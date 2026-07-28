@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getBrandedFallbackImage } from '../../utils/imageUtils';
+import { getProductImageUrl, handleImageLoadError, handleImageLoadCheck } from '../../utils/imageUtils';
 import { useCart } from '../../context/useCart';
 
 export const ProductCard = ({ product }) => {
@@ -32,14 +32,12 @@ export const ProductCard = ({ product }) => {
       {/* Image container clickable to product detail */}
       <Link to={`/products/${product.id}`} className="w-full h-48 bg-gray-50 flex items-center justify-center p-4 overflow-hidden relative">
         <img
-          src={product.images && product.images.length > 0 && product.images[0] ? product.images[0] : getBrandedFallbackImage(product.name)}
+          src={getProductImageUrl(product)}
           alt={product.name}
           className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = getBrandedFallbackImage(product.name);
-          }}
+          onLoad={(e) => handleImageLoadCheck(e, product.name)}
+          onError={(e) => handleImageLoadError(e, product.name)}
         />
       </Link>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/useCart';
-import { getBrandedFallbackImage } from '../utils/imageUtils';
+import { getProductImageUrl, handleImageLoadError, handleImageLoadCheck } from '../utils/imageUtils';
 
 export const OrderSuccessPage = () => {
   const navigate = useNavigate();
@@ -81,13 +81,11 @@ export const OrderSuccessPage = () => {
             <div key={product.id} className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <img
-                  src={product.images && product.images.length > 0 && product.images[0] ? product.images[0] : getBrandedFallbackImage(product.name)}
+                  src={getProductImageUrl(product)}
                   alt={product.name}
                   className="w-12 h-12 object-contain rounded-lg bg-gray-50 p-1 border border-gray-100"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = getBrandedFallbackImage(product.name);
-                  }}
+                  onLoad={(e) => handleImageLoadCheck(e, product.name)}
+                  onError={(e) => handleImageLoadError(e, product.name)}
                 />
                 <div>
                   <h4 className="font-bold text-xs text-gray-900 line-clamp-1">{product.name}</h4>

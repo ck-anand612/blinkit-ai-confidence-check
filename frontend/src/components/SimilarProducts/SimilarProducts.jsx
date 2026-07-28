@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getProducts } from '../../api/client';
-import { getBrandedFallbackImage } from '../../utils/imageUtils';
+import { getProductImageUrl, handleImageLoadError, handleImageLoadCheck } from '../../utils/imageUtils';
 import { useCart } from '../../context/useCart';
 
 export const SimilarProducts = ({ currentProduct }) => {
@@ -89,13 +89,11 @@ export const SimilarProducts = ({ currentProduct }) => {
             >
               <div className="w-full h-32 bg-gray-50 rounded-lg p-2 flex items-center justify-center overflow-hidden mb-2">
                 <img
-                  src={item.images && item.images.length > 0 && item.images[0] ? item.images[0] : getBrandedFallbackImage(item.name)}
+                  src={getProductImageUrl(item)}
                   alt={item.name}
                   className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-200"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = getBrandedFallbackImage(item.name);
-                  }}
+                  onLoad={(e) => handleImageLoadCheck(e, item.name)}
+                  onError={(e) => handleImageLoadError(e, item.name)}
                 />
               </div>
 

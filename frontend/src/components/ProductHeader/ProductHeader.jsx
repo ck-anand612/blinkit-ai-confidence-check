@@ -1,5 +1,5 @@
 import React from 'react';
-import { getBrandedFallbackImage } from '../../utils/imageUtils';
+import { getProductImageUrl, handleImageLoadError, handleImageLoadCheck } from '../../utils/imageUtils';
 
 export const ProductHeader = ({ product }) => {
   if (!product) return null;
@@ -9,13 +9,11 @@ export const ProductHeader = ({ product }) => {
       {/* Hero Image Gallery */}
       <section className="relative w-full h-[450px] bg-surface-container-low overflow-hidden snap-x snap-mandatory flex hide-scroll">
         <img
-          src={product.images && product.images.length > 0 && product.images[0] ? product.images[0] : getBrandedFallbackImage(product.name)}
+          src={getProductImageUrl(product)}
           alt={product.name}
           className="w-full h-full object-contain p-4 shrink-0 snap-center"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = getBrandedFallbackImage(product.name);
-          }}
+          onLoad={(e) => handleImageLoadCheck(e, product.name)}
+          onError={(e) => handleImageLoadError(e, product.name)}
         />
         {/* Pagination Dots overlay */}
         <div className="absolute bottom-4 left-0 w-full flex justify-center gap-2">
