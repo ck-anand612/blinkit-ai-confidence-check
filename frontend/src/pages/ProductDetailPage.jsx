@@ -16,11 +16,11 @@ export const ProductDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // AI Confidence Sheet State
+  // AI Confidence State Management
+  const [activeConcern, setActiveConcern] = useState('authenticity');
+  const [confidenceCache, setConfidenceCache] = useState({});
+  const [concernLoading, setConcernLoading] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const [summaryData, setSummaryData] = useState(null);
-  const [sheetLoading, setSheetLoading] = useState(false);
-  const [sheetError, setSheetError] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -29,6 +29,8 @@ export const ProductDetailPage = () => {
         setError(null);
         const data = await getProduct(id);
         setProduct(data);
+        // Pre-fetch initial concern (authenticity)
+        fetchConcernSummary(id, 'authenticity');
       } catch (err) {
         console.error('Error fetching product:', err);
         if (err.response && err.response.status === 404) {
@@ -46,20 +48,23 @@ export const ProductDetailPage = () => {
     }
   }, [id]);
 
-  const handleViewDetails = async () => {
-    setIsSheetOpen(true);
-    if (summaryData || sheetLoading) return;
-
-    setSheetLoading(true);
-    setSheetError(false);
+  const fetchConcernSummary = async (productId, concernKey) => {
+    if (confidenceCache[concernKey]) return;
     try {
-      const data = await getConfidenceCheck(product.id, 'suitability');
-      setSummaryData(data);
+      setConcernLoading(true);
+      const res = await getConfidenceCheck(productId, concernKey);
+      setConfidenceCache(prev => ({ ...prev, [concernKey]: res.summary }));
     } catch (err) {
-      console.error('Error fetching confidence check:', err);
-      setSheetError(true);
+      console.error(`Error fetching confidence check for ${concernKey}:`, err);
     } finally {
-      setSheetLoading(false);
+      setConcernLoading(false);
+    }
+  };
+
+  const handleConcernChange = (newConcern) => {
+    setActiveConcern(newConcern);
+    if (product && product.id) {
+      fetchConcernSummary(product.id, newConcern);
     }
   };
 
@@ -108,10 +113,14 @@ export const ProductDetailPage = () => {
         {/* 1. Product Header (Hero Image & Info) */}
         <ProductHeader product={product} />
 
-        {/* 2. Core MVP: AI Confidence Check Card */}
+        {/* 2. Core MVP: Inline Purchase Confidence Engine */}
         <AIConfidenceCheck 
           product={product} 
-          onViewDetails={handleViewDetails} 
+          activeConcern={activeConcern}
+          onConcernChange={handleConcernChange}
+          concernSummary={confidenceCache[activeConcern]}
+          loading={concernLoading}
+          onOpenSheet={() => setIsSheetOpen(true)}
         />
 
         {/* 3. Static Trust Signals & Description */}
@@ -124,15 +133,15 @@ export const ProductDetailPage = () => {
       {/* 5. Add to Cart Call To Action (Sticky Footer) */}
       <AddToCartCTA product={product} price={product.price} />
 
-      {/* AI Confidence Bottom Sheet */}
+      {/* Optional Extended Evidence Bottom Sheet */}
       <AIConfidenceSheet 
         isOpen={isSheetOpen} 
         onClose={() => setIsSheetOpen(false)} 
         product={product}
-        summaryData={summaryData}
-        loading={sheetLoading}
-        error={sheetError}
-        onRetry={handleViewDetails}
+        activeConcern={activeConcern}
+        onConcernChange={handleConcernChange}
+        concernSummary={confidenceCache[activeConcern]}
+        loading={concernLoading}
       />
     </div>
   );
