@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blinkit Cart Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#f7d002",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d0c6ab",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#00530e",
+                        "on-primary-fixed": "#221b00",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#e9c400",
+                        "background": "#f8f9fb",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#7e775f",
+                        "surface-variant": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#e9c400",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#002203",
+                        "secondary-fixed": "#8ffb87",
+                        "on-surface": "#191c1e",
+                        "primary-fixed": "#ffe16e",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#d5d2d2",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#8ffb87",
+                        "on-tertiary-container": "#5b5a5a",
+                        "surface-bright": "#f8f9fb",
+                        "on-secondary-container": "#007518",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#4d4632",
+                        "primary": "#705d00",
+                        "surface": "#f8f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006e16",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-container": "#6b5900",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed-variant": "#544600",
+                        "secondary-fixed-dim": "#74dd6e",
+                        "tertiary": "#5f5e5e",
+                        "surface-tint": "#705d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background docked full-width top-0 flat no shadows transition-colors duration-200 ease-in-out flex items-center justify-between px-margin-mobile h-16 w-full z-50 sticky border-b border-surface-variant">
+<div class="flex flex-col">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">My Cart</h1>
+<div class="flex items-center text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px] mr-1" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span>Delivery in 10 mins to Home</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface hover:bg-surface-container-low dark:hover:bg-surface-variant rounded-full p-2 cursor-pointer transition-colors duration-200 ease-in-out">account_circle</span>
+</header>
+<!-- Main Content -->
+<main class="px-margin-mobile py-lg space-y-gutter max-w-2xl mx-auto">
+<!-- Delivery Promise Banner -->
+<div class="bg-surface-container-low rounded-lg p-md flex items-center justify-between border border-surface-variant">
+<div class="flex items-center space-x-md">
+<span class="material-symbols-outlined text-secondary text-[24px]">timer</span>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Delivery in 10 mins</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Shipment of 3 items</p>
+</div>
+</div>
+</div>
+<!-- Cart Items -->
+<div class="bg-surface-container-lowest rounded-lg border border-surface-variant divide-y divide-surface-variant overflow-hidden shadow-sm">
+<!-- Item 1 -->
+<div class="p-md flex items-start space-x-md">
+<div class="w-16 h-16 rounded border border-surface-variant overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="A top-down view of a fresh bunch of green bananas, perfectly ripe for cooking. Bright studio lighting on a pristine white background. High resolution, detailed texture of the skin. Clean, high-density product photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD4EKlE8aNJJJKY5crJZGtXl_M-5l_Z49R-YUbZeONNvMIeMyT0aLsxp1nLaG_DSHj1YuRQnTI7-pqD1jEciTfqN8V4nnQYqdPaNCqyB1nBbo5dFl-QsG-87kOQbmd2hzuwVOvKjFQB-fQO8NkWlgU-kkilZJWaYbMTi35FFeVdh2ePIG_aSr6Q2p4_zSjMTNHSBpaTaq7TcSjHl0ueKsJ2sSXwzuia2eHkFyEu0hb7CeFMdnzkFjUFsedhn8JmgXQzcD6DjTarkxt"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-label-lg text-on-surface line-clamp-2">Fresh Raw Banana</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">500 g</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-title-lg text-title-lg text-on-surface">₹35</span>
+<!-- Quantity Control -->
+<div class="flex items-center bg-secondary rounded flex-shrink-0 h-8">
+<button class="w-8 h-full flex items-center justify-center text-on-secondary font-bold hover:bg-on-secondary-fixed-variant rounded-l transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="px-2 font-label-lg text-label-lg text-on-secondary w-8 text-center">1</span>
+<button class="w-8 h-full flex items-center justify-center text-on-secondary font-bold hover:bg-on-secondary-fixed-variant rounded-r transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-md flex items-start space-x-md">
+<div class="w-16 h-16 rounded border border-surface-variant overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="A carton of organic toned milk in modern packaging. Bright lighting highlighting the freshness and nutritional branding. Studio shot, white background. High-density retail product aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJXIe40cYKC6p-qmjFzy9_UZy6dzynYJVxDU8Yvzarb0-TkafoLbeo5p75siRGecIdZRuq5_KzP5EMn1f4tGvpmYZ6vuufQjhzxAoLMwo-zYlqaDE8otTf9lPXb7BVRbQRTATdmj-vn7TvhR_YsSuXSkkD6_Esk8jfo_DtBl1crOqek1e58lpLS1EYbvbrHQowgJ917OquJqqlc9bnpVEKw5grSf1Wcqb1ZgegD-2Er_8Qu_nMgrdDimIRvqi09Jr-olPlkoyP1cM"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg text-label-lg text-on-surface line-clamp-2">Amul Taaza Toned Milk</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">500 ml</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-title-lg text-title-lg text-on-surface">₹27</span>
+<!-- Quantity Control -->
+<div class="flex items-center bg-secondary rounded flex-shrink-0 h-8">
+<button class="w-8 h-full flex items-center justify-center text-on-secondary font-bold hover:bg-on-secondary-fixed-variant rounded-l transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="px-2 font-label-lg text-label-lg text-on-secondary w-8 text-center">2</span>
+<button class="w-8 h-full flex items-center justify-center text-on-secondary font-bold hover:bg-on-secondary-fixed-variant rounded-r transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Guarantee Card -->
+<div class="bg-[#F8FDF8] rounded-lg p-md border border-[#E6F5E6] relative overflow-hidden group">
+<div class="flex items-start space-x-md">
+<div class="bg-[#E6F5E6] rounded-full p-2 flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[24px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-lg text-title-lg text-on-surface flex items-center gap-2">
+                    AI Confidence Guarantee
+                    <span class="material-symbols-outlined text-[#F7D002] text-[16px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Quality checked by advanced AI models. 100% refund if not satisfied with freshness.</p>
+<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex items-center gap-1 bg-[#F0F8F0] px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-secondary text-[14px]">check_circle</span>
+<span class="text-secondary text-[11px] font-medium uppercase tracking-wider">Brand Authorized</span>
+</div>
+<div class="flex items-center gap-1 bg-[#F0F8F0] px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-secondary text-[14px]">fact_check</span>
+<span class="text-secondary text-[11px] font-medium uppercase tracking-wider">Batch Verified</span>
+</div>
+<div class="flex items-center gap-1 bg-[#F0F8F0] px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-secondary text-[14px]">published_with_changes</span>
+<span class="text-secondary text-[11px] font-medium uppercase tracking-wider">Easy Returns</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary -->
+<div class="bg-surface-container-lowest rounded-lg p-md border border-surface-variant shadow-sm space-y-md">
+<h3 class="font-title-lg text-title-lg text-on-surface">Bill Details</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">receipt_long</span> Item Total</span>
+<span class="text-on-surface font-medium">₹89</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">shopping_bag</span> Handling Charge</span>
+<span class="text-on-surface font-medium">₹4</span>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">two_wheeler</span> Delivery Fee</span>
+<div class="flex items-center space-x-2">
+<span class="line-through text-on-surface-variant opacity-70">₹25</span>
+<span class="text-secondary font-medium">Free</span>
+</div>
+</div>
+</div>
+<div class="border-t border-surface-variant pt-md flex justify-between items-center">
+<span class="font-title-lg text-title-lg text-on-surface font-bold">To Pay</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">₹93</span>
+</div>
+</div>
+</main>
+<!-- Sticky Footer (BottomNavBar replacement context) -->
+<div class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-surface-variant shadow-[0_-4px_12px_rgba(0,0,0,0.05)] p-md">
+<div class="max-w-2xl mx-auto flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">₹93</span>
+<a class="font-label-sm text-label-sm text-secondary uppercase font-bold hover:underline" href="#">View detailed bill</a>
+</div>
+<button class="bg-[#F7D002] text-on-primary-fixed font-title-lg text-title-lg font-bold py-3 px-6 rounded-lg flex items-center justify-center space-x-2 active:scale-95 transition-transform hover:bg-[#ffe16e]">
+<span>Proceed to Pay</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Hidden BottomNavBar (Suppressed due to Task-Focused flow) -->
+<nav aria-hidden="true" class="hidden">
+<!-- Render logic would normally go here, but suppressed per guidelines for linear/checkout flows -->
+</nav>
+</body></html>

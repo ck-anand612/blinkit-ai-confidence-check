@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blinkit - Beauty &amp; Personal Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#f7d002",
+                      "surface-container-low": "#f2f4f6",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#d0c6ab",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "on-secondary-fixed-variant": "#00530e",
+                      "on-primary-fixed": "#221b00",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#e9c400",
+                      "background": "#ffffff", /* Changed to white */
+                      "on-tertiary": "#ffffff",
+                      "outline": "#e0e0e0", /* Subtle gray divider */
+                      "surface-variant": "#f4f4f4",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#e9c400",
+                      "surface-container": "#f8f8f8",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#002203",
+                      "secondary-fixed": "#8ffb87",
+                      "on-surface": "#191c1e",
+                      "primary-fixed": "#ffe16e",
+                      "tertiary-fixed": "#e5e2e1",
+                      "on-background": "#1c1c1c",
+                      "tertiary-container": "#d5d2d2",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "inverse-surface": "#2d3133",
+                      "secondary-container": "#e8f5e9", /* Blinkit green light */
+                      "on-tertiary-container": "#5b5a5a",
+                      "surface-bright": "#ffffff",
+                      "on-secondary-container": "#2e7d32", /* Blinkit green dark */
+                      "surface-container-highest": "#e0e3e5",
+                      "on-surface-variant": "#666666",
+                      "primary": "#f7d002",
+                      "surface": "#ffffff",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#2e7d32", /* Blinkit green */
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#d8dadc",
+                      "on-primary-container": "#000000", /* Changed for better contrast on yellow */
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-primary-fixed-variant": "#544600",
+                      "secondary-fixed-dim": "#74dd6e",
+                      "tertiary": "#5f5e5e",
+                      "surface-tint": "#705d00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "2xl": "1rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "gutter": "12px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "margin-mobile": "16px",
+                      "lg": "24px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "label-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "22px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background flex items-center justify-between px-margin-mobile h-14 w-full z-50 sticky top-0 flat no shadows border-b border-surface-variant">
+<div class="flex items-center gap-4">
+<button class="text-on-background dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors duration-200 ease-in-out p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-background dark:text-primary-fixed">Beauty &amp; Personal Care</h1>
+</div>
+<button class="text-on-background dark:text-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors duration-200 ease-in-out p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</header>
+<main class="pb-24">
+<!-- Sub-categories Chips -->
+<section class="py-sm px-margin-mobile bg-surface sticky top-14 z-40">
+<div class="flex overflow-x-auto gap-sm no-scrollbar pb-1">
+<button class="flex-shrink-0 px-4 py-2 bg-secondary text-on-secondary rounded-full font-label-lg text-label-lg whitespace-nowrap">All</button>
+<button class="flex-shrink-0 px-4 py-2 bg-surface-container text-on-background rounded-full font-label-lg text-label-lg border border-outline whitespace-nowrap">Makeup</button>
+<button class="flex-shrink-0 px-4 py-2 bg-surface-container text-on-background rounded-full font-label-lg text-label-lg border border-outline whitespace-nowrap">Skincare</button>
+<button class="flex-shrink-0 px-4 py-2 bg-surface-container text-on-background rounded-full font-label-lg text-label-lg border border-outline whitespace-nowrap">Haircare</button>
+<button class="flex-shrink-0 px-4 py-2 bg-surface-container text-on-background rounded-full font-label-lg text-label-lg border border-outline whitespace-nowrap">Fragrance</button>
+<button class="flex-shrink-0 px-4 py-2 bg-surface-container text-on-background rounded-full font-label-lg text-label-lg border border-outline whitespace-nowrap">Bath &amp; Body</button>
+</div>
+</section>
+<!-- Hero Banner -->
+<section class="px-margin-mobile mt-md mb-xl">
+<div class="relative w-full h-[220px] md:h-[300px] rounded-2xl overflow-hidden flex items-center">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full" data-alt="A clean, minimalist composition of premium skincare products like The Ordinary and Beauty of Joseon serums and creams on a textured stone surface with natural sunlight and soft shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6WWV7Ro6nQLEZy45Ew1U7aiG1t_txLomgR4P2RG31lOvbSPCrcF3-368ph32gUcJ6itvA3F4w1Wf3u5cWUzDCHzrqTjplLnkl4mkzpnu52Q1OHSTeQerIokWg-1eTOfOt37pRAi5hH0EKELGsVciLi5ImBimF6liLf0yVpZrrNQnJfTT6xw_fuMOXfWC2_qPDgdFiMIR_9SUh6FZ_bAcRtVoFwDm6afnJ8pi4XVtLFXf8GS-KhrgCeghS1jZhEe5gTW6lQoxGUlrj')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/90 via-surface/60 to-transparent"></div>
+<div class="relative z-10 pl-lg w-[85%] md:w-1/2">
+<h2 class="font-display-lg text-display-lg text-on-background mb-2 leading-tight">Redefine your<br/>beauty routine</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 max-w-[200px]">Premium brands delivered in minutes.</p>
+<button class="bg-primary text-on-primary-container font-label-lg text-label-lg px-6 py-2 rounded-lg font-bold shadow-sm">Shop Now</button>
+</div>
+</div>
+</section>
+<!-- Luxury Finds Grid -->
+<section class="px-margin-mobile mb-xl">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-title-lg text-title-lg text-on-background">Luxury Finds</h3>
+<button class="font-label-lg text-label-lg text-secondary flex items-center">See all <span class="material-symbols-outlined text-sm ml-1">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline overflow-hidden flex flex-col h-full relative">
+<div class="absolute top-2 left-2 z-10 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-label-sm text-[10px] font-bold uppercase tracking-wider">Authentic</span>
+</div>
+<div class="w-full h-44 bg-surface-container relative p-4 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A sleek, minimalist glass bottle of premium facial serum sitting on a pristine white pedestal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm2AMhsAY4nt3BG-RrVTHYUOlccXk7p4sXeN8GUIO3CjFhw5grOPDVr0Ra6ZK_HZDtiq0Z2AlCti6J4afayONnooYdAkq6Mtjl-WZPLgoO0kx6b7c6Tbms7JrXZXgJZ0AJyMI9bpIa4HOk72E098UF2athesv4Omfn6wKeCtOMRok4lYv74_basA7E-zLH9EdgpQiJkMapt08CuhHjcvzfcei7uoMdOg9h-pL4jwu-ZNGX8bmy7Pcq5j6Z5NO4_hcH1u-rbnG-mT4L"/>
+</div>
+<div class="p-3 flex flex-col flex-grow bg-surface">
+<p class="font-body-sm text-[12px] text-on-surface-variant mb-1 line-clamp-1">Glow Recipe</p>
+<p class="font-body-md text-[14px] leading-[18px] text-on-background font-semibold line-clamp-2 mb-2 flex-grow">Watermelon Glow Niacinamide Dew Drops</p>
+<div class="flex items-center justify-between mt-auto pt-2">
+<p class="font-title-lg text-[16px] text-on-background">₹2,850</p>
+<button class="w-8 h-8 rounded border border-secondary text-secondary flex items-center justify-center hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline overflow-hidden flex flex-col h-full relative">
+<div class="absolute top-2 left-2 z-10 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-label-sm text-[10px] font-bold uppercase tracking-wider">Authentic</span>
+</div>
+<div class="w-full h-44 bg-surface-container relative p-4 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A high-end, matte black lipstick tube standing upright against a stark white, brightly lit background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC28ktmBQuqHuhoVuL2dWphotr_Guh9X9CsDBSkaa6RfsM2ux1rAfyaGnPc60zh3OefqcosNShMuEzGAj69M_oeDUyptRkkmEn07yGgSLx6-cqjCb-KB6qTtqbMu3DpM0u3-UxAStbCHx0h0qcwIYw7VGwVSQCCWjSHqewbGaCztF1DgsnTizQ3DAQx5ID1VjFO99VijV_k5XBrp4anQRs1nVPWlkV4CRWJT7t87ScI_ThYTELQvx367KunSlE6kmLHRVMKv1YdvKPf"/>
+</div>
+<div class="p-3 flex flex-col flex-grow bg-surface">
+<p class="font-body-sm text-[12px] text-on-surface-variant mb-1 line-clamp-1">M.A.C</p>
+<p class="font-body-md text-[14px] leading-[18px] text-on-background font-semibold line-clamp-2 mb-2 flex-grow">Retro Matte Lipstick - Ruby Woo</p>
+<div class="flex items-center justify-between mt-auto pt-2">
+<p class="font-title-lg text-[16px] text-on-background">₹1,950</p>
+<button class="w-8 h-8 rounded border border-secondary text-secondary flex items-center justify-center hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline shadow-md fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-dim p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed font-bold scale-95 transition-transform duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">category</span>
+<span class="font-label-sm text-label-sm mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-dim p-2 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">print</span>
+<span class="font-label-sm text-label-sm mt-1">Print</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-dim p-2 rounded-lg transition-colors relative" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="font-label-sm text-label-sm mt-1">Cart</span>
+<div class="absolute top-1 right-3 w-4 h-4 bg-secondary rounded-full flex items-center justify-center">
+<span class="text-[10px] text-on-secondary font-bold">2</span>
+</div>
+</a>
+</nav>
+</body></html>

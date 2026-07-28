@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Blinkit Home Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#f7d002",
+                      "surface-container-low": "#f2f4f6",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#d0c6ab",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "on-secondary-fixed-variant": "#00530e",
+                      "on-primary-fixed": "#221b00",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#e9c400",
+                      "background": "#f4f6f8",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#7e775f",
+                      "surface-variant": "#e0e3e5",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#e9c400",
+                      "surface-container": "#eceef0",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#002203",
+                      "secondary-fixed": "#8ffb87",
+                      "on-surface": "#191c1e",
+                      "primary-fixed": "#ffe16e",
+                      "tertiary-fixed": "#e5e2e1",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#d5d2d2",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "inverse-surface": "#2d3133",
+                      "secondary-container": "#8ffb87",
+                      "on-tertiary-container": "#5b5a5a",
+                      "surface-bright": "#ffffff",
+                      "on-secondary-container": "#007518",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-surface-variant": "#4d4632",
+                      "primary": "#F7D002",
+                      "surface": "#ffffff",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#0C831F",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#d8dadc",
+                      "on-primary-container": "#6b5900",
+                      "error": "#ba1a1a",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-primary-fixed-variant": "#544600",
+                      "secondary-fixed-dim": "#74dd6e",
+                      "tertiary": "#5f5e5e",
+                      "surface-tint": "#705d00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.375rem",
+                      "lg": "0.75rem",
+                      "xl": "1rem",
+                      "2xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "gutter": "12px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "margin-mobile": "16px",
+                      "lg": "24px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "800"}],
+                      "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                      "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "800"}],
+                      "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "800"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for horizontal scroll areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-[80px]">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background flex flex-col px-margin-mobile pt-3 pb-4 w-full z-50 docked full-width top-0 sticky shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex flex-col">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-background tracking-tight">Blinkit</h1>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface-variant">Delivery in 10 mins</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex items-center">
+<button class="hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-2 rounded-full flex items-center justify-center bg-black">
+<span class="material-symbols-outlined text-white text-[24px]">person</span>
+</button>
+</div>
+</div>
+<!-- Search -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</div>
+<input class="block w-full pl-11 pr-10 py-3.5 rounded-xl bg-white border border-surface-container-high shadow-sm text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:ring-2 focus:ring-primary-container focus:outline-none" placeholder='Search "bread"' type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3.5 flex items-center">
+<span class="w-px h-5 bg-surface-container-high mr-3"></span>
+<button class="flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">mic</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-margin-mobile pt-4 flex flex-col gap-lg max-w-2xl mx-auto">
+<!-- Hero Banner -->
+<div class="w-full rounded-2xl overflow-hidden shadow-sm relative h-[180px]">
+<img class="w-full h-full object-cover" data-alt="A vibrant, high-quality promotional banner for beauty and personal care products. The image features a clean, modern aesthetic with soft lighting, showcasing a sleek bottle of serum, a premium face cream, and fresh botanical elements like aloe vera and rose petals on a pastel-colored background. The style is hyper-realistic and polished, suitable for a fast-delivery app's home screen. The color palette emphasizes soft pinks, fresh greens, and stark whites to convey purity and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmpFi822wMhhYG5OIx8v4qUYYhIGawg3fBVmROQkpy9n0g6Dr3AkSeYlCo8JwzuilJgyJlPGOKTJqASt7oBjwjwsaOQTKTOLilgKU64WNeVjsdD0XZc5L5zdhMQbYGgJAxP24tGbn7mLxoO6XYYRmdYPOe91pcTfCq9z4F4Y22044TgKr88NaVJ4kqTQwkv4ppk5wc4G9BLDSUxSGpnqa8QsK_wyc6gj3wi472QIvX9_DY_FGFlM_5sQNzYVzVYkdC3EDyag_rU0bW"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex flex-col justify-center p-5">
+<h2 class="font-display-lg text-display-lg text-white mb-1 drop-shadow-md">Beauty &amp;<br/>Personal Care</h2>
+<div class="inline-flex items-center bg-primary text-black px-2 py-0.5 rounded text-[11px] font-bold w-fit mt-2">
+<span>UP TO 40% OFF</span>
+</div>
+</div>
+</div>
+<!-- Categories Grid -->
+<section class="bg-white p-4 rounded-2xl shadow-sm border border-surface-container-highest">
+<h3 class="font-title-lg text-title-lg mb-4 text-on-background">Explore by category</h3>
+<div class="grid grid-cols-4 gap-y-6 gap-x-3">
+<!-- Item 1 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#F0F6FF] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A clean, isolated image of fresh groceries, including a red apple and a green bell pepper, sitting in a small, stylized woven basket on a plain light background. The lighting is bright and even, highlighting the fresh, vibrant colors of the produce. High resolution, modern mobile app category icon style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABYqZQtaVzd0weYmuJSBvWnMbyLXMpOmrD7Zm2XgMOVhvzB6GaZNUsYsTQT-kMFSWTtzkMEos7WIjGd7b2juTHDKS6nr3O4GYaKlHWquvat1el_k8lGiP5DMdH_q0Jl1Cos11FjFZxl5_V3u-iPvkFAYAYfI8TYP3EWWsKGbuxA6p6klN_bPu_lL4jnLtGBp5BaR6soQe51rYJWspsJIdk6w07s_vohW4zQhaXe31o4baPThABPOZeng3HXl8ZbPNf9eD0wyozoDgx"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Grocery &amp;<br/>Staples</span>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#FFF5F0] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A bright, studio-lit image of fresh fruits, specifically a bunch of yellow bananas and a sliced orange, arranged neatly against a seamless white background. The image is crisp, appetizing, and shot macro-style to serve as a category icon for a grocery delivery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk5J2iwWTpYrWvcuusrEOHE-eOi0nxQpyu2FpG5dVbaB6dov2DHwuznwmrwUYITo9BFyRpjGUWUr9wGD4ExVDe4OHj1cbxvnKR8MUG_OzNDpVapk2QtzYQ3MK3OHI6N7_ZhfqyRugUz5-d2wP4IHVfSls_RWtNlj0n7jDoVHknuOoXYl4B0DPcWw4PTVkc5fEKVZSLFz7fcHTTT5BPSH35wnwTVCuMD_LEQETMTvpVONCrwPBu4fsJ3XkW6ogSjL7D4UWvVESGfU0g"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Fruits &amp;<br/>Vegetables</span>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#FFF0F6] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A sleek, minimalist shot of beauty products: a frosted glass dropper bottle and a smooth, unbranded lipstick tube. The setting is clean, brightly lit with soft shadows on a very light grey surface, creating a premium, modern aesthetic for a mobile app category icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDNHJN3BUuIMazRsvhW9PgTHQs8tuK2uYW9kRDhpNLMEEXlgcamqTHtKRtUdXBtnsjIECyLSBVw2utteNVTTO3sTQavnE3hnfnpHMHmiuaNE1OdkGSRbxAEaZx0aphcndujFBrwqm85Us_tf0VdIICOszMAvRQabh0TuhFfZRm65y7ZUzBXafKOm9mq1Tg89LWDMOngn6LlotGepzOk0mrv8zmsazWCyxJksqAqWPmGPxYsmWahQ2nCHYuVtubk9uc-0_Y388zUrL0"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Beauty &amp;<br/>Makeup</span>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#F4F4F4] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A modern, high-tech looking image featuring a pair of sleek white wireless earbuds in their charging case, placed next to a coiled, premium USB-C cable. Bright, clinical lighting on a stark white background, designed as a clear category icon for electronics in a modern app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmLLAlSAgMRuDCc5VDUKgoYM-PBGaFy8ZeItKFJRAvEmEQe2oGf0Mv714_QY0aKnBI-Pkcav131tGIMJd9ilx7gkTzMI9L814jhMUwzCfcfCeSzN7asfRHjjwc67WbxiRvj3ndyAbb7a6Xw2X7y1f4x_5flaQPSPa3QsjjgfjAWPyH9MqU7wqzudYc8piPFAzpeRawCudWLl6_oH3XDmerlNq3h3wwRpTz8M6MkCbRpON-7bWgVDTTk_MsoRtWuQvaDOMUiuZs8tqV"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Electronics &amp;<br/>Accessories</span>
+</div>
+<!-- Item 5 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#FFF8E6] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A stylized overhead shot of a fresh loaf of sliced bread next to a small glass of milk. Warm, inviting lighting on a light wooden texture background, designed to look appetizing and clear as a bakery category icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjU35R7i7fbpYlMaArAGxeACcA40Mkw1Iiu9LXN1ymdkZwJr4WgS_S6d2jKJWpwD8meEwm9LXyqVlmFs3-EX0Pgu1QDN2t1_0XUD12T_TIB62bjcTDKtZ-VvGOtBeSFruOmCiZsu3QCM9ygJ3S4xNDB2xXa-u-EtOolVyC4nkjta2hUfJA0gPpi6TxTrPYp3Yyt2mwQx0F_h-kXZvSE6Y7J7rHpLQ9zmmgOUaRdiqlDTMtY0eZ-WUACjuIzNSimXFeEJgSpXdPe1Yq"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Bakery &amp;<br/>Biscuits</span>
+</div>
+<!-- Item 6 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#E6F4EA] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A pristine, brightly lit image of fresh, raw vegetables: a bundle of green spinach and a few bright orange carrots. Clean white background, high contrast, studio lighting, perfectly suited for a vegetable category icon on a modern delivery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJJgCLPT9HgX3lRBC3r6FvfNje7_Q5cp1i7NgLeyFV6pdS3yQTCFnPUcJF6XloCfYwFYNb2vTXM9i7Cv8fId6hqwX2YFOAmgqOBkqWIQKgr_tuSMknN1K6nYs0y2FI23v1LKoV1R-b-O2VxZVFiK8WgNdEeRQUjAszSDFihGgd_01bBCBystcwI52CEYZcL32SnFtASRNqc4B1ow1YT-SUjtwXjFa00rLUvCZk3CQ_Qx3K8dLrACVlRLoGsIbV4MfO0VG36_4v6FJo"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Dairy &amp;<br/>Breakfast</span>
+</div>
+<!-- Item 7 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#E8F0FE] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="A clean, studio shot of household cleaning supplies, featuring a brightly colored spray bottle and a neatly folded microfiber cloth. Shot against a pure white background with even, bright lighting to convey cleanliness and utility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNCWei3dw7VaLhMlhYJ9j7uti3Fm96ueCxg_H0trzR24y0DzJ3gUxHtw5uw9L_NgK-V7GBCe94e7I-mhpLxj6mvEhCAkycMklrQapCHnZNR7r6CZLg6mKsCaiT-5kJcfJjqb13MtCyEiywQj1dmyAnWib-alKOsyK9owIvJA7YlUI0A_ITVMNpkV7tOAmktRBB53tGp5XRXPUgsVxQQHSSkbOBsv7WuOegyvqEqKr-h7L0SKW6HYN5ixmSauOlaAicz5JLhlhAqaGj"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Cleaning &amp;<br/>Household</span>
+</div>
+<!-- Item 8 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-xl bg-[#FCE8E6] flex items-center justify-center overflow-hidden border border-surface-container-high/50 p-1">
+<img class="w-full h-full object-contain mix-blend-multiply" data-alt="An appetizing, high-resolution close-up of a premium chocolate bar, partially unwrapped, next to a small pile of mixed nuts. Warm, rich lighting against a neutral background, making it perfect for a snacks category icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXx1B37T-fhT4r5QQExEEaaIwN41IH_kli_JiZHryrqh7KTRwByxu56fkJ7t4kU4bwk2fGOKy0uarHIHsQkVRZZg46s9WlWZuZubHET0V5JysNuGuLfvWnEBWud-kvQyxDmvvTYjkrOYieL0h5mz9HuFATFlBkaeY3wd8XioFjZCGzlUTl3ybjRLs2HckYYnQdn484KuDtL_ZSbMnPiC2ieWUaWK96vp1WMrsLxfd9FOJBrfjtJnxnvBJVFlhm_gGcmsh2IbQtYxc"/>
+</div>
+<span class="font-label-sm text-[11px] leading-tight text-center text-on-surface-variant font-semibold">Snacks &amp;<br/>Munchies</span>
+</div>
+</div>
+</section>
+<!-- Recent Orders (Horizontal Scroll) -->
+<section class="-mx-margin-mobile px-margin-mobile">
+<h3 class="font-title-lg text-title-lg mb-4 text-on-background">Buy Again</h3>
+<div class="flex overflow-x-auto gap-3 pb-4 no-scrollbar">
+<!-- Product Card 1 -->
+<div class="min-w-[130px] max-w-[130px] flex-shrink-0 bg-white border border-surface-container-highest rounded-2xl overflow-hidden flex flex-col shadow-sm">
+<div class="h-[100px] bg-white w-full relative">
+<img class="w-full h-full object-contain p-3" data-alt="A studio-lit, high-quality image of a 1-liter carton of whole milk. The carton is white with subtle blue and green branding. The background is pure white to isolate the product completely, suitable for a fast-commerce product listing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0MMDKwak2s9iJjFjoE7AHCJOPfuX1MyJ4QMwarI6yEHbAeSCXK38iGNbtsvYx7eecqlG2frk9SesbH4HZxVqDYyhxY8beE9STxTVlRiU9WaUBL_0OnK4iZN4vGLq8NSbDAX3ZLug690gd_t2MhgG2aV0QazB6LIkVzZdI-04SKx1FUN4uIat17BDoEft3Vf1qb4nbWYK4VdvoS1GyzaHW2_5amWfJiaWLv8jD1jLNbBSBlryEBKRX60FKeOmp7oLazg0-GnEvX4Lo"/>
+<div class="absolute top-1 right-1 bg-primary text-black text-[9px] font-bold px-1.5 py-0.5 rounded">11% OFF</div>
+</div>
+<div class="p-3 flex-grow flex flex-col justify-between">
+<div>
+<p class="font-body-sm text-[12px] leading-snug text-on-background line-clamp-2 font-medium">Amul Taaza Homogenised Toned Milk</p>
+<p class="text-[11px] text-on-surface-variant mt-1">1 l</p>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg">₹74</span>
+<span class="text-[10px] text-on-surface-variant line-through">₹84</span>
+</div>
+<button class="bg-[#F8FDF9] border border-secondary text-secondary rounded-lg px-4 py-1.5 font-label-sm text-[12px] font-bold uppercase shadow-sm">ADD</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[130px] max-w-[130px] flex-shrink-0 bg-white border border-surface-container-highest rounded-2xl overflow-hidden flex flex-col shadow-sm">
+<div class="h-[100px] bg-white w-full relative">
+<img class="w-full h-full object-contain p-3" data-alt="A clean, brightly lit studio shot of a standard loaf of sliced white bread in clear plastic packaging. The packaging has simple, generic red and white branding. The background is seamless white for a clean product listing appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHh325DwEmlvHnVjr7LXtJ7qh8C6qvRlKGy6qGYEoGnECykc9zAUsp2i_2W_pNucCIFRqLRDOZfzL0G6y-QPHSCh63RxwDBoTlbQHksG2qt4AoJBYI1eej27GHoP1vienYR4EcR4upTUDzev_UcpQnuDBYdeb3C9eAgeWE-rvV06toh-IjcJh9Hl4xd6M4OB10NDQQA1PHldeU076Scf6bV8wQMIRqzgp8e4djxENxfDoRtBgzzuI7xPMYbas3t6bxVnwNIfB6W2mz"/>
+</div>
+<div class="p-3 flex-grow flex flex-col justify-between">
+<div>
+<p class="font-body-sm text-[12px] leading-snug text-on-background line-clamp-2 font-medium">Harvest Gold White Bread</p>
+<p class="text-[11px] text-on-surface-variant mt-1">400 g</p>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg">₹40</span>
+</div>
+<button class="bg-[#F8FDF9] border border-secondary text-secondary rounded-lg px-4 py-1.5 font-label-sm text-[12px] font-bold uppercase shadow-sm">ADD</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[130px] max-w-[130px] flex-shrink-0 bg-white border border-surface-container-highest rounded-2xl overflow-hidden flex flex-col shadow-sm">
+<div class="h-[100px] bg-white w-full relative">
+<img class="w-full h-full object-contain p-3" data-alt="A macro studio shot of a 6-pack of brown eggs in a standard cardboard carton. The lighting is warm and natural, highlighting the texture of the eggs and carton against a pure white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDlXPzQU0VJXOFEcQuEA23HGZM1BcAhLUvS5tlyboSR31ddTm4wqJ1qIlKNt0uK1Gi_jGY3rdxijOHVl1uGYj49Nj6qLh3vJ-ce3_-wynY2_zVls_16UtQAiiRrld6a4uvRWxKT3qLKmjm9-_jZ9238Teq3BPJKnyf48PSPCunjGbzTiHsTyjZAzFt4WfJshvFZseKptxx-OV2o23goYTEzNfCtnq4lrtwZJkAhRvpw8b9272DsrlBoNB550lCqmG-OufXUSgF5yyr"/>
+</div>
+<div class="p-3 flex-grow flex flex-col justify-between">
+<div>
+<p class="font-body-sm text-[12px] leading-snug text-on-background line-clamp-2 font-medium">Farm Fresh Brown Eggs - 6 pcs</p>
+<p class="text-[11px] text-on-surface-variant mt-1">6 pieces</p>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg">₹65</span>
+</div>
+<button class="bg-[#F8FDF9] border border-secondary text-secondary rounded-lg px-4 py-1.5 font-label-sm text-[12px] font-bold uppercase shadow-sm">ADD</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-white border-t border-surface-container-highest shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-4 md:hidden">
+<button class="flex flex-col items-center justify-center text-on-background scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm mt-1 font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-lg p-1 transition-colors duration-200">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-sm text-label-sm mt-1">Categories</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-lg p-1 transition-colors duration-200">
+<span class="material-symbols-outlined">print</span>
+<span class="font-label-sm text-label-sm mt-1">Print</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-lg p-1 transition-colors duration-200">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-sm text-label-sm mt-1">Cart</span>
+</button>
+</nav>
+</body></html>

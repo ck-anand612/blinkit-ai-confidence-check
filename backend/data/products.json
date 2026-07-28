@@ -1,0 +1,887 @@
+[
+  {
+    "id": "bpc-prem-001",
+    "brand": "The Ordinary",
+    "name": "The Ordinary Niacinamide 10% + Zinc 1% 30ml",
+    "product_name": "The Ordinary Niacinamide 10% + Zinc 1%",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Skincare",
+    "subcategory": "Skincare",
+    "size": "30ml",
+    "price": 600,
+    "rating": 4.6,
+    "review_count": 18450,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/ordinary/niacinamide.jpg",
+    "images": [
+      "/images/products/ordinary/niacinamide.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/ordinary/niacinamide.jpg"
+    ],
+    "variants": [
+      { "size": "30ml", "price": 600 },
+      { "size": "60ml", "price": 1050 }
+    ],
+    "tags": ["Bestseller", "Direct Import", "Minimalist"],
+    "description": "High-strength vitamin and mineral blemish formula with 10% pure Niacinamide and 1% Zinc PCA to reduce skin blemishes, balance sebum, and refine pore structure.",
+    "trustSignals": {
+      "authenticity": "Sourced directly from DECIEM authorized Indian distributor with DECIEM batch verification seal.",
+      "returnPolicy": "7-day easy return for unopened product. Full refund to original payment method.",
+      "localConfidence": "Stored in temperature-controlled dark stores. Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "This product is imported directly through DECIEM's authorized Indian supply chain. Batch number on base matches DECIEM's global authenticity registry.",
+      "suitability": "Ideal for oily, combination, and acne-prone skin. Controls excess sebum without stripping moisture. Perform a patch test before first use.",
+      "quality": "Fragrance-free, alcohol-free, silicone-free, vegan, and cruelty-free formulation. Clinical study showed 89% users noticed reduced pore visibility in 4 weeks.",
+      "returns": "Blinkit 7-day return policy applies. If damaged during delivery, instant free replacement is dispatched within 1 hour."
+    }
+  },
+  {
+    "id": "bpc-prem-002",
+    "brand": "The Ordinary",
+    "name": "The Ordinary Salicylic Acid 2% Solution 30ml",
+    "product_name": "The Ordinary Salicylic Acid 2% Solution",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Skincare",
+    "subcategory": "Skincare",
+    "size": "30ml",
+    "price": 570,
+    "rating": 4.5,
+    "review_count": 9200,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/ordinary/salicylic.jpg",
+    "images": [
+      "/images/products/ordinary/salicylic.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/ordinary/salicylic.jpg"
+    ],
+    "variants": [
+      { "size": "30ml", "price": 570 }
+    ],
+    "tags": ["Acne Care", "Exfoliant"],
+    "description": "Formulated for blemish-prone skin. Targeted 2% Beta Hydroxy Acid (BHA) solution that exfoliates inside pore walls to fight acne and clarify skin tone.",
+    "trustSignals": {
+      "authenticity": "Official DECIEM India supply chain partner with holographic import seal.",
+      "returnPolicy": "7-day return guarantee on sealed products.",
+      "localConfidence": "Available at your nearest Blinkit dark store for express delivery."
+    },
+    "concernContext": {
+      "authenticity": "Verified authentic via DECIEM's official Indian distribution network. Includes MRP sticker and verifiable batch code.",
+      "suitability": "Specifically designed for active acne and clogged pores. Apply once daily in evening. Always pair with SPF during daytime.",
+      "quality": "Vegan, cruelty-free, and formulated without oils or artificial fragrance. Dermatologist tested.",
+      "returns": "If bottle arrives damaged or unsealed, instant replacement or full refund is provided by Blinkit."
+    }
+  },
+  {
+    "id": "bpc-prem-003",
+    "brand": "Cetaphil",
+    "name": "Cetaphil Gentle Skin Cleanser 250ml",
+    "product_name": "Cetaphil Gentle Skin Cleanser",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Derma Care",
+    "subcategory": "Derma Care",
+    "size": "250ml",
+    "price": 399,
+    "rating": 4.8,
+    "review_count": 42100,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/cetaphil/cleanser.jpg",
+    "images": [
+      "/images/products/cetaphil/cleanser.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/cetaphil/cleanser.jpg"
+    ],
+    "variants": [
+      { "size": "125ml", "price": 249 },
+      { "size": "250ml", "price": 399 },
+      { "size": "1000ml", "price": 1150 }
+    ],
+    "tags": ["Dermatologist Recommended", "Sensitive Skin"],
+    "description": "Clinically proven soap-free, non-irritating daily cleanser with Niacinamide, Panthenol, and Glycerin for sensitive and dry skin.",
+    "trustSignals": {
+      "authenticity": "Galderma India authorized distribution. Authentic pharmacy-grade stock.",
+      "returnPolicy": "7-day return window with instant refund.",
+      "localConfidence": "Top-selling derma skincare SKU delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Sourced directly from Galderma India. Outer bottle carries Galderma security hologram and batch number.",
+      "suitability": "Formulated for ultra-sensitive, dry, and eczema-prone skin. Soap-free, fragrance-free, and non-comedogenic.",
+      "quality": "#1 Dermatologist recommended cleanser in India. Clinically proven to preserve natural skin barrier.",
+      "returns": "Full refund or quick replacement provided if pump is broken or package arrives damaged."
+    }
+  },
+  {
+    "id": "bpc-prem-004",
+    "brand": "Cetaphil",
+    "name": "Cetaphil Moisturizing Cream 100g",
+    "product_name": "Cetaphil Moisturizing Cream",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Derma Care",
+    "subcategory": "Derma Care",
+    "size": "100g",
+    "price": 540,
+    "rating": 4.7,
+    "review_count": 28900,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/cetaphil/moisturizer.jpg",
+    "images": [
+      "/images/products/cetaphil/moisturizer.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/cetaphil/moisturizer.jpg"
+    ],
+    "variants": [
+      { "size": "100g", "price": 540 },
+      { "size": "250g", "price": 1050 }
+    ],
+    "tags": ["Barrier Repair", "Dermatologist Pick"],
+    "description": "Rich, non-greasy cream formulated with Sweet Almond Oil, Vitamin E, and Niacinamide to restore skin's moisture barrier in just 1 week.",
+    "trustSignals": {
+      "authenticity": "Galderma India original manufacture with trackable batch codes.",
+      "returnPolicy": "7-day return policy for unopened items.",
+      "localConfidence": "Available at all Blinkit dark stores across metro cities."
+    },
+    "concernContext": {
+      "authenticity": "Direct supply from Galderma's authorized warehouse. Authentic security seal on tub.",
+      "suitability": "Intensive hydration for dry to very dry skin. Safe for face and body use.",
+      "quality": "Provides 48-hour continuous hydration. Paraben-free and hypoallergenic.",
+      "returns": "If product seal is broken upon arrival, Blinkit dispatches immediate replacement."
+    }
+  },
+  {
+    "id": "bpc-prem-005",
+    "brand": "Bioderma",
+    "name": "Bioderma Sensibio H2O Micellar Water 250ml",
+    "product_name": "Bioderma Sensibio H2O Micellar Water",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Derma Care",
+    "subcategory": "Derma Care",
+    "size": "250ml",
+    "price": 990,
+    "rating": 4.9,
+    "review_count": 15400,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/bioderma/sensibio.jpg",
+    "images": [
+      "/images/products/bioderma/sensibio.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/bioderma/sensibio.jpg"
+    ],
+    "variants": [
+      { "size": "100ml", "price": 490 },
+      { "size": "250ml", "price": 990 },
+      { "size": "500ml", "price": 1690 }
+    ],
+    "tags": ["Iconic French Skincare", "Makeup Remover"],
+    "description": "The world's original micellar water crafted in France. Cleanses pollutants and removes waterproof makeup while respecting sensitive skin barrier.",
+    "trustSignals": {
+      "authenticity": "NAOS Skin Care India official import with custom clearance hologram.",
+      "returnPolicy": "7-day return guarantee.",
+      "localConfidence": "Delivered in 10 minutes in temperature-monitored dark store packaging."
+    },
+    "concernContext": {
+      "authenticity": "Imported from France by NAOS India. Holographic import sticker verifiable online.",
+      "suitability": "Formulated for sensitive skin. No rinse required. Maintains natural skin pH 5.5.",
+      "quality": "Dermatological innovation used by professional makeup artists globally. Fragrance-free.",
+      "returns": "Easy 7-day return if bottle arrives damaged or leaking."
+    }
+  },
+  {
+    "id": "bpc-prem-006",
+    "brand": "Bioderma",
+    "name": "Bioderma Atoderm Intensive Baume 75ml",
+    "product_name": "Bioderma Atoderm Intensive Baume",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Derma Care",
+    "subcategory": "Derma Care",
+    "size": "75ml",
+    "price": 750,
+    "rating": 4.8,
+    "review_count": 6800,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/bioderma/atoderm.jpg",
+    "images": [
+      "/images/products/bioderma/atoderm.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/bioderma/atoderm.jpg"
+    ],
+    "variants": [
+      { "size": "75ml", "price": 750 }
+    ],
+    "tags": ["Anti-Itch", "Eczema Care"],
+    "description": "Ultra-soothing, lipid-replenishing balm that rapidly relieves itching and calms irritated, dry to atopic skin.",
+    "trustSignals": {
+      "authenticity": "NAOS India authorized importer product.",
+      "returnPolicy": "7-day return window.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Sourced via official NAOS India channels. Includes import license details on tube.",
+      "suitability": "Ideal for severe dryness, itchiness, and irritated skin barrier.",
+      "quality": "Lipigenium technology rebuilds skin barrier naturally. Non-sticky texture.",
+      "returns": "Full refund or replacement provided if package arrives damaged."
+    }
+  },
+  {
+    "id": "bpc-prem-007",
+    "brand": "COSRX",
+    "name": "COSRX Advanced Snail 96 Mucin Power Essence 100ml",
+    "product_name": "COSRX Advanced Snail 96 Mucin Power Essence",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "100ml",
+    "price": 1450,
+    "rating": 4.9,
+    "review_count": 35200,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/cosrx/snail_mucin.jpg",
+    "images": [
+      "/images/products/cosrx/snail_mucin.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/cosrx/snail_mucin.jpg"
+    ],
+    "variants": [
+      { "size": "100ml", "price": 1450 }
+    ],
+    "tags": ["Viral K-Beauty", "Glass Skin", "Hydration"],
+    "description": "Lightweight essence enriched with 96.3% Snail Secretion Filtrate that repairs skin damage, boosts elasticity, and delivers radiant glass skin.",
+    "trustSignals": {
+      "authenticity": "Official Korean import with K-Beauty authenticity seal & QR verification.",
+      "returnPolicy": "7-day easy return policy for sealed bottle.",
+      "localConfidence": "Delivered in 10 minutes directly from Blinkit dark store."
+    },
+    "concernContext": {
+      "authenticity": "100% genuine COSRX Korea import. QR code on box allows direct verification on COSRX's official site.",
+      "suitability": "Suitable for all skin types, including sensitive and acne-prone skin. Soothes redness and repairs acne scars.",
+      "quality": "Cruelty-free snail mucin harvested ethically in Korea. Free from parabens, sulfates, and artificial fragrances.",
+      "returns": "Instant return and full refund if bottle seal is compromised upon delivery."
+    }
+  },
+  {
+    "id": "bpc-prem-008",
+    "brand": "COSRX",
+    "name": "COSRX Salicylic Acid Daily Gentle Cleanser 150ml",
+    "product_name": "COSRX Salicylic Acid Daily Gentle Cleanser",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "150ml",
+    "price": 850,
+    "rating": 4.7,
+    "review_count": 11400,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/cosrx/salicylic_cleanser.jpg",
+    "images": [
+      "/images/products/cosrx/salicylic_cleanser.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/cosrx/salicylic_cleanser.jpg"
+    ],
+    "variants": [
+      { "size": "150ml", "price": 850 }
+    ],
+    "tags": ["Pore Care", "K-Beauty Cleanser"],
+    "description": "Micro-bubbling foam cleanser with 0.5% Salicylic Acid and Tea Tree Oil to clear breakouts, reduce excess oil, and gently exfoliate.",
+    "trustSignals": {
+      "authenticity": "Authorized COSRX distributor import seal.",
+      "returnPolicy": "7-day return guarantee.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Direct import from COSRX Korea. Authenticity sticker on packaging.",
+      "suitability": "Best for oily and acne-prone skin. Controls shine without over-drying.",
+      "quality": "Dermatologist tested in Korea. Clean formulation.",
+      "returns": "Blinkit guarantees instant refund or replacement if item is damaged."
+    }
+  },
+  {
+    "id": "bpc-prem-009",
+    "brand": "Laneige",
+    "name": "Laneige Lip Sleeping Mask Berry 20g",
+    "product_name": "Laneige Lip Sleeping Mask Berry",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "20g",
+    "price": 1420,
+    "rating": 4.9,
+    "review_count": 27800,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/laneige/lip_mask.jpg",
+    "images": [
+      "/images/products/laneige/lip_mask.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/laneige/lip_mask.jpg"
+    ],
+    "variants": [
+      { "size": "8g", "price": 600 },
+      { "size": "20g", "price": 1420 }
+    ],
+    "tags": ["Cult Favorite", "Luxury K-Beauty"],
+    "description": "Overnight lip treatment with Berry Mix Complex and Vitamin C that melts dead skin cells and leaves lips supple, hydrated, and plump by morning.",
+    "trustSignals": {
+      "authenticity": "Amorepacific India official brand importer seal.",
+      "returnPolicy": "7-day return for unopened box.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Imported by Amorepacific India. Every box carries a custom security hologram and batch registration number.",
+      "suitability": "Suitable for dry, chapped, or flaky lips. Works overnight for intense hydration.",
+      "quality": "Patented Moisture Wrap technology locks in active ingredients and moisture.",
+      "returns": "If the jar seal is damaged or spatula is missing, Blinkit replaces it immediately."
+    }
+  },
+  {
+    "id": "bpc-prem-010",
+    "brand": "Laneige",
+    "name": "Laneige Water Bank Blue Hyaluronic Cream 50ml",
+    "product_name": "Laneige Water Bank Blue Hyaluronic Cream",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "50ml",
+    "price": 3050,
+    "rating": 4.8,
+    "review_count": 5900,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/laneige/water_bank.jpg",
+    "images": [
+      "/images/products/laneige/water_bank.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/laneige/water_bank.jpg"
+    ],
+    "variants": [
+      { "size": "50ml", "price": 3050 }
+    ],
+    "tags": ["Deep Hydration", "Barrier Cream"],
+    "description": "Intense barrier repair cream powered by micro-sized Blue Hyaluronic Acid that provides 100-hour moisture and repairs damaged skin barrier.",
+    "trustSignals": {
+      "authenticity": "Official Amorepacific import certificate.",
+      "returnPolicy": "7-day return guarantee.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "100% genuine Laneige product with Amorepacific security holographic label.",
+      "suitability": "Formulated for normal, dry, and sensitive skin types needing barrier repair.",
+      "quality": "Micro-hyaluronic acid is 2000x smaller for 300% deeper skin penetration.",
+      "returns": "Blinkit offers immediate replacement if seal is broken on delivery."
+    }
+  },
+  {
+    "id": "bpc-prem-011",
+    "brand": "Beauty of Joseon",
+    "name": "Beauty of Joseon Relief Sun: Rice + Probiotics SPF50+ PA++++ 50ml",
+    "product_name": "Beauty of Joseon Relief Sun SPF50+",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "50ml",
+    "price": 1550,
+    "rating": 4.9,
+    "review_count": 39800,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/beauty_of_joseon/relief_sun.jpg",
+    "images": [
+      "/images/products/beauty_of_joseon/relief_sun.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/beauty_of_joseon/relief_sun.jpg"
+    ],
+    "variants": [
+      { "size": "50ml", "price": 1550 }
+    ],
+    "tags": ["Global Viral Sunscreen", "No White Cast"],
+    "description": "Organic sunscreen with 30% Rice Extract and Grain Probiotics that offers broad spectrum SPF50+ protection while nourishing skin with a lightweight, non-sticky finish.",
+    "trustSignals": {
+      "authenticity": "Direct import from Beauty of Joseon Korea with security hologram.",
+      "returnPolicy": "7-day return policy for unopened items.",
+      "localConfidence": "Stored in temperature-controlled dark stores for maximum SPF stability."
+    },
+    "concernContext": {
+      "authenticity": "Authentic Beauty of Joseon sunscreen imported via official channels. QR code on box confirms origin.",
+      "suitability": "Zero white cast, non-greasy, and leaves no residue. Perfect under makeup for all skin tones.",
+      "quality": "SPF and PA tested in independent labs in Korea and Spain. Free from artificial fragrance.",
+      "returns": "Full refund or replacement if outer seal is broken upon arrival."
+    }
+  },
+  {
+    "id": "bpc-prem-012",
+    "brand": "Beauty of Joseon",
+    "name": "Beauty of Joseon Dynasty Cream 50ml",
+    "product_name": "Beauty of Joseon Dynasty Cream",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "50ml",
+    "price": 1750,
+    "rating": 4.8,
+    "review_count": 8900,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/beauty_of_joseon/dynasty_cream.jpg",
+    "images": [
+      "/images/products/beauty_of_joseon/dynasty_cream.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/beauty_of_joseon/dynasty_cream.jpg"
+    ],
+    "variants": [
+      { "size": "50ml", "price": 1750 }
+    ],
+    "tags": ["Hanbang Skincare", "Nourishing"],
+    "description": "Luxurious Korean Hanbang cream formulated with Rice Bran Water, Ginseng Root Water, and 2% Niacinamide to deeply hydrate and firm skin.",
+    "trustSignals": {
+      "authenticity": "Official Korean import with hologram verification code.",
+      "returnPolicy": "7-day easy return policy.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "100% genuine Beauty of Joseon jar with official Korean batch registration.",
+      "suitability": "Ideal for dry and combination skin needing deep nourishment and glow.",
+      "quality": "Traditional Korean herbal ingredients blended with modern dermatological science.",
+      "returns": "Hassle-free return and replacement if package is damaged in transit."
+    }
+  },
+  {
+    "id": "bpc-prem-013",
+    "brand": "Medicube",
+    "name": "Medicube Zero Pore Pad 2.0 70 Pads",
+    "product_name": "Medicube Zero Pore Pad 2.0",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "70 Pads",
+    "price": 2100,
+    "rating": 4.8,
+    "review_count": 14200,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/medicube/zero_pore.jpg",
+    "images": [
+      "/images/products/medicube/zero_pore.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/medicube/zero_pore.jpg"
+    ],
+    "variants": [
+      { "size": "70 Pads", "price": 2100 }
+    ],
+    "tags": ["Viral Pore Pad", "Dual Texture"],
+    "description": "Dual-textured facial toner pads infused with AHA & BHA complex and patented botanical extracts to tighten pores and exfoliate dead skin cells.",
+    "trustSignals": {
+      "authenticity": "Medicube Korea official import with security seal.",
+      "returnPolicy": "7-day return guarantee.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Imported directly from Medicube Korea. Hologram code on tub for verification.",
+      "suitability": "Clinically proven to tighten pores and reduce sebum. Suitable for oily and rough skin texture.",
+      "quality": "Hypoallergenic tested. Over 10 million units sold worldwide.",
+      "returns": "If inner seal is opened or tub is cracked, instant replacement is issued."
+    }
+  },
+  {
+    "id": "bpc-prem-014",
+    "brand": "Biodance",
+    "name": "Biodance Bio-Collagen Real Deep Mask 4 Sheets",
+    "product_name": "Biodance Bio-Collagen Real Deep Mask",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "4 Sheets",
+    "price": 1950,
+    "rating": 4.9,
+    "review_count": 21300,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/biodance/collagen_mask.jpg",
+    "images": [
+      "/images/products/biodance/collagen_mask.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/biodance/collagen_mask.jpg"
+    ],
+    "variants": [
+      { "size": "4 Sheets", "price": 1950 }
+    ],
+    "tags": ["Overnight Hydrogel", "Trending K-Beauty"],
+    "description": "Hydrogel mask infused with ultra-low molecular Collagen and Oligo-Hyaluronic Acid that turns transparent as skin absorbs deep hydration overnight.",
+    "trustSignals": {
+      "authenticity": "Official Biodance Korea import with QR code verification.",
+      "returnPolicy": "7-day return for sealed box.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Genuine Korean import. QR code on box allows authenticity scan on Biodance website.",
+      "suitability": "Safe for sensitive skin. Wear for 3-4 hours or overnight for maximum collagen absorption.",
+      "quality": "Formulated without allergens or harmful chemicals. Clinical results show instant pore tightening.",
+      "returns": "Blinkit guarantees quick return if box seal is tampered with."
+    }
+  },
+  {
+    "id": "bpc-prem-015",
+    "brand": "Tirtir",
+    "name": "Tirtir Mask Fit Red Cushion Foundation 18g",
+    "product_name": "Tirtir Mask Fit Red Cushion",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "18g",
+    "price": 2350,
+    "rating": 4.8,
+    "review_count": 17900,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/tirtir/red_cushion.jpg",
+    "images": [
+      "/images/products/tirtir/red_cushion.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/tirtir/red_cushion.jpg"
+    ],
+    "variants": [
+      { "size": "18g", "price": 2350 }
+    ],
+    "tags": ["72H Stay", "Viral Cushion"],
+    "description": "High-coverage cushion foundation infused with Red Propolis and Hibiscus extracts that provides a flawless semi-matte finish for up to 72 hours without transfer.",
+    "trustSignals": {
+      "authenticity": "Authentic Tirtir Korea product with holographic import seal.",
+      "returnPolicy": "7-day return guarantee on unopened product.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Official Korean import. Security seal on metallic red compact.",
+      "suitability": "Smudge-proof, mask-proof formula with buildable high coverage.",
+      "quality": "SPF40 PA++ sun protection included. Dermatologically tested for long wear.",
+      "returns": "If shade compact arrives damaged or unsealed, instant replacement is issued."
+    }
+  },
+  {
+    "id": "bpc-prem-016",
+    "brand": "The Face Shop",
+    "name": "The Face Shop Rice Water Bright Cleansing Foam 150ml",
+    "product_name": "The Face Shop Rice Water Bright Cleansing Foam",
+    "category": "Beauty & Personal Care",
+    "subCategory": "K-Beauty",
+    "subcategory": "K-Beauty",
+    "size": "150ml",
+    "price": 720,
+    "rating": 4.6,
+    "review_count": 16500,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/the_face_shop/rice_foam.jpg",
+    "images": [
+      "/images/products/the_face_shop/rice_foam.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/the_face_shop/rice_foam.jpg"
+    ],
+    "variants": [
+      { "size": "150ml", "price": 720 },
+      { "size": "300ml", "price": 1250 }
+    ],
+    "tags": ["Brightening", "Rice Water Classic"],
+    "description": "Creamy cleansing foam enriched with Rice Water and Soapwort extract that gently brightens skin while removing makeup and impurities.",
+    "trustSignals": {
+      "authenticity": "LG Household & Health Care official India import.",
+      "returnPolicy": "7-day easy return policy.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Imported by LG H&H India. Original batch code and MRP sticker printed on tube.",
+      "suitability": "Suitable for dry to normal skin types seeking a radiant glow.",
+      "quality": "Formulated with traditional Korean rice water known for brightening properties.",
+      "returns": "Full refund or replacement if item arrives punctured."
+    }
+  },
+  {
+    "id": "bpc-prem-017",
+    "brand": "Forest Essentials",
+    "name": "Forest Essentials Soundarya Radiance Cream 50g",
+    "product_name": "Forest Essentials Soundarya Radiance Cream",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Luxury Beauty",
+    "subcategory": "Luxury Beauty",
+    "size": "50g",
+    "price": 3495,
+    "rating": 4.9,
+    "review_count": 7800,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/forest_essentials/soundarya.jpg",
+    "images": [
+      "/images/products/forest_essentials/soundarya.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/forest_essentials/soundarya.jpg"
+    ],
+    "variants": [
+      { "size": "30g", "price": 2495 },
+      { "size": "50g", "price": 3495 }
+    ],
+    "tags": ["24K Gold", "Luxury Ayurveda"],
+    "description": "An award-winning luxury Ayurvedic day cream infused with 24 Karat Gold Bhasma and SPF 25 that restores elasticity and imparts a youthful golden glow.",
+    "trustSignals": {
+      "authenticity": "Sourced directly from Forest Essentials manufacturing facility with holographic brand seal.",
+      "returnPolicy": "7-day return guarantee on unopened luxury jar.",
+      "localConfidence": "Delivered in 10 minutes in velvet-padded packaging."
+    },
+    "concernContext": {
+      "authenticity": "Direct brand supply from Forest Essentials. Each jar has a unique 8-digit batch code verifiable at forestessentialsindia.com.",
+      "suitability": "Rich nourishing day cream for normal to dry skin. Contains natural SPF 25.",
+      "quality": "Contains pure 24K Gold Bhasma, Saffron, and Cold-Pressed oils. 100% natural Ayurvedic formulation.",
+      "returns": "If luxury seal is broken or jar is damaged, Blinkit dispatches free replacement within 2 hours."
+    }
+  },
+  {
+    "id": "bpc-prem-018",
+    "brand": "Kama Ayurveda",
+    "name": "Kama Ayurveda Kumkumadi Miraculous Beauty Fluid 12ml",
+    "product_name": "Kama Ayurveda Kumkumadi Miraculous Beauty Fluid",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Luxury Beauty",
+    "subcategory": "Luxury Beauty",
+    "size": "12ml",
+    "price": 3195,
+    "rating": 4.9,
+    "review_count": 9100,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/kama_ayurveda/kumkumadi.jpg",
+    "images": [
+      "/images/products/kama_ayurveda/kumkumadi.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/kama_ayurveda/kumkumadi.jpg"
+    ],
+    "variants": [
+      { "size": "12ml", "price": 3195 }
+    ],
+    "tags": ["Pure Saffron", "Luxury Ayurvedic Oil"],
+    "description": "Iconic Ayurvedic night serum prescribed in Ashtanga Hridaya. Made with 100% Kashmiri Saffron and 14 precious herbs to illuminate skin tone.",
+    "trustSignals": {
+      "authenticity": "Directly supplied by Kama Ayurveda India with holographic brand seal.",
+      "returnPolicy": "7-day return policy.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Authentic Kama Ayurveda product. Unique batch code and tamper-proof security seal on box.",
+      "suitability": "Apply 3-4 drops at night for dullness, hyperpigmentation, and fine lines.",
+      "quality": "Clinically proven to improve skin brightness by 28% in 4 weeks. 100% natural.",
+      "returns": "Blinkit guarantees immediate replacement if glass bottle or dropper is damaged."
+    }
+  },
+  {
+    "id": "bpc-prem-019",
+    "brand": "Olaplex",
+    "name": "Olaplex No.3 Hair Perfector 100ml",
+    "product_name": "Olaplex No.3 Hair Perfector",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Haircare",
+    "subcategory": "Haircare",
+    "size": "100ml",
+    "price": 2950,
+    "rating": 4.8,
+    "review_count": 18200,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/olaplex/no3.jpg",
+    "images": [
+      "/images/products/olaplex/no3.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/olaplex/no3.jpg"
+    ],
+    "variants": [
+      { "size": "100ml", "price": 2950 },
+      { "size": "250ml", "price": 5400 }
+    ],
+    "tags": ["Bond Building", "Prestige Haircare"],
+    "description": "At-home treatment with patented Bond Building Technology that re-links broken disulfide bonds, repairing severe damage from chemical processing and heat.",
+    "trustSignals": {
+      "authenticity": "Official Olaplex India authorized importer hologram code on bottle.",
+      "returnPolicy": "7-day return guarantee.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Official Olaplex import. QR code on bottle base confirms authenticity at olaplex.com.",
+      "suitability": "For all hair types, especially bleached, colored, or heat-damaged hair.",
+      "quality": "Patented bis-aminopropyl diglycol dimaleate technology. Reduces breakage by 68%.",
+      "returns": "Instant return and full refund if bottle seal is compromised upon arrival."
+    }
+  },
+  {
+    "id": "bpc-prem-020",
+    "brand": "Moroccanoil",
+    "name": "Moroccanoil Treatment Original 100ml",
+    "product_name": "Moroccanoil Treatment Original",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Haircare",
+    "subcategory": "Haircare",
+    "size": "100ml",
+    "price": 3870,
+    "rating": 4.9,
+    "review_count": 12600,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/moroccanoil/treatment.jpg",
+    "images": [
+      "/images/products/moroccanoil/treatment.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/moroccanoil/treatment.jpg"
+    ],
+    "variants": [
+      { "size": "25ml", "price": 1300 },
+      { "size": "100ml", "price": 3870 }
+    ],
+    "tags": ["Argan Oil Classic", "Luxury Haircare"],
+    "description": "The pioneer of argan oil-infused hair care. Infused with antioxidant-rich Argan Oil and vitamins to condition, detangle, and boost shine by 118%.",
+    "trustSignals": {
+      "authenticity": "Moroccanoil India official distribution with blue-tinted glass bottle & hologram.",
+      "returnPolicy": "7-day return window.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "100% original Moroccanoil in signature blue glass bottle with matrix barcode.",
+      "suitability": "Ideal for all hair types as a styling, finishing, or conditioning oil.",
+      "quality": "Award-winning global bestseller. Non-greasy formula.",
+      "returns": "Blinkit guarantees instant replacement if bottle arrives leaking."
+    }
+  },
+  {
+    "id": "bpc-prem-021",
+    "brand": "Minimalist",
+    "name": "Minimalist 10% Niacinamide Serum 30ml",
+    "product_name": "Minimalist 10% Niacinamide Serum",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Skincare",
+    "subcategory": "Skincare",
+    "size": "30ml",
+    "price": 599,
+    "rating": 4.6,
+    "review_count": 31200,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/minimalist/niacinamide.jpg",
+    "images": [
+      "/images/products/minimalist/niacinamide.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/minimalist/niacinamide.jpg"
+    ],
+    "variants": [
+      { "size": "30ml", "price": 599 }
+    ],
+    "tags": ["Clean Science", "Oil Control"],
+    "description": "Nourishing serum with 10% Niacinamide and Matmarine to reduce sebum, clear blemishes, and improve skin texture in 2 weeks.",
+    "trustSignals": {
+      "authenticity": "Direct from Minimalist brand warehouse with tamper-proof seal.",
+      "returnPolicy": "7-day return policy.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Direct Minimalist brand supply. Scan QR code on outer carton for batch verification.",
+      "suitability": "Best for oily and acne-prone skin. Fragrance-free and non-comedogenic.",
+      "quality": "Formulated with European quality active ingredients. USFDA registered lab.",
+      "returns": "Instant replacement if package is damaged upon delivery."
+    }
+  },
+  {
+    "id": "bpc-prem-022",
+    "brand": "Minimalist",
+    "name": "Minimalist Maleic Bond Repair Complex 5% Hair Serum 50ml",
+    "product_name": "Minimalist Maleic Bond Repair Hair Serum",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Haircare",
+    "subcategory": "Haircare",
+    "size": "50ml",
+    "price": 499,
+    "rating": 4.5,
+    "review_count": 8400,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/minimalist/bond_repair.jpg",
+    "images": [
+      "/images/products/minimalist/bond_repair.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/minimalist/bond_repair.jpg"
+    ],
+    "variants": [
+      { "size": "50ml", "price": 499 }
+    ],
+    "tags": ["Bond Repair", "Hair Science"],
+    "description": "Patent-pending hair serum with 5% Maleic Bond Repair Complex, Transglutaminase, and Amino Acids that repairs damaged hair bonds.",
+    "trustSignals": {
+      "authenticity": "Direct Minimalist brand supply with QR seal.",
+      "returnPolicy": "7-day easy return policy.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "Original Minimalist product with QR code batch authentication.",
+      "suitability": "Designed for hair damaged by thermal styling, UV, or chemical treatments.",
+      "quality": "Clinically proven to repair hair strength by 5x.",
+      "returns": "Easy replacement if bottle arrives leaking."
+    }
+  },
+  {
+    "id": "bpc-prem-023",
+    "brand": "Sebamed",
+    "name": "Sebamed Clear Face Cleansing Foam 150ml",
+    "product_name": "Sebamed Clear Face Cleansing Foam",
+    "category": "Beauty & Personal Care",
+    "subCategory": "Derma Care",
+    "subcategory": "Derma Care",
+    "size": "150ml",
+    "price": 580,
+    "rating": 4.7,
+    "review_count": 14300,
+    "delivery_time": "10 MINS",
+    "stock_status": "In Stock",
+    "image": "/images/products/sebamed/cleansing_foam.jpg",
+    "images": [
+      "/images/products/sebamed/cleansing_foam.jpg"
+    ],
+    "gallery_images": [
+      "/images/products/sebamed/cleansing_foam.jpg"
+    ],
+    "variants": [
+      { "size": "150ml", "price": 580 }
+    ],
+    "tags": ["pH 5.5", "German Derma Care"],
+    "description": "Deep cleansing foam with Montaline C40 that combats acne bacteria and maintains skin's protective acid mantle at pH 5.5.",
+    "trustSignals": {
+      "authenticity": "Imported from Sebamed Germany by USV Private Limited.",
+      "returnPolicy": "7-day return guarantee.",
+      "localConfidence": "Delivered in 10 minutes."
+    },
+    "concernContext": {
+      "authenticity": "100% authentic Sebamed product imported from Germany by USV Ltd.",
+      "suitability": "Formulated for acne-prone skin. Combats pimples, blackheads, and skin impurities.",
+      "quality": "Patented Montaline C40 active ingredient kills acne bacteria in 5 minutes.",
+      "returns": "Blinkit guarantees quick replacement if item is damaged in transit."
+    }
+  }
+]

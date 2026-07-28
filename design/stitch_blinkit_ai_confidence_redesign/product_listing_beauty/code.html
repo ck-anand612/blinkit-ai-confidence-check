@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxury Skincare - Blinkit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#f7d002",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#d0c6ab",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-secondary-fixed-variant": "#00530e",
+                    "on-primary-fixed": "#221b00",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#e9c400",
+                    "background": "#f8f9fb",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#7e775f",
+                    "surface-variant": "#e0e3e5",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#e9c400",
+                    "surface-container": "#eceef0",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#002203",
+                    "secondary-fixed": "#8ffb87",
+                    "on-surface": "#191c1e",
+                    "primary-fixed": "#ffe16e",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-background": "#191c1e",
+                    "tertiary-container": "#d5d2d2",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "inverse-surface": "#2d3133",
+                    "secondary-container": "#8ffb87",
+                    "on-tertiary-container": "#5b5a5a",
+                    "surface-bright": "#f8f9fb",
+                    "on-secondary-container": "#007518",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#4d4632",
+                    "primary": "#705d00",
+                    "surface": "#f8f9fb",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#006e16",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d8dadc",
+                    "on-primary-container": "#6b5900",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-fixed-variant": "#544600",
+                    "secondary-fixed-dim": "#74dd6e",
+                    "tertiary": "#5f5e5e",
+                    "surface-tint": "#705d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "gutter": "12px",
+                    "md": "16px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-margin-mobile h-14 bg-surface dark:bg-on-background transition-colors duration-200 ease-in-out">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed icon-fill" data-icon="location_on" data-weight="fill">location_on</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed">Delivery in 10 mins</h1>
+</div>
+<button class="hover:bg-surface-container-low dark:hover:bg-surface-variant p-2 rounded-full transition-colors duration-200 ease-in-out">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="pt-[72px] px-margin-mobile">
+<!-- Search Bar -->
+<div class="mb-6 sticky top-[64px] z-40 bg-background pb-2 pt-2">
+<div class="flex items-center bg-[#F5F7F9] rounded-full px-4 py-2 w-full">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none w-full font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant focus:ring-0 p-0" placeholder="Search 'Luxury Skincare'" type="text" value="Luxury Skincare"/>
+<div class="bg-primary-container text-on-primary-container px-2 py-1 rounded-full flex items-center gap-1 ml-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm font-bold">AI</span>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-4 mt-2">
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface">Premium Selection</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Curated for your skin profile</p>
+</div>
+<button class="font-label-lg text-label-lg text-secondary">Filter</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-gutter pb-8">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest border border-[#EEEEEE] rounded-lg overflow-hidden flex flex-col relative group hover:border-surface-variant transition-colors duration-200">
+<!-- Badges -->
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<div class="bg-[#2D8E3B] text-white font-[500] text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px] icon-fill" data-icon="auto_awesome">auto_awesome</span>
+                        98% AI Match
+                    </div>
+</div>
+<div class="absolute top-2 right-2 z-10">
+<div class="bg-white/95 border border-[#EEEEEE] text-[#4A4A4A] font-[600] text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px] text-[#4A4A4A]" data-icon="timer">timer</span>
+                        8 mins
+                    </div>
+</div>
+<!-- Image -->
+<div class="h-48 w-full relative bg-[#F8F9FA] flex items-center justify-center p-2">
+<img class="object-contain h-full w-full mix-blend-multiply" data-alt="A high-end, elegant glass bottle of facial serum standing on a clean, white marble pedestal. Soft, natural studio lighting with a light-mode corporate modern aesthetic. Minimalist background, high contrast precision, luxury skincare vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE7JEYaQ02JWLPA46jVFBqOBw4CBZRF6QdKf5_2BjjCIP7XAq04fd4WpLhTBHX1ZY1oboQtnA7CpRfAMoc9JEFmOPFbJI_RRjf9jy7B73d-ijFd_v96rpTtj3tXHk2ZfEtU3lRbUS3ncZPBei4eF2tEjzVJc20QoFmGMPLc0r6gyvIwbrH6X5hFlpTA0eUHJn-aqhjDhfsLozJ1EwvyExE1KzXg8azk61FLQGV3CiYYWKAi17IZdbEFVI8M7WBFCxczb0n3s44Gqpe"/>
+</div>
+<!-- Details -->
+<div class="p-3 flex flex-col flex-grow bg-white">
+<div class="flex items-center justify-between mb-1">
+<span class="font-[500] text-[11px] text-[#767676] uppercase tracking-wide">Estée Lauder</span>
+<div class="flex items-center bg-[#F4F4F4] px-1 py-0.5 rounded-sm text-[#4A4A4A]">
+<span class="font-[600] text-[10px] mr-0.5">4.9</span>
+<span class="material-symbols-outlined text-[10px] icon-fill text-[#F7D002]" data-icon="star">star</span>
+</div>
+</div>
+<h3 class="font-[500] text-[13px] leading-[18px] text-[#222222] line-clamp-2 mb-2 min-h-[36px]">Advanced Night Repair Synchronized Multi-Recovery Complex</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-[600] text-[10px] text-[#0C831F] bg-[#E6F4EA] px-1 py-0.5 rounded-sm">15% OFF</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<div class="font-[600] text-[14px] text-[#222222]">₹3,450</div>
+<div class="font-[400] text-[12px] text-[#767676] line-through">₹4,050</div>
+</div>
+<button class="bg-[#F4F9F5] border border-[#0C831F] text-[#0C831F] font-bold text-[13px] px-5 py-1.5 rounded-md shadow-sm hover:bg-[#0C831F]/10 transition-colors uppercase">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest border border-[#EEEEEE] rounded-lg overflow-hidden flex flex-col relative group hover:border-surface-variant transition-colors duration-200">
+<!-- Badges -->
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<div class="bg-[#2D8E3B] text-white font-[500] text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px] icon-fill" data-icon="auto_awesome">auto_awesome</span>
+                        95% AI Match
+                    </div>
+</div>
+<div class="absolute top-2 right-2 z-10">
+<div class="bg-white/95 border border-[#EEEEEE] text-[#4A4A4A] font-[600] text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px] text-[#4A4A4A]" data-icon="timer">timer</span>
+                        8 mins
+                    </div>
+</div>
+<!-- Image -->
+<div class="h-48 w-full relative bg-[#F8F9FA] flex items-center justify-center p-2">
+<img class="object-contain h-full w-full mix-blend-multiply" data-alt="A sleek, minimalist jar of luxury face cream with a matte silver lid. Placed on a light grey textured surface with subtle drop shadows. High-end lighting, crisp focus, modern urban lifestyle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5pokpK-R6LS-bYTbxumXJTrfwwlZyf6lyBt-S_J6RKOXLxJCiZA4YTfjcwiTkH_vZVL3zb6GcrUUvNDsgYnhG057qM3R64sfi25my4dT0QpiC5ybA6AgktBi4819j107H0ooVO31oSf00bR5qijiwU-w7dz2UmFMkpVvYAYCsNLgxXeWmGdub3ROijBFyd7ArVFnJsE8cA692u7O9X3zCJDsBS2DaxIb6xKOpM_g5YyE3UCAHGbbBZI6aKrbG7m6tXj8AZzaNbW5d"/>
+</div>
+<!-- Details -->
+<div class="p-3 flex flex-col flex-grow bg-white">
+<div class="flex items-center justify-between mb-1">
+<span class="font-[500] text-[11px] text-[#767676] uppercase tracking-wide">Clinique</span>
+<div class="flex items-center bg-[#F4F4F4] px-1 py-0.5 rounded-sm text-[#4A4A4A]">
+<span class="font-[600] text-[10px] mr-0.5">4.7</span>
+<span class="material-symbols-outlined text-[10px] icon-fill text-[#F7D002]" data-icon="star">star</span>
+</div>
+</div>
+<h3 class="font-[500] text-[13px] leading-[18px] text-[#222222] line-clamp-2 mb-2 min-h-[36px]">Moisture Surge 100H Auto-Replenishing Hydrator</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-[600] text-[10px] text-[#0C831F] bg-[#E6F4EA] px-1 py-0.5 rounded-sm">10% OFF</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<div class="font-[600] text-[14px] text-[#222222]">₹1,950</div>
+<div class="font-[400] text-[12px] text-[#767676] line-through">₹2,160</div>
+</div>
+<button class="bg-[#0C831F] border border-[#0C831F] text-white font-bold text-[14px] px-2 py-1.5 rounded-md shadow-sm flex items-center justify-between w-[70px]">
+<span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span>
+<span class="text-[13px]">1</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest border border-[#EEEEEE] rounded-lg overflow-hidden flex flex-col relative group hover:border-surface-variant transition-colors duration-200">
+<!-- Badges -->
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<div class="bg-[#2D8E3B] text-white font-[500] text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px] icon-fill" data-icon="auto_awesome">auto_awesome</span>
+                        92% AI Match
+                    </div>
+</div>
+<div class="absolute top-2 right-2 z-10">
+<div class="bg-white/95 border border-[#EEEEEE] text-[#4A4A4A] font-[600] text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px] text-[#4A4A4A]" data-icon="timer">timer</span>
+                        8 mins
+                    </div>
+</div>
+<!-- Image -->
+<div class="h-48 w-full relative bg-[#F8F9FA] flex items-center justify-center p-2">
+<img class="object-contain h-full w-full mix-blend-multiply" data-alt="A premium glass dropper bottle containing golden facial oil. The bottle sits elegantly against a bright white background with a soft, diffused shadow beneath it. Crisp, high-contrast, modern luxury cosmetic presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFnWtZQbEvsWUBp2S6S0uC0jcvxwFdLPOxcjjDjNmy5MTLR9wFh3tYCm9-b3CDF7d0H_ZwH_vvXBfLzn0qtqa4yZIPpjh0tobP6EqUxO3HiVfiCdzA6iM_FPzfEJmYteNFAdEKnUpIsj9VlA3GRmwMwaVK60rvL1Gq5drQxvME0Gkn4ibfGyHv6iPxpFMsFeqlTcx1LpWdGcNRrY7JS53W2ZUn9f_X_pNjsS9EMlhiM3ydJJuIuOH9lTmKso0oYpaKjqSF5wH6o5KP"/>
+</div>
+<!-- Details -->
+<div class="p-3 flex flex-col flex-grow bg-white">
+<div class="flex items-center justify-between mb-1">
+<span class="font-[500] text-[11px] text-[#767676] uppercase tracking-wide">Kiehl's</span>
+<div class="flex items-center bg-[#F4F4F4] px-1 py-0.5 rounded-sm text-[#4A4A4A]">
+<span class="font-[600] text-[10px] mr-0.5">4.8</span>
+<span class="material-symbols-outlined text-[10px] icon-fill text-[#F7D002]" data-icon="star">star</span>
+</div>
+</div>
+<h3 class="font-[500] text-[13px] leading-[18px] text-[#222222] line-clamp-2 mb-2 min-h-[36px]">Midnight Recovery Concentrate Face Oil</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-[600] text-[10px] text-[#0C831F] bg-[#E6F4EA] px-1 py-0.5 rounded-sm">20% OFF</span>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<div class="font-[600] text-[14px] text-[#222222]">₹2,850</div>
+<div class="font-[400] text-[12px] text-[#767676] line-through">₹3,560</div>
+</div>
+<button class="bg-[#F4F9F5] border border-[#0C831F] text-[#0C831F] font-bold text-[13px] px-5 py-1.5 rounded-md shadow-sm hover:bg-[#0C831F]/10 transition-colors uppercase">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest border border-[#EEEEEE] rounded-lg overflow-hidden flex flex-col relative group hover:border-surface-variant transition-colors duration-200">
+<!-- Badges -->
+<div class="absolute top-2 left-2 z-10 flex flex-col gap-1">
+<div class="bg-[#E23744] text-white font-[500] text-[10px] px-1.5 py-0.5 rounded shadow-sm">
+                        Trending
+                    </div>
+</div>
+<div class="absolute top-2 right-2 z-10">
+<div class="bg-white/95 border border-[#EEEEEE] text-[#4A4A4A] font-[600] text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[10px] text-[#4A4A4A]" data-icon="timer">timer</span>
+                        8 mins
+                    </div>
+</div>
+<!-- Image -->
+<div class="h-48 w-full relative bg-[#F8F9FA] flex items-center justify-center p-2">
+<img class="object-contain h-full w-full mix-blend-multiply" data-alt="A sophisticated tube of luxury sunscreen with metallic accents, resting horizontally on a pristine white surface. Minimalist composition, bright studio lighting, emphasizing the premium quality of the skincare product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAssU52hLJ0PHviE_360C-3dQMMuLga-HLk8fdZn8MrvywGPa2YB9nKQnQlKOUiEAWO4FBtmK1Ein58IUx6iRXtDZBT4HcGxzfGvBMRdhrctuvL_SZ8Rz1pG4XwORq4KquOJIFMuRajb3jUofjq2bQyfYxOKUNKVqSdzzMExOd46vVlSja1ZRUtm-B_2qTHhSyygX6VoIjiUcShrWPbU5TbXL9RAB5d1mi_98slrTtAj0uZ_Or-KAJjtwq4HA47k1JnWzt87BavXBoJ"/>
+</div>
+<!-- Details -->
+<div class="p-3 flex flex-col flex-grow bg-white">
+<div class="flex items-center justify-between mb-1">
+<span class="font-[500] text-[11px] text-[#767676] uppercase tracking-wide">La Roche-Posay</span>
+<div class="flex items-center bg-[#F4F4F4] px-1 py-0.5 rounded-sm text-[#4A4A4A]">
+<span class="font-[600] text-[10px] mr-0.5">4.6</span>
+<span class="material-symbols-outlined text-[10px] icon-fill text-[#F7D002]" data-icon="star">star</span>
+</div>
+</div>
+<h3 class="font-[500] text-[13px] leading-[18px] text-[#222222] line-clamp-2 mb-2 min-h-[36px]">Anthelios UVMune 400 Invisible Fluid SPF50+</h3>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-2 h-[20px]">
+<!-- Empty space for alignment if no discount -->
+</div>
+<div class="flex items-end justify-between">
+<div>
+<div class="font-[600] text-[14px] text-[#222222]">₹1,750</div>
+</div>
+<button class="bg-[#F4F9F5] border border-[#0C831F] text-[#0C831F] font-bold text-[13px] px-5 py-1.5 rounded-md shadow-sm hover:bg-[#0C831F]/10 transition-colors uppercase">
+                                ADD
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-lowest dark:bg-inverse-surface shadow-md border-t border-[#EEEEEE]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-dim p-2 rounded-lg transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0C831F] dark:text-secondary-fixed font-bold hover:bg-surface-container-high dark:hover:bg-surface-dim p-2 rounded-lg scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1 icon-fill" data-icon="category">category</span>
+<span class="font-label-sm text-label-sm">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-dim p-2 rounded-lg transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="print">print</span>
+<span class="font-label-sm text-label-sm">Print</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-dim p-2 rounded-lg transition-transform duration-150 relative" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Cart</span>
+<span class="absolute top-1 right-2 bg-[#0C831F] text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+</a>
+</nav>
+<!-- Sticky 'View Cart' Bar (Level 2 Elevation) -->
+<div class="fixed bottom-[64px] left-0 right-0 px-4 py-3 z-40 md:hidden bg-white/95 backdrop-blur-sm border-t border-[#EEEEEE]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-[#F4F4F4] p-2 rounded-lg">
+<span class="material-symbols-outlined text-[#0C831F]" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<div class="font-bold text-[14px] text-on-surface">1 item</div>
+<div class="font-[400] text-[12px] text-on-surface-variant">₹1,950 plus taxes</div>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-fixed-variant font-bold text-[14px] px-4 py-2.5 rounded-lg shadow-sm flex items-center gap-1">
+                View Cart
+                <span class="material-symbols-outlined text-[20px]" data-icon="arrow_right">arrow_right</span>
+</button>
+</div>
+</div>
+</body></html>

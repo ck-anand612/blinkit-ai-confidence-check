@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Confidence Check Bottom Sheet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#f7d002",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d0c6ab",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#00530e",
+                        "on-primary-fixed": "#221b00",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#e9c400",
+                        "background": "#f8f9fb",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#7e775f",
+                        "surface-variant": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#e9c400",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#002203",
+                        "secondary-fixed": "#8ffb87",
+                        "on-surface": "#191c1e",
+                        "primary-fixed": "#ffe16e",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#d5d2d2",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#8ffb87",
+                        "on-tertiary-container": "#5b5a5a",
+                        "surface-bright": "#f8f9fb",
+                        "on-secondary-container": "#007518",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#4d4632",
+                        "primary": "#705d00",
+                        "surface": "#f8f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#0c831f",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-container": "#6b5900",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed-variant": "#544600",
+                        "secondary-fixed-dim": "#74dd6e",
+                        "tertiary": "#5f5e5e",
+                        "surface-tint": "#705d00",
+                        "blinkit-green": "#0c831f",
+                        "blinkit-yellow": "#f7d002"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background antialiased flex flex-col min-h-screen relative overflow-hidden h-screen md:h-auto md:min-h-screen">
+<!-- Scrim / Dimmer -->
+<div class="fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 md:hidden"></div>
+<!-- Main Content Area (Background to show context) -->
+<main class="flex-1 overflow-y-auto pb-24 md:pb-8 flex items-center justify-center relative">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" data-alt="A brightly lit modern cosmetic store setting with clean white shelves showcasing premium beauty products. High-contrast precision style with soft natural lighting and subtle shadows. The aesthetic is clean, professional, and trustworthy, embodying urban sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR8fveduNrIg3fH9ETJOnvg85_S4dVzbkOOsCcaJ6aqJxyGqXcXb_mxOnVVjSRjp6OXV-VpbwNRlsj2jb97b_kC15GAaOL339e317LzA9d6PHBvGpipV_PU07BUWbd9O-6xymw4Uifprmb17dWg8sorpxdi3e_zVv0TnkiMDxCPI1nldEfbU21ir_n5H6YCfvrbHsB8LiLsWirIt8YfkajQs51QgcUItp31vlR4FWoH6ywvWsKaRdFOuUw2US1kL61bVATuMFRlSt1"/>
+<div class="z-10 text-center px-4 hidden md:block">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-4">Desktop View</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The bottom sheet is visible on mobile breakpoints.</p>
+</div>
+</main>
+<!-- Bottom Sheet (Mobile Only) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest z-50 rounded-t-[28px] flex flex-col md:hidden transform transition-transform duration-300 ease-in-out translate-y-0" id="bottomSheet">
+<!-- Grabber Area & Header -->
+<div class="px-4 pt-4 pb-4 relative flex flex-col items-center border-b border-surface-container-high">
+<div class="w-8 h-1 bg-surface-variant rounded-full mb-6"></div>
+<div class="flex items-center justify-between w-full relative">
+<button aria-label="Close sheet" class="text-on-surface p-2 -ml-2 hover:bg-surface-container-low rounded-full transition-colors flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary" onclick="document.getElementById('bottomSheet').classList.add('translate-y-full'); setTimeout(() =&gt; document.getElementById('bottomSheet').classList.remove('translate-y-full'), 1000);">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 400;">close</span>
+</button>
+<h2 class="font-headline-md text-headline-md text-on-surface absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">AI Confidence Details</h2>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="px-4 py-6 overflow-y-auto max-h-[60vh]">
+<!-- Compatibility Score Section -->
+<div class="flex items-center justify-between bg-surface-container-low rounded-[16px] p-4 mb-8 border border-surface-variant/50">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Compatibility Score</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-blinkit-green">98%</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Match</span>
+</div>
+</div>
+<div class="bg-secondary-container/30 text-blinkit-green px-3 py-1.5 rounded-full flex items-center gap-1.5 border border-blinkit-green/20">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm font-bold">High Match</span>
+</div>
+</div>
+<!-- Bullet Points List -->
+<div class="space-y-8 mb-4">
+<!-- Point 1 -->
+<div class="flex items-start gap-4">
+<div class="mt-0.5 flex-shrink-0 bg-secondary/10 p-1.5 rounded-full text-blinkit-green">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 400;">check</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Authenticity Verification</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Cryptographically verified original product sourced directly from the authorized brand distributor.</p>
+</div>
+</div>
+<!-- Point 2 -->
+<div class="flex items-start gap-4">
+<div class="mt-0.5 flex-shrink-0 bg-secondary/10 p-1.5 rounded-full text-blinkit-green">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 400;">check</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Skin Suitability</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Ingredients cross-referenced against your profile. No known allergens detected for dry/sensitive skin types.</p>
+</div>
+</div>
+<!-- Point 3 -->
+<div class="flex items-start gap-4">
+<div class="mt-0.5 flex-shrink-0 bg-secondary/10 p-1.5 rounded-full text-blinkit-green">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 400;">check</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Return Assurance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Eligible for 10-minute hassle-free returns if the seal remains unbroken upon delivery.</p>
+</div>
+</div>
+<!-- Point 4 -->
+<div class="flex items-start gap-4">
+<div class="mt-0.5 flex-shrink-0 bg-primary-container/20 p-1.5 rounded-full text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 400;">science</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-1">Ingredient Highlights</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Rich in Hyaluronic Acid and Ceramides for extended hydration.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Action -->
+<div class="p-4 bg-surface-container-lowest border-t border-surface-container-high pb-safe-area relative z-10">
+<button class="w-full bg-blinkit-yellow text-on-primary-fixed font-title-lg text-title-lg rounded-[12px] py-4 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-sm focus:outline-none focus:ring-4 focus:ring-primary/20">
+<span>Add to Cart</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'wght' 400;">shopping_bag</span>
+</button>
+</div>
+</div>
+</body></html>

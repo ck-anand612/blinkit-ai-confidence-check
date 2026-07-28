@@ -1,0 +1,20 @@
+# Environment secrets
+.env
+
+# Python virtual environment
+backend/venv/
+
+# Node modules
+frontend/node_modules/
+
+# Vite build output
+frontend/dist/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db

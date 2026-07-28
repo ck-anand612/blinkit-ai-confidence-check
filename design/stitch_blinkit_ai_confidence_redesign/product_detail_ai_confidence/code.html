@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blinkit - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#f7d002",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#d0c6ab",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#00530e",
+                        "on-primary-fixed": "#221b00",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#e9c400",
+                        "background": "#f8f9fb",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#7e775f",
+                        "surface-variant": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#e9c400",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#002203",
+                        "secondary-fixed": "#8ffb87",
+                        "on-surface": "#191c1e",
+                        "primary-fixed": "#ffe16e",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#d5d2d2",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#8ffb87",
+                        "on-tertiary-container": "#5b5a5a",
+                        "surface-bright": "#f8f9fb",
+                        "on-secondary-container": "#007518",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#4d4632",
+                        "primary": "#705d00",
+                        "surface": "#f8f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006e16",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-container": "#6b5900",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed-variant": "#544600",
+                        "secondary-fixed-dim": "#74dd6e",
+                        "tertiary": "#5f5e5e",
+                        "surface-tint": "#705d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "12px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f8f9fb; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-0">
+<!-- Top Navigation (Mobile Focus, Desktop Shell omitted for focused flow) -->
+<header class="bg-surface sticky top-0 z-50 flex items-center justify-between px-margin-mobile h-14 w-full shadow-sm md:hidden">
+<div class="flex items-center gap-4 text-on-surface">
+<button class="material-symbols-outlined hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-1 rounded-full">arrow_back</button>
+</div>
+<div class="flex items-center gap-4 text-on-surface">
+<button class="material-symbols-outlined hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-1 rounded-full">share</button>
+<button class="material-symbols-outlined hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-1 rounded-full">search</button>
+</div>
+</header>
+<main class="max-w-screen-md mx-auto bg-surface-container-lowest md:mt-8 md:rounded-xl md:shadow-md overflow-hidden relative">
+<!-- Hero Image Gallery -->
+<section class="relative w-full h-[450px] bg-surface-container-low overflow-hidden snap-x snap-mandatory flex hide-scroll">
+<img class="w-full h-full object-cover shrink-0 snap-center" data-alt="Aura Luminous AI Serum premium bottle on marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAblgmpjhAgE-dB0ybwjEkqw5IfoCb7LaGzC9BRSXDjOxKWM4qIawyDwzKqzik2m-o0rgzzVaLmHdqmOx6DpAKahzaSWGG6l7Q3I0zzKAVrtXVVZWrj_ykERjZAN_xFE2_u1Kxgo8mYbdH29ml3fh7SeVEHOiFA8YRqv9d60VkqiQdCE0WhL0p1gDUuvZGyTwGKp3qo8qbD7q9I2DyVCg294rKXu-6NFksqM1rLN7XAIXo5MpyfYVILIjv_PLMl1uz-neB5w3QJdGBj"/>
+<!-- Pagination Dots overlay -->
+<div class="absolute bottom-4 left-0 w-full flex justify-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-background opacity-100"></span>
+<span class="w-2 h-2 rounded-full bg-on-background opacity-40"></span>
+<span class="w-2 h-2 rounded-full bg-on-background opacity-40"></span>
+</div>
+</section>
+<!-- Product Header Info -->
+<section class="px-margin-mobile py-lg border-b border-surface-variant">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-1">Aura Luminous AI Serum</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">by Aura Skincare | 30ml</p>
+</div>
+<button class="material-symbols-outlined text-outline p-2 hover:bg-surface-container-low rounded-full transition-colors">favorite_border</button>
+</div>
+<div class="mt-4 flex items-center gap-2 bg-surface-container-low w-fit px-3 py-1.5 rounded-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">schedule</span>
+<span class="font-label-lg text-label-lg text-on-background">12 mins</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-1">Delivery</span>
+</div>
+</section>
+<!-- AI Confidence Card -->
+<section class="px-margin-mobile py-md">
+<div class="bg-gradient-to-br from-surface-container-lowest to-[#fff9e6] border border-[#f5e396] rounded-xl p-md flex flex-col gap-3 relative overflow-hidden shadow-sm">
+<div class="flex items-center gap-2 text-[#b08d00]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">neurology</span>
+<span class="font-label-lg text-label-lg font-bold">AI Confidence Check</span>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<p class="font-headline-md text-headline-md text-secondary">High Compatibility</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Based on your skin profile &amp; past purchases.</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-secondary flex items-center justify-center bg-surface-container-lowest">
+<span class="font-label-lg text-label-lg text-secondary font-bold">98%</span>
+</div>
+</div>
+<button class="font-label-lg text-label-lg text-[#b08d00] text-left mt-2 hover:underline">View Details</button>
+</div>
+</section>
+<!-- Trust Indicators -->
+<section class="px-margin-mobile py-sm">
+<div class="flex gap-4 overflow-x-auto hide-scroll pb-2">
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded-lg shrink-0 border border-surface-variant">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-on-background">Brand Verified</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded-lg shrink-0 border border-surface-variant">
+<span class="material-symbols-outlined text-primary-container">qr_code_scanner</span>
+<span class="font-label-sm text-label-sm text-on-background">Batch Verified</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded-lg shrink-0 border border-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant">ac_unit</span>
+<span class="font-label-sm text-label-sm text-on-background">Temp-Controlled Storage</span>
+</div>
+</div>
+<div class="mt-lg pb-xl">
+<h3 class="font-title-lg text-title-lg text-on-background mb-2">Description</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    A potent, lightweight Vitamin C serum formulated to brighten, firm, and even out skin tone. Infused with hyaluronic acid for deep hydration. Apply 2-3 drops morning and night for a radiant complexion.
+                </p>
+</div>
+</section>
+<!-- Similar Products -->
+<section class="px-margin-mobile py-md bg-surface-container-low mb-24 md:mb-0">
+<h3 class="font-title-lg text-title-lg text-on-background mb-4">Similar Products</h3>
+<div class="flex gap-4 overflow-x-auto hide-scroll pb-4">
+<div class="w-32 shrink-0 bg-surface-container-lowest rounded-lg p-2 shadow-sm border border-surface-variant">
+<img class="w-full h-32 object-cover rounded-md mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGmhiDMsutNRaEgBwOGI_6Cwx5btJnaPBuiaJXIYeIVQBZruRCbVxdG0B_4UTqUAsVlKm-9cm1PuysxiVwo1R2rnMMo6lk7IlmH_o3jbJYdBVXxvWWpw9ue67MRa3smpr3TibW8YcLvnFncEuF6ksDgrcyCP8xkKDj_SjbHEdV9OrUltY1nZS-BN2qs8p9UQXpgM9jC1uMTS_nzJXNV1b-CprdQ67_WvVoCIiWaHniujxFbGwNHpdY1X7E6zBDYYaVMYiL2ifK4A6z"/>
+<p class="font-label-sm text-label-sm text-on-background line-clamp-2 mb-1">Glow Recipe Watermelon Drop</p>
+<p class="font-label-lg text-label-lg text-on-background">₹1299</p>
+</div>
+<div class="w-32 shrink-0 bg-surface-container-lowest rounded-lg p-2 shadow-sm border border-surface-variant">
+<img class="w-full h-32 object-cover rounded-md mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0sZVjETGKRg5APJQgxkLiNN4crWfRUkn9AcY2r6o-hWHOLLxfTrqfmMCn1lpEyeJFodoz0Uuo9Z98DOCl8dMn6OWH-X_xhfbooCa0awxt7zsnptBNxHoVePSZxltEyfk485xdKIoagS61AX2l-bZL5EaovGezz3CkBPk-iTNMI7XUMk55UEH-FYDo63DDyvftvpqxYvDlWEWdH9uUh7HNIIVroc7t2ENgEZnu_eCZ7kQbbriNVPQwUKBC4lTC7f_gSadGcXIRPw81"/>
+<p class="font-label-sm text-label-sm text-on-background line-clamp-2 mb-1">Ordinary Niacinamide 10%</p>
+<p class="font-label-lg text-label-lg text-on-background">₹799</p>
+</div>
+<div class="w-32 shrink-0 bg-surface-container-lowest rounded-lg p-2 shadow-sm border border-surface-variant">
+<img class="w-full h-32 object-cover rounded-md mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzBE-jLZwpNrCPUTuRKguRmOS7zwnLMMtsekguzC2uE1q73BfOtRvMiz9F5EP98bc6BuxlnueNiE4URVns_NQJGXk7SDZv89XqRdiglyu8ljugkS-LLxQhpZ0z6xHjgvygijU4f6xsUsryHAf145iBGVF51ASJ-_pNODP6NyODfDSGt1euDnXRQtRtjhXZJ7h8rHDB3gkb720oA1nni3o3aPmg3yJ6GwzUKWUXF5UsoX79z2eczpF3vyltsfOKGHCDtQh5oHWWWbgT"/>
+<p class="font-label-sm text-label-sm text-on-background line-clamp-2 mb-1">COSRX Snail Mucin Power</p>
+<p class="font-label-lg text-label-lg text-on-background">₹1450</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Footer (Level 2 Shadow for float) -->
+<div class="fixed bottom-0 w-full md:w-[768px] md:left-1/2 md:-translate-x-1/2 bg-surface-container-lowest border-t border-surface-variant px-margin-mobile py-4 z-50 flex items-center justify-between" style="box-shadow: 0 -4px 12px rgba(0,0,0,0.05);">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant line-through">₹899</span>
+<span class="font-headline-md text-headline-md text-on-background">₹699</span>
+</div>
+<button class="bg-[#f7d002] text-[#6b5900] font-label-lg text-label-lg font-bold px-8 py-3 rounded-lg flex items-center gap-2 active:scale-95 transition-transform duration-150 shadow-sm border border-[#e6c100]">
+<span>Add to Cart</span>
+</button>
+</div>
+</body></html>
