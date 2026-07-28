@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -10,17 +10,17 @@ const apiClient = axios.create({
 });
 
 export const getProducts = async () => {
-  const response = await apiClient.get('/products');
+  const response = await apiClient.get('/api/products');
   return response.data;
 };
 
 export const getProduct = async (id) => {
-  const response = await apiClient.get(`/products/${id}`);
+  const response = await apiClient.get(`/api/products/${id}`);
   return response.data;
 };
 
 export const getConfidenceCheck = async (productId, concern) => {
-  const response = await apiClient.post('/confidence-check', {
+  const response = await apiClient.post('/api/confidence-check', {
     product_id: productId,
     concern: concern,
   });
