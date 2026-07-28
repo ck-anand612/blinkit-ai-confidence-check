@@ -7,6 +7,7 @@ import AIConfidenceCheck from '../components/AIConfidenceCheck/AIConfidenceCheck
 import AIConfidenceSheet from '../components/AIConfidenceCheck/AIConfidenceSheet';
 import AddToCartCTA from '../components/AddToCartCTA/AddToCartCTA';
 import LoadingSpinner from '../components/Common/LoadingSpinner';
+import SimilarProducts from '../components/SimilarProducts/SimilarProducts';
 
 export const ProductDetailPage = () => {
   const { id } = useParams();
@@ -86,7 +87,7 @@ export const ProductDetailPage = () => {
   }
 
   return (
-    <div className="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-0 relative">
+    <div className="bg-background text-on-background font-body-md min-h-screen pb-28 md:pb-0 relative">
       {/* Top Navigation (Mobile Focus) */}
       <header className="bg-surface sticky top-0 z-50 flex items-center justify-between px-margin-mobile h-14 w-full shadow-sm md:hidden">
         <div className="flex items-center gap-4 text-on-surface">
@@ -116,20 +117,12 @@ export const ProductDetailPage = () => {
         {/* 3. Static Trust Signals & Description */}
         <TrustSignals description={product.description} />
 
-        {/* Similar Products (Mock) */}
-        <section className="px-margin-mobile py-md bg-surface-container-low mb-24 md:mb-0">
-          <h3 className="font-title-lg text-title-lg text-on-background mb-4">Similar Products</h3>
-          <div className="flex gap-4 overflow-x-auto hide-scroll pb-4">
-            <div className="w-32 shrink-0 bg-surface-container-lowest rounded-lg p-2 shadow-sm border border-surface-variant opacity-70">
-              <div className="w-full h-32 bg-surface-variant rounded-md mb-2"></div>
-              <p className="font-label-sm text-label-sm text-on-background line-clamp-2 mb-1">Coming Soon</p>
-            </div>
-          </div>
-        </section>
+        {/* 4. Real Similar Products */}
+        <SimilarProducts currentProduct={product} />
       </main>
 
-      {/* 4. Add to Cart Call To Action (Sticky Footer) */}
-      <AddToCartCTA price={product.price} />
+      {/* 5. Add to Cart Call To Action (Sticky Footer) */}
+      <AddToCartCTA product={product} price={product.price} />
 
       {/* AI Confidence Bottom Sheet */}
       <AIConfidenceSheet 
@@ -146,5 +139,3 @@ export const ProductDetailPage = () => {
 };
 
 export default ProductDetailPage;
-
-

@@ -1,4 +1,5 @@
 import React from 'react';
+import { getBrandedFallbackImage } from '../../utils/imageUtils';
 
 export const ProductHeader = ({ product }) => {
   if (!product) return null;
@@ -8,15 +9,15 @@ export const ProductHeader = ({ product }) => {
       {/* Hero Image Gallery */}
       <section className="relative w-full h-[450px] bg-surface-container-low overflow-hidden snap-x snap-mandatory flex hide-scroll">
         <img
-          src={product.images && product.images.length > 0 ? product.images[0] : ''}
+          src={product.images && product.images.length > 0 && product.images[0] ? product.images[0] : getBrandedFallbackImage(product.name)}
           alt={product.name}
-          className="w-full h-full object-cover shrink-0 snap-center"
+          className="w-full h-full object-contain p-4 shrink-0 snap-center"
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' fill='%239ca3af'%3ENo Image Available%3C/text%3E%3C/svg%3E";
+            e.target.src = getBrandedFallbackImage(product.name);
           }}
         />
-        {/* Pagination Dots overlay (simplified for MVP) */}
+        {/* Pagination Dots overlay */}
         <div className="absolute bottom-4 left-0 w-full flex justify-center gap-2">
           <span className="w-2 h-2 rounded-full bg-on-background opacity-100"></span>
           <span className="w-2 h-2 rounded-full bg-on-background opacity-40"></span>
@@ -50,4 +51,3 @@ export const ProductHeader = ({ product }) => {
 };
 
 export default ProductHeader;
-
