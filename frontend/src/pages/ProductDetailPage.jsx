@@ -110,10 +110,13 @@ export const ProductDetailPage = () => {
       </header>
 
       <main className="max-w-screen-md mx-auto bg-surface-container-lowest md:mt-8 md:rounded-xl md:shadow-md overflow-hidden relative">
-        {/* 1. Product Header (Hero Image & Info) */}
+        {/* 1. Product Header (Hero Image, Info & Delivery Badge) */}
         <ProductHeader product={product} />
 
-        {/* 2. Core MVP: Inline Purchase Confidence Engine */}
+        {/* 2. Trust Signals Badges (Brand Verified, Batch Verified, Temp-Controlled) */}
+        <TrustSignals showBadges={true} showDescription={false} />
+
+        {/* 3. Purchase Confidence Engine */}
         <AIConfidenceCheck 
           product={product} 
           activeConcern={activeConcern}
@@ -123,10 +126,10 @@ export const ProductDetailPage = () => {
           onOpenSheet={() => setIsSheetOpen(true)}
         />
 
-        {/* 3. Static Trust Signals & Description */}
-        <TrustSignals description={product.description} />
+        {/* 4. Product Description */}
+        <TrustSignals showBadges={false} showDescription={true} description={product.description} />
 
-        {/* 4. Real Similar Products */}
+        {/* 5. Real Similar Products */}
         <SimilarProducts currentProduct={product} />
       </main>
 

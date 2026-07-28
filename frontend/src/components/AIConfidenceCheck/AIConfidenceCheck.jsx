@@ -1,5 +1,36 @@
 import React from 'react';
 
+const formatConciseRecommendation = (rawText, concern, prod) => {
+  if (!rawText) {
+    switch (concern) {
+      case 'authenticity':
+        return `Recommended for 100% authentic skincare.\nOfficially sourced through authorized ${prod?.brand || 'brand'} distribution.`;
+      case 'suitability':
+        return `Recommended for ${prod?.subCategory || 'daily skincare'} routine.\nFormulated to balance skin without stripping moisture.`;
+      case 'quality':
+        return `Recommended for high-purity active ingredients.\nDermatologically tested to international safety standards.`;
+      case 'returns':
+        return `Protected under Blinkit 7-day return guarantee.\nInstant replacement dispatched if package seal is broken.`;
+      default:
+        return `Recommended for high purchase confidence.\nVerified authentic stock stored in 10-minute dark stores.`;
+    }
+  }
+
+  // Split into sentences and take max 2 short sentences (1 recommendation, 1 supporting reason)
+  const sentences = rawText
+    .split(/(?<=[.!?])\s+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+
+  if (sentences.length === 0) {
+    return `Recommended for purchase.\nVerified against official ${prod?.brand || 'brand'} standards.`;
+  }
+  if (sentences.length === 1) {
+    return `${sentences[0]}\nOfficially sourced through authorized supply chain channels.`;
+  }
+  return `${sentences[0]}\n${sentences[1]}`;
+};
+
 export const AIConfidenceCheck = ({
   product,
   activeConcern = 'authenticity',
@@ -123,6 +154,7 @@ export const AIConfidenceCheck = ({
   };
 
   const evidenceCards = getEvidenceCards().slice(0, 3);
+  const formattedRecommendation = formatConciseRecommendation(concernSummary, activeConcern, product);
 
   return (
     <section className="px-margin-mobile py-4 space-y-4">
@@ -137,9 +169,9 @@ export const AIConfidenceCheck = ({
               Purchase Confidence
             </h2>
           </div>
-          <div className="bg-yellow-400 text-emerald-950 px-3 py-1 rounded-full font-black text-sm shadow-sm flex items-center gap-1">
+          <div className="bg-yellow-400 text-emerald-950 px-3 py-1 rounded-full font-black text-xs sm:text-sm shadow-sm flex items-center gap-1">
             <span>{baseScore}%</span>
-            <span className="text-[10px] font-bold uppercase tracking-tight">Trust Score</span>
+            <span className="text-[10px] font-bold uppercase tracking-tight">Purchase Confidence</span>
           </div>
         </div>
 
@@ -219,8 +251,8 @@ export const AIConfidenceCheck = ({
         ))}
       </div>
 
-      {/* 4. Short AI Recommendation Box (2-3 Lines Max) */}
-      <div className="bg-emerald-50/80 border border-emerald-200 rounded-xl p-3.5 space-y-1">
+      {/* 4. Short AI Recommendation Box (Max 2 short sentences: 1 recommendation, 1 supporting reason) */}
+      <div className="bg-emerald-50/80 border border-emerald-200 rounded-xl p-3.5 space-y-1.5">
         <div className="flex items-center justify-between">
           <span className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider flex items-center gap-1">
             <span className="material-symbols-outlined text-sm">psychology</span>
@@ -232,9 +264,8 @@ export const AIConfidenceCheck = ({
             </span>
           )}
         </div>
-        <p className="text-xs text-emerald-950 leading-relaxed font-medium">
-          {concernSummary ||
-            `Verified ${activeConcern} parameters. Sourced through official brand supply chain and covered under Blinkit 10-minute dark store return policies.`}
+        <p className="text-xs text-emerald-950 font-semibold leading-relaxed whitespace-pre-line">
+          {formattedRecommendation}
         </p>
       </div>
 
