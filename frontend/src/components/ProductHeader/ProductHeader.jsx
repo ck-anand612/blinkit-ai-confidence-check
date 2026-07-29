@@ -27,7 +27,7 @@ export const ProductHeader = ({ product }) => {
       <section className="px-4 py-3 bg-[#FFFFFF] border-b border-[#E5E5E5]">
         <div className="flex justify-between items-start gap-3">
           <div className="flex-1">
-            <h1 className="text-base font-bold text-[#1F1F1F] leading-snug mb-0.5 pt-1.5">
+            <h1 className="text-base font-bold text-[#1F1F1F] leading-snug mb-0.5 pt-4">
               {product.name}
             </h1>
             <p className="text-xs font-semibold text-[#666666] mb-1.5">
@@ -43,7 +43,7 @@ export const ProductHeader = ({ product }) => {
             favorite_border
           </button>
         </div>
-        <div className="mt-1 flex items-center gap-2 bg-[#F3F4F6] border border-[#E5E5E5] w-fit px-3 py-1 rounded-lg">
+        <div className="mt-4 flex items-center gap-2 bg-[#F3F4F6] border border-[#E5E5E5] w-fit px-3 py-1 rounded-lg">
           <span className="material-symbols-outlined text-[#0C831F] text-[18px]">schedule</span>
           <span className="text-xs font-extrabold text-[#1F1F1F]">12 mins</span>
           <span className="text-xs text-[#666666]">Delivery</span>

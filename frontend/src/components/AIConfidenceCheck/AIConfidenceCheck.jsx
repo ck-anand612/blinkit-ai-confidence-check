@@ -222,7 +222,7 @@ export const AIConfidenceCheck = ({
             <span className="material-symbols-outlined text-sm">chevron_left</span>
           </button>
 
-          <div ref={tabsScrollRef} className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none flex-1">
+          <div ref={tabsScrollRef} className="flex items-center space-x-2 overflow-x-auto pb-1 flex-1" style={{ WebkitOverflowScrolling: 'touch' }}>
             {concernTabs.map((tab) => {
               const isActive = activeConcern === tab.id;
               return (
@@ -260,25 +260,25 @@ export const AIConfidenceCheck = ({
         </div>
       </div>
 
-      {/* 3. Structured Evidence Cards */}
-      <div className="grid grid-cols-1 gap-2">
+      {/* 3. Structured Evidence Cards (Horizontally Scrollable) */}
+      <div className="flex space-x-2 overflow-x-auto pb-2" style={{ WebkitOverflowScrolling: 'touch' }}>
         {evidenceCards.map((card, idx) => (
           <div
             key={idx}
-            className="bg-[#FFFFFF] rounded-[16px] border border-[#E5E5E5] p-3 shadow-2xs space-y-1 hover:border-gray-300 transition-colors"
+            className="bg-[#FFFFFF] rounded-[16px] border border-[#E5E5E5] p-3 shadow-2xs space-y-1 hover:border-gray-300 transition-colors shrink-0 w-[260px]"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[#0C831F] text-base">
                   {card.icon}
                 </span>
-                <h4 className="font-bold text-xs text-[#1F1F1F]">{card.title}</h4>
+                <h4 className="font-bold text-[11px] text-[#1F1F1F] truncate">{card.title}</h4>
               </div>
-              <span className="bg-[#F3F4F6] text-[#0C831F] text-[9px] font-black px-2 py-0.5 rounded-md border border-[#E5E5E5]">
+              <span className="bg-[#F3F4F6] text-[#0C831F] text-[9px] font-black px-1.5 py-0.5 rounded-md border border-[#E5E5E5] shrink-0">
                 {card.badge}
               </span>
             </div>
-            <p className="text-[11px] text-[#666666] leading-snug pl-6">
+            <p className="text-[11px] text-[#666666] leading-snug pl-6 whitespace-normal">
               {card.detail}
             </p>
           </div>

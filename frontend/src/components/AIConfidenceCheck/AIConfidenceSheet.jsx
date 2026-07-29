@@ -92,9 +92,9 @@ export const AIConfidenceSheet = ({
       </div>
 
       {/* Scrollable Main Evidence Content (naturally sizes to content without empty whitespace) */}
-      <div className="p-3.5 overflow-y-auto space-y-3 flex-1 scrollbar-none">
+      <div className="p-3.5 overflow-y-auto space-y-1.5 flex-1 scrollbar-none pb-4">
         {/* Trust Score Breakdown Banner */}
-        <div className="bg-[#F3F4F6] text-[#1F1F1F] rounded-[16px] p-3 space-y-2 border border-[#E5E5E5] shadow-2xs">
+        <div className="bg-[#F3F4F6] text-[#1F1F1F] rounded-[16px] p-3 space-y-1.5 border border-[#E5E5E5] shadow-2xs">
           <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-1.5">
             <span className="text-[11px] font-black text-[#0C831F] uppercase tracking-wider">
               Purchase Confidence Score

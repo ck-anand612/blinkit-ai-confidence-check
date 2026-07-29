@@ -43,7 +43,7 @@ export const CheckoutPage = () => {
       </div>
 
       {/* Top Delivery Header Banner */}
-      <div className="bg-[#F3F4F6] text-[#1F1F1F] p-2 rounded-[14px] border border-[#E5E5E5] flex items-center justify-between shadow-2xs">
+      <div className="mt-4 bg-[#F3F4F6] text-[#1F1F1F] p-2 rounded-[14px] border border-[#E5E5E5] flex items-center justify-between shadow-2xs">
         <div className="flex items-center space-x-1.5">
           <span className="material-symbols-outlined text-[#0C831F] text-base">bolt</span>
           <div>
