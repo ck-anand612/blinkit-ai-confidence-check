@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import LoadingSpinner from '../Common/LoadingSpinner';
 
 const formatConciseRecommendation = (rawText, concern, prod) => {
@@ -42,6 +43,14 @@ export const AIConfidenceSheet = ({
 }) => {
   const tabsScrollRef = React.useRef(null);
   const scrollContainerRef = React.useRef(null);
+  const [portalTarget, setPortalTarget] = React.useState(null);
+
+  React.useEffect(() => {
+    const mainEl = document.querySelector('main.overflow-y-auto');
+    if (mainEl && mainEl.parentElement) {
+      setPortalTarget(mainEl.parentElement);
+    }
+  }, []);
 
   React.useEffect(() => {
     if (isOpen && scrollContainerRef.current) {
@@ -73,7 +82,7 @@ export const AIConfidenceSheet = ({
   const qualityFact = hasContext.quality || `Formulated with high-purity active ingredients. Stored in climate-controlled Blinkit dark stores to maintain potency.`;
   const returnsFact = hasContext.returns || `Blinkit 7-day hassle-free return policy. If item arrives damaged or unsealed, instant free replacement is dispatched within 60 mins.`;
 
-  return (
+  const sheetContent = (
     <div className="absolute inset-0 z-50 bg-[#F8F8F8] flex flex-col font-sans overflow-hidden">
       {/* Top Header Bar with Back Button (pt-10 clears top phone camera notch) */}
       <div className="bg-[#FFFFFF] border-b border-[#E5E5E5] px-4 pt-10 pb-2.5 flex items-center justify-between shrink-0 shadow-2xs">
@@ -252,6 +261,8 @@ export const AIConfidenceSheet = ({
       </div>
     </div>
   );
+
+  return portalTarget ? createPortal(sheetContent, portalTarget) : sheetContent;
 };
 
 export default AIConfidenceSheet;

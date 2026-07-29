@@ -23,6 +23,15 @@ export const ProductDetailPage = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
+    const mainEl = document.querySelector('main.overflow-y-auto');
+    if (isSheetOpen) {
+      if (mainEl) mainEl.style.overflow = 'hidden';
+    } else {
+      if (mainEl) mainEl.style.overflow = '';
+    }
+  }, [isSheetOpen]);
+
+  useEffect(() => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
