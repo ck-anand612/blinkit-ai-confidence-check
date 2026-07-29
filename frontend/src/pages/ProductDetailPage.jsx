@@ -94,18 +94,22 @@ export const ProductDetailPage = () => {
   return (
     <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans relative min-h-full flex flex-col">
       {/* Top Header Bar */}
-      <header className="bg-[#FFFFFF] sticky top-0 z-40 flex items-center justify-between px-3.5 h-10 w-full border-b border-[#E5E5E5] shadow-2xs shrink-0">
-        <button 
-          className="material-symbols-outlined text-[#2F2F2F] hover:bg-[#F3F4F6] p-1 rounded-full transition-colors text-base"
-          onClick={() => navigate('/')}
-        >
-          arrow_back
-        </button>
-        <span className="text-xs font-extrabold text-[#1F1F1F] truncate max-w-[200px]">
-          {product.name}
-        </span>
-        <div className="flex items-center gap-1.5 text-[#2F2F2F]">
-          <button className="material-symbols-outlined text-sm hover:bg-[#F3F4F6] p-1 rounded-full">share</button>
+      <header className="bg-[#FFFFFF] sticky top-0 z-40 flex items-center justify-between px-3.5 pt-10 pb-2 w-full border-b border-[#E5E5E5] shadow-2xs shrink-0">
+        <div className="flex flex-1 justify-start">
+          <button 
+            className="material-symbols-outlined text-[#2F2F2F] hover:bg-[#F3F4F6] p-1.5 rounded-full transition-colors text-[22px]"
+            onClick={() => navigate('/')}
+          >
+            arrow_back
+          </button>
+        </div>
+        <div className="flex-[2] flex justify-center overflow-hidden px-2">
+          <h1 className="text-sm font-extrabold text-[#1F1F1F] truncate text-center w-full">
+            {product.name}
+          </h1>
+        </div>
+        <div className="flex flex-1 justify-end">
+          <button className="material-symbols-outlined text-[20px] hover:bg-[#F3F4F6] p-1.5 rounded-full text-[#2F2F2F]">share</button>
         </div>
       </header>
 

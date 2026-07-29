@@ -41,6 +41,13 @@ export const AIConfidenceSheet = ({
   loading = false
 }) => {
   const tabsScrollRef = React.useRef(null);
+  const scrollContainerRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (isOpen && scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+  }, [isOpen, activeConcern]);
 
   if (!isOpen || !product) return null;
 
@@ -67,9 +74,9 @@ export const AIConfidenceSheet = ({
   const returnsFact = hasContext.returns || `Blinkit 7-day hassle-free return policy. If item arrives damaged or unsealed, instant free replacement is dispatched within 60 mins.`;
 
   return (
-    <div className="absolute inset-0 z-50 bg-[#F8F8F8] flex flex-col justify-between font-sans overflow-hidden">
-      {/* Top Header Bar with Back Button (pt-7 clears top phone camera notch) */}
-      <div className="bg-[#FFFFFF] border-b border-[#E5E5E5] px-4 pt-7 pb-2.5 flex items-center justify-between shrink-0 shadow-2xs">
+    <div className="absolute inset-0 z-50 bg-[#F8F8F8] flex flex-col font-sans overflow-hidden">
+      {/* Top Header Bar with Back Button (pt-10 clears top phone camera notch) */}
+      <div className="bg-[#FFFFFF] border-b border-[#E5E5E5] px-4 pt-10 pb-2.5 flex items-center justify-between shrink-0 shadow-2xs">
         <button
           onClick={onClose}
           className="flex items-center gap-1 text-xs font-extrabold text-[#1F1F1F] hover:text-[#0C831F] transition-colors p-1 rounded-lg hover:bg-[#F3F4F6]"
@@ -92,7 +99,7 @@ export const AIConfidenceSheet = ({
       </div>
 
       {/* Scrollable Main Evidence Content (naturally sizes to content without empty whitespace) */}
-      <div className="p-3.5 overflow-y-auto space-y-1.5 flex-1 scrollbar-none pb-4">
+      <div ref={scrollContainerRef} className="p-3.5 overflow-y-auto space-y-1.5 flex-1 scrollbar-none pb-4">
         {/* Trust Score Breakdown Banner */}
         <div className="bg-[#F3F4F6] text-[#1F1F1F] rounded-[16px] p-3 space-y-1.5 border border-[#E5E5E5] shadow-2xs">
           <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-1.5">
