@@ -19,7 +19,7 @@ export const OrderSuccessPage = () => {
   }
 
   return (
-    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans p-2.5 space-y-2 pb-6 relative">
+    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans pt-7 px-2.5 pb-6 space-y-2 relative">
       {/* Success Hero Banner (Success Green #16A34A with #F8C537 Check Badge) */}
       <div className="bg-[#16A34A] text-white p-3.5 rounded-[14px] text-center space-y-1.5 shadow-2xs relative overflow-hidden">
         <div className="w-10 h-10 bg-[#F8C537] text-[#1F1F1F] rounded-full flex items-center justify-center mx-auto text-base font-black shadow-inner">

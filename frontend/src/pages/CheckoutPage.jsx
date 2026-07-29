@@ -34,7 +34,7 @@ export const CheckoutPage = () => {
   };
 
   return (
-    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans p-2.5 space-y-2 pb-14 relative">
+    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans pt-7 px-2.5 pb-14 space-y-2 relative">
       {/* Breadcrumb Header */}
       <div className="flex items-center space-x-1.5 text-[10px] font-bold text-[#666666]">
         <Link to="/cart" className="hover:text-[#1F1F1F]">Cart</Link>

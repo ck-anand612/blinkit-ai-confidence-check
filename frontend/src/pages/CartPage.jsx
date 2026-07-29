@@ -30,7 +30,7 @@ export const CartPage = () => {
   }
 
   return (
-    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans p-2.5 space-y-2 pb-14 relative">
+    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans pt-7 px-2.5 pb-14 space-y-2 relative">
       {/* Top Header & Delivery Info Banner */}
       <div className="bg-[#F3F4F6] text-[#1F1F1F] p-2 rounded-[14px] border border-[#E5E5E5] flex items-center justify-between shadow-2xs">
         <div className="flex items-center space-x-1.5">

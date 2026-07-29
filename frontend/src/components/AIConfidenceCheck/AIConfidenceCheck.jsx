@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const formatConciseRecommendation = (rawText, concern, prod) => {
   if (!rawText) {
@@ -38,6 +38,8 @@ export const AIConfidenceCheck = ({
   loading = false,
   onOpenSheet
 }) => {
+  const tabsScrollRef = useRef(null);
+
   if (!product) return null;
 
   // Base rating score calculation
@@ -200,33 +202,61 @@ export const AIConfidenceCheck = ({
         </div>
       </div>
 
-      {/* 2. Interactive Concern Tabs (Horizontally Scrollable) */}
+      {/* 2. Interactive Concern Tabs (Horizontally Scrollable with Arrow Controls) */}
       <div className="space-y-1.5">
         <span className="text-[10px] font-black text-[#666666] uppercase tracking-wider block">
           Select concern for instant AI analysis:
         </span>
 
-        <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
-          {concernTabs.map((tab) => {
-            const isActive = activeConcern === tab.id;
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => onConcernChange && onConcernChange(tab.id)}
-                className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 border ${
-                  isActive
-                    ? 'bg-[#0C831F] text-white border-[#0C831F] font-black shadow-xs scale-105'
-                    : 'bg-[#FFFFFF] text-[#1F1F1F] border border-[#E5E5E5] hover:border-gray-400'
-                }`}
-              >
-                <span className="material-symbols-outlined text-[15px]" style={{ color: isActive ? '#FFFFFF' : '#2F2F2F' }}>
-                  {tab.icon}
-                </span>
-                <span>{tab.label}</span>
-              </button>
-            );
-          })}
+        <div className="relative flex items-center">
+          <button
+            type="button"
+            onClick={() => {
+              if (tabsScrollRef.current) {
+                tabsScrollRef.current.scrollBy({ left: -140, behavior: 'smooth' });
+              }
+            }}
+            className="w-6 h-6 rounded-full bg-white border border-[#E5E5E5] text-[#1F1F1F] shadow-xs flex items-center justify-center shrink-0 mr-1 hover:bg-[#F3F4F6] cursor-pointer"
+            title="Previous tab"
+          >
+            <span className="material-symbols-outlined text-sm">chevron_left</span>
+          </button>
+
+          <div ref={tabsScrollRef} className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none flex-1">
+            {concernTabs.map((tab) => {
+              const isActive = activeConcern === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => onConcernChange && onConcernChange(tab.id)}
+                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 border ${
+                    isActive
+                      ? 'bg-[#0C831F] text-white border-[#0C831F] font-black shadow-xs scale-105'
+                      : 'bg-[#FFFFFF] text-[#1F1F1F] border border-[#E5E5E5] hover:border-gray-400'
+                  }`}
+                >
+                  <span className="material-symbols-outlined text-[15px]" style={{ color: isActive ? '#FFFFFF' : '#2F2F2F' }}>
+                    {tab.icon}
+                  </span>
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              if (tabsScrollRef.current) {
+                tabsScrollRef.current.scrollBy({ left: 140, behavior: 'smooth' });
+              }
+            }}
+            className="w-6 h-6 rounded-full bg-white border border-[#E5E5E5] text-[#1F1F1F] shadow-xs flex items-center justify-center shrink-0 ml-1 hover:bg-[#F3F4F6] cursor-pointer"
+            title="Next tab"
+          >
+            <span className="material-symbols-outlined text-sm">chevron_right</span>
+          </button>
         </div>
       </div>
 

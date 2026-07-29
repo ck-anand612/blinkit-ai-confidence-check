@@ -34,7 +34,7 @@ export const ProductHeader = ({ product }) => {
               by {product.brand} {product.size ? `| ${product.size}` : ''}
             </p>
             {product.description && (
-              <p className="text-xs text-[#666666] line-clamp-2 leading-relaxed mb-2">
+              <p className="text-xs text-[#666666] leading-relaxed mb-2">
                 {product.description}
               </p>
             )}
