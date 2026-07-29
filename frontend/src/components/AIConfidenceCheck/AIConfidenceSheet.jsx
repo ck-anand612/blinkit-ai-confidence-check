@@ -2,36 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import LoadingSpinner from '../Common/LoadingSpinner';
 
-const formatConciseRecommendation = (rawText, concern, prod) => {
-  if (!rawText) {
-    switch (concern) {
-      case 'authenticity':
-        return `Recommended for 100% authentic skincare.\nOfficially sourced through authorized ${prod?.brand || 'brand'} distribution.`;
-      case 'suitability':
-        return `Recommended for ${prod?.subCategory || 'daily skincare'} routine.\nFormulated to balance skin without stripping moisture.`;
-      case 'quality':
-        return `Recommended for high-purity active ingredients.\nDermatologically tested to international safety standards.`;
-      case 'returns':
-        return `Protected under Blinkit 7-day return guarantee.\nInstant replacement dispatched if package seal is broken.`;
-      default:
-        return `Recommended for high purchase confidence.\nVerified authentic stock stored in 10-minute dark stores.`;
-    }
-  }
-
-  const sentences = rawText
-    .split(/(?<=[.!?])\s+/)
-    .map(s => s.trim())
-    .filter(s => s.length > 0);
-
-  if (sentences.length === 0) {
-    return `Recommended for purchase.\nVerified against official ${prod?.brand || 'brand'} standards.`;
-  }
-  if (sentences.length === 1) {
-    return `${sentences[0]}\nOfficially sourced through authorized supply chain channels.`;
-  }
-  return `${sentences[0]}\n${sentences[1]}`;
-};
-
+import { generateRiskAssessment, generateCommunityInsights, generatePersonalizedRecommendation } from '../../utils/aiContentGenerator';
 export const AIConfidenceSheet = ({
   isOpen,
   onClose,
@@ -67,7 +38,7 @@ export const AIConfidenceSheet = ({
   const returnsScore = 100;
 
   const hasContext = product?.concernContext || {};
-  const formattedRecommendation = formatConciseRecommendation(concernSummary, activeConcern, product);
+  const formattedRecommendation = generatePersonalizedRecommendation(product);
 
   // Evidence facts with rich fallbacks so page is filled and comprehensive
   const authenticityFact = hasContext.authenticity || `Directly sourced from authorized ${product?.brand || 'brand'} distributors. Batch code verified against manufacturer certificates.`;
@@ -190,7 +161,7 @@ export const AIConfidenceSheet = ({
             Community Review Insights
           </h4>
           <p className="text-xs text-[#666666] leading-relaxed">
-            {product?.reviews?.summary || `Over 2,000+ verified buyers rate this highly for ${product?.subCategory || 'daily use'}. 94% noticed positive changes within 2 weeks. The general consensus points to a non-greasy finish.`}
+            {generateCommunityInsights(product)}
           </p>
         </div>
 
@@ -201,7 +172,7 @@ export const AIConfidenceSheet = ({
             Risk Assessment
           </h4>
           <p className="text-xs text-[#92400E] leading-relaxed font-medium">
-            {product?.warnings || `Low risk profile. Free from common allergens (parabens, sulfates). A standard 24-hour patch test is always recommended when introducing new active ingredients to your routine.`}
+            {generateRiskAssessment(product)}
           </p>
         </div>
 

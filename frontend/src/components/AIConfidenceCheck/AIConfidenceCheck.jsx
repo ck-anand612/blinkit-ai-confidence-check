@@ -1,34 +1,6 @@
 import React, { useRef } from 'react';
 
-const formatConciseRecommendation = (rawText, concern, prod) => {
-  if (!rawText) {
-    switch (concern) {
-      case 'authenticity':
-        return `Recommended for 100% authentic skincare.\nOfficially sourced through authorized ${prod?.brand || 'brand'} distribution.`;
-      case 'suitability':
-        return `Recommended for ${prod?.subCategory || 'daily skincare'} routine.\nFormulated to balance skin without stripping moisture.`;
-      case 'quality':
-        return `Recommended for high-purity active ingredients.\nDermatologically tested to international safety standards.`;
-      case 'returns':
-        return `Protected under Blinkit 7-day return guarantee.\nInstant replacement dispatched if package seal is broken.`;
-      default:
-        return `Recommended for high purchase confidence.\nVerified authentic stock stored in 10-minute dark stores.`;
-    }
-  }
-
-  const sentences = rawText
-    .split(/(?<=[.!?])\s+/)
-    .map(s => s.trim())
-    .filter(s => s.length > 0);
-
-  if (sentences.length === 0) {
-    return `Recommended for purchase.\nVerified against official ${prod?.brand || 'brand'} standards.`;
-  }
-  if (sentences.length === 1) {
-    return `${sentences[0]}\nOfficially sourced through authorized supply chain channels.`;
-  }
-  return `${sentences[0]}\n${sentences[1]}`;
-};
+import { generatePersonalizedRecommendation } from '../../utils/aiContentGenerator';
 
 export const AIConfidenceCheck = ({
   product,
@@ -50,7 +22,7 @@ export const AIConfidenceCheck = ({
   const returnsScore = 100;
 
 
-  const formattedRecommendation = formatConciseRecommendation(concernSummary, activeConcern, product);
+  const formattedRecommendation = generatePersonalizedRecommendation(product);
 
   const scores = [
     { label: 'Authenticity', value: authenticityScore },
