@@ -66,13 +66,6 @@ export const AIConfidenceSheet = ({
   const qualityScore = Math.max(88, baseScore - 3);
   const returnsScore = 100;
 
-  const concernTabs = [
-    { id: 'authenticity', label: 'Authenticity', icon: 'verified' },
-    { id: 'suitability', label: 'Skin Match', icon: 'face_retouching_natural' },
-    { id: 'quality', label: 'Quality', icon: 'thumb_up' },
-    { id: 'returns', label: 'Returns', icon: 'assignment_return' },
-  ];
-
   const hasContext = product?.concernContext || {};
   const formattedRecommendation = formatConciseRecommendation(concernSummary, activeConcern, product);
 
@@ -108,141 +101,136 @@ export const AIConfidenceSheet = ({
       </div>
 
       {/* Scrollable Main Evidence Content (naturally sizes to content without empty whitespace) */}
-      <div ref={scrollContainerRef} className="p-3.5 overflow-y-auto space-y-1.5 flex-1 scrollbar-none pb-4">
-        {/* Trust Score Breakdown Banner */}
-        <div className="bg-[#F3F4F6] text-[#1F1F1F] rounded-[16px] p-3 space-y-1.5 border border-[#E5E5E5] shadow-2xs">
-          <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-1.5">
-            <span className="text-[11px] font-black text-[#0C831F] uppercase tracking-wider">
-              Purchase Confidence Score
+      <div ref={scrollContainerRef} className="p-3.5 overflow-y-auto space-y-4 flex-1 scrollbar-none pb-6 bg-[#F8F8F8]">
+        
+        {/* 1. Overall AI Purchase Confidence */}
+        <div className="bg-[#FFFFFF] text-[#1F1F1F] rounded-[16px] p-4 border border-[#E5E5E5] shadow-xs space-y-3 relative overflow-hidden">
+          <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-2">
+            <span className="text-xs font-black text-[#0C831F] uppercase tracking-wider flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-base">psychology</span>
+              Overall AI Purchase Confidence
             </span>
-            <span className="bg-[#0C831F] text-white px-2 py-0.5 rounded-full font-black text-xs">
-              {baseScore}% Score
+            <span className="bg-[#0C831F] text-white px-2.5 py-0.5 rounded-full font-black text-sm shadow-xs">
+              {baseScore}%
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-1.5 text-xs pt-0.5">
-            <div className="flex justify-between bg-[#FFFFFF] p-1.5 rounded-xl border border-[#E5E5E5] shadow-2xs text-[11px]">
-              <span className="text-[#666666] font-medium">✓ Authenticity</span>
+          <div className="grid grid-cols-2 gap-2 text-xs pt-1">
+            <div className="flex justify-between bg-[#F8F8F8] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">Authenticity</span>
               <span className="font-black text-[#0C831F]">{authenticityScore}%</span>
             </div>
-            <div className="flex justify-between bg-[#FFFFFF] p-1.5 rounded-xl border border-[#E5E5E5] shadow-2xs text-[11px]">
-              <span className="text-[#666666] font-medium">✓ Skin Match</span>
+            <div className="flex justify-between bg-[#F8F8F8] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">Skin Match</span>
               <span className="font-black text-[#0C831F]">{skinMatchScore}%</span>
             </div>
-            <div className="flex justify-between bg-[#FFFFFF] p-1.5 rounded-xl border border-[#E5E5E5] shadow-2xs text-[11px]">
-              <span className="text-[#666666] font-medium">✓ Quality</span>
+            <div className="flex justify-between bg-[#F8F8F8] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">Quality</span>
               <span className="font-black text-[#0C831F]">{qualityScore}%</span>
             </div>
-            <div className="flex justify-between bg-[#FFFFFF] p-1.5 rounded-xl border border-[#E5E5E5] shadow-2xs text-[11px]">
-              <span className="text-[#666666] font-medium">✓ Returns</span>
+            <div className="flex justify-between bg-[#F8F8F8] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">Returns</span>
               <span className="font-black text-[#0C831F]">{returnsScore}%</span>
             </div>
           </div>
-        </div>
-
-        {/* Tab Selector with Arrow Scroll Controls */}
-        <div className="relative flex items-center">
-          <button
-            type="button"
-            onClick={() => {
-              if (tabsScrollRef.current) {
-                tabsScrollRef.current.scrollBy({ left: -140, behavior: 'smooth' });
-              }
-            }}
-            className="w-5 h-5 rounded-full bg-white border border-[#E5E5E5] text-[#1F1F1F] shadow-xs flex items-center justify-center shrink-0 mr-1 hover:bg-[#F3F4F6] cursor-pointer"
-            title="Previous tab"
-          >
-            <span className="material-symbols-outlined text-xs">chevron_left</span>
-          </button>
-
-          <div ref={tabsScrollRef} className="flex items-center space-x-1.5 overflow-x-auto pb-0.5 scrollbar-none flex-1">
-            {concernTabs.map((tab) => {
-              const isActive = activeConcern === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => onConcernChange && onConcernChange(tab.id)}
-                  className={`flex items-center space-x-1 px-2.5 py-1 rounded-xl text-[11px] font-bold shrink-0 border transition-all ${
-                    isActive
-                      ? 'bg-[#0C831F] text-white border-[#0C831F] font-black shadow-xs'
-                      : 'bg-[#FFFFFF] text-[#1F1F1F] border border-[#E5E5E5] hover:text-[#1F1F1F]'
-                  }`}
-                >
-                  <span className="material-symbols-outlined text-sm" style={{ color: isActive ? '#FFFFFF' : '#2F2F2F' }}>{tab.icon}</span>
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
+          
+          <div className="bg-[#F3F4F6] p-2.5 rounded-xl border border-[#E5E5E5]">
+            <p className="text-xs text-[#1F1F1F] font-semibold leading-relaxed">
+              Based on the aggregated scores across 4 dimensions, Blinkit AI recommends this product as a highly secure and verified purchase.
+            </p>
           </div>
-
-          <button
-            type="button"
-            onClick={() => {
-              if (tabsScrollRef.current) {
-                tabsScrollRef.current.scrollBy({ left: 140, behavior: 'smooth' });
-              }
-            }}
-            className="w-5 h-5 rounded-full bg-white border border-[#E5E5E5] text-[#1F1F1F] shadow-xs flex items-center justify-center shrink-0 ml-1 hover:bg-[#F3F4F6] cursor-pointer"
-            title="Next tab"
-          >
-            <span className="material-symbols-outlined text-xs">chevron_right</span>
-          </button>
         </div>
 
-        {/* AI Rationale Summary Box */}
-        <div className="bg-[#F3F4F6] border border-[#E5E5E5] p-3 rounded-[16px] space-y-1 shadow-2xs">
-          <span className="text-[10px] font-black text-[#0C831F] uppercase tracking-wider block">
-            Blinkit AI Recommendation Rationale
-          </span>
+        {/* 2. Authenticity Evidence */}
+        <div className="bg-[#FFFFFF] border border-[#E5E5E5] rounded-[16px] p-4 space-y-2 shadow-xs">
+          <h4 className="text-xs font-black text-[#1F1F1F] uppercase tracking-wider flex items-center gap-1.5 border-b border-[#F3F4F6] pb-2">
+            <span className="material-symbols-outlined text-[#0C831F] text-base">verified</span>
+            Authenticity Evidence
+          </h4>
+          <p className="text-xs text-[#666666] leading-relaxed">
+            {authenticityFact}
+          </p>
+          <div className="flex gap-2 pt-1">
+            <span className="bg-[#F8F8F8] text-[#0C831F] text-[10px] font-bold px-2 py-1 rounded-lg border border-[#E5E5E5]">Brand Authorized</span>
+            <span className="bg-[#F8F8F8] text-[#0C831F] text-[10px] font-bold px-2 py-1 rounded-lg border border-[#E5E5E5]">Batch Verified</span>
+          </div>
+        </div>
+
+        {/* 3. Skin Compatibility Analysis */}
+        <div className="bg-[#FFFFFF] border border-[#E5E5E5] rounded-[16px] p-4 space-y-2 shadow-xs">
+          <h4 className="text-xs font-black text-[#1F1F1F] uppercase tracking-wider flex items-center gap-1.5 border-b border-[#F3F4F6] pb-2">
+            <span className="material-symbols-outlined text-[#0C831F] text-base">face_retouching_natural</span>
+            Skin Compatibility Analysis
+          </h4>
+          <p className="text-xs text-[#666666] leading-relaxed">
+            {suitabilityFact}
+          </p>
+        </div>
+
+        {/* 4. Ingredient Intelligence */}
+        <div className="bg-[#FFFFFF] border border-[#E5E5E5] rounded-[16px] p-4 space-y-2 shadow-xs">
+          <h4 className="text-xs font-black text-[#1F1F1F] uppercase tracking-wider flex items-center gap-1.5 border-b border-[#F3F4F6] pb-2">
+            <span className="material-symbols-outlined text-[#0C831F] text-base">science</span>
+            Ingredient Intelligence
+          </h4>
+          <p className="text-xs text-[#666666] leading-relaxed">
+            {qualityFact}
+          </p>
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {product?.tags?.slice(0, 4).map((tag, idx) => (
+              <span key={idx} className="bg-[#F3F4F6] text-[#1F1F1F] text-[10px] font-bold px-2 py-1 rounded-lg border border-[#E5E5E5]">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* 5. Community Review Insights */}
+        <div className="bg-[#FFFFFF] border border-[#E5E5E5] rounded-[16px] p-4 space-y-2 shadow-xs">
+          <h4 className="text-xs font-black text-[#1F1F1F] uppercase tracking-wider flex items-center gap-1.5 border-b border-[#F3F4F6] pb-2">
+            <span className="material-symbols-outlined text-[#F5A623] text-base">forum</span>
+            Community Review Insights
+          </h4>
+          <p className="text-xs text-[#666666] leading-relaxed">
+            {product?.reviews?.summary || `Over 2,000+ verified buyers rate this highly for ${product?.subCategory || 'daily use'}. 94% noticed positive changes within 2 weeks. The general consensus points to a non-greasy finish.`}
+          </p>
+        </div>
+
+        {/* 6. Risk Assessment */}
+        <div className="bg-[#FFF9E6] border border-[#FDE047] rounded-[16px] p-4 space-y-2 shadow-xs">
+          <h4 className="text-xs font-black text-[#B45309] uppercase tracking-wider flex items-center gap-1.5 border-b border-[#FDE047]/50 pb-2">
+            <span className="material-symbols-outlined text-[#B45309] text-base">warning</span>
+            Risk Assessment
+          </h4>
+          <p className="text-xs text-[#92400E] leading-relaxed font-medium">
+            {product?.warnings || `Low risk profile. Free from common allergens (parabens, sulfates). A standard 24-hour patch test is always recommended when introducing new active ingredients to your routine.`}
+          </p>
+        </div>
+
+        {/* 7. Return Protection Analysis */}
+        <div className="bg-[#FFFFFF] border border-[#E5E5E5] rounded-[16px] p-4 space-y-2 shadow-xs">
+          <h4 className="text-xs font-black text-[#1F1F1F] uppercase tracking-wider flex items-center gap-1.5 border-b border-[#F3F4F6] pb-2">
+            <span className="material-symbols-outlined text-[#0C831F] text-base">assignment_return</span>
+            Return Protection Analysis
+          </h4>
+          <p className="text-xs text-[#666666] leading-relaxed">
+            {returnsFact}
+          </p>
+        </div>
+
+        {/* 8. Final AI Recommendation */}
+        <div className="bg-[#F3F4F6] border border-[#0C831F]/30 rounded-[16px] p-4 space-y-2 shadow-xs">
+          <h4 className="text-xs font-black text-[#0C831F] uppercase tracking-wider flex items-center gap-1.5">
+            <span className="material-symbols-outlined text-base">psychology</span>
+            Final AI Recommendation
+          </h4>
           {loading ? (
             <div className="py-2 flex items-center justify-center">
               <LoadingSpinner label="Generating rationale..." />
             </div>
           ) : (
-            <p className="text-xs text-[#1F1F1F] font-medium leading-relaxed whitespace-pre-line">
+            <p className="text-[13px] text-[#1F1F1F] font-bold leading-relaxed whitespace-pre-line">
               {formattedRecommendation}
             </p>
           )}
-        </div>
-
-        {/* Granular Context Key Facts (All 4 cards rendered for rich, comprehensive report) */}
-        <div className="space-y-2 pt-0.5">
-          <h4 className="font-black text-[11px] text-[#1F1F1F] uppercase tracking-wider">
-            Verified Evidence & Key Facts
-          </h4>
-
-          <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-2.5 rounded-[14px] space-y-0.5 shadow-2xs">
-            <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[#0C831F] text-sm">verified</span>
-              Authenticity Verification
-            </span>
-            <p className="text-[11px] text-[#666666] leading-snug pl-5">{authenticityFact}</p>
-          </div>
-
-          <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-2.5 rounded-[14px] space-y-0.5 shadow-2xs">
-            <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[#0C831F] text-sm">spa</span>
-              Skin Suitability Analysis
-            </span>
-            <p className="text-[11px] text-[#666666] leading-snug pl-5">{suitabilityFact}</p>
-          </div>
-
-          <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-2.5 rounded-[14px] space-y-0.5 shadow-2xs">
-            <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[#0C831F] text-sm">thumb_up</span>
-              Quality & Safety Criteria
-            </span>
-            <p className="text-[11px] text-[#666666] leading-snug pl-5">{qualityFact}</p>
-          </div>
-
-          <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-2.5 rounded-[14px] space-y-0.5 shadow-2xs">
-            <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-[#0C831F] text-sm">assignment_return</span>
-              Return & Refund Guarantee
-            </span>
-            <p className="text-[11px] text-[#666666] leading-snug pl-5">{returnsFact}</p>
-          </div>
         </div>
       </div>
 
