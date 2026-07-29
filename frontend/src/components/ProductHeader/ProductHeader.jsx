@@ -27,7 +27,7 @@ export const ProductHeader = ({ product }) => {
       <section className="px-4 py-3 bg-[#FFFFFF] border-b border-[#E5E5E5]">
         <div className="flex justify-between items-start gap-3">
           <div className="flex-1">
-            <h1 className="text-base font-bold text-[#1F1F1F] leading-snug mb-0.5">
+            <h1 className="text-base font-bold text-[#1F1F1F] leading-snug mb-0.5 pt-1.5">
               {product.name}
             </h1>
             <p className="text-xs font-semibold text-[#666666] mb-1.5">

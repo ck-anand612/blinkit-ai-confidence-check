@@ -26,7 +26,7 @@ export const AddToCartCTA = ({ product, price }) => {
   };
 
   return (
-    <div className="absolute bottom-0 left-0 w-full bg-[#FFFFFF] border-t border-[#E5E5E5] px-4 py-2.5 z-40 flex items-center justify-between shadow-lg">
+    <div className="sticky bottom-0 left-0 w-full bg-[#FFFFFF] border-t border-[#E5E5E5] px-4 py-2.5 z-40 flex items-center justify-between shadow-lg">
       {/* Price Section */}
       <div className="flex flex-col">
         <span className="text-[10px] font-semibold text-[#666666] line-through">

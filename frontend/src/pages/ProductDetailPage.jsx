@@ -92,9 +92,9 @@ export const ProductDetailPage = () => {
   }
 
   return (
-    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans pb-14 relative">
+    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans relative min-h-full flex flex-col">
       {/* Top Header Bar */}
-      <header className="bg-[#FFFFFF] sticky top-0 z-40 flex items-center justify-between px-3.5 h-10 w-full border-b border-[#E5E5E5] shadow-2xs">
+      <header className="bg-[#FFFFFF] sticky top-0 z-40 flex items-center justify-between px-3.5 h-10 w-full border-b border-[#E5E5E5] shadow-2xs shrink-0">
         <button 
           className="material-symbols-outlined text-[#2F2F2F] hover:bg-[#F3F4F6] p-1 rounded-full transition-colors text-base"
           onClick={() => navigate('/')}
@@ -109,7 +109,7 @@ export const ProductDetailPage = () => {
         </div>
       </header>
 
-      <main className="bg-[#F8F8F8] overflow-hidden relative space-y-2">
+      <main className="bg-[#F8F8F8] relative space-y-2 pb-16 flex-1">
         {/* 1. Product Header (Hero Image, Info & Delivery Badge) */}
         <ProductHeader product={product} />
 

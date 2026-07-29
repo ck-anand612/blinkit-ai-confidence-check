@@ -67,7 +67,7 @@ export const AIConfidenceSheet = ({
   const returnsFact = hasContext.returns || `Blinkit 7-day hassle-free return policy. If item arrives damaged or unsealed, instant free replacement is dispatched within 60 mins.`;
 
   return (
-    <div className="absolute inset-0 z-50 bg-[#F8F8F8] flex flex-col font-sans overflow-hidden">
+    <div className="absolute inset-0 z-50 bg-[#F8F8F8] flex flex-col justify-between font-sans overflow-hidden">
       {/* Top Header Bar with Back Button (pt-7 clears top phone camera notch) */}
       <div className="bg-[#FFFFFF] border-b border-[#E5E5E5] px-4 pt-7 pb-2.5 flex items-center justify-between shrink-0 shadow-2xs">
         <button
@@ -91,7 +91,7 @@ export const AIConfidenceSheet = ({
         </button>
       </div>
 
-      {/* Scrollable Main Evidence Content */}
+      {/* Scrollable Main Evidence Content (naturally sizes to content without empty whitespace) */}
       <div className="p-3.5 overflow-y-auto space-y-3 flex-1 scrollbar-none">
         {/* Trust Score Breakdown Banner */}
         <div className="bg-[#F3F4F6] text-[#1F1F1F] rounded-[16px] p-3 space-y-2 border border-[#E5E5E5] shadow-2xs">
