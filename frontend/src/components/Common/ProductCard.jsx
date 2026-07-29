@@ -21,16 +21,16 @@ export const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden relative">
+    <div className="group bg-[#1E1E1E] rounded-2xl border border-white/10 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden relative">
       {/* Category Tag */}
-      <div className="absolute top-3 left-3 z-10">
-        <span className="bg-emerald-50 text-emerald-700 font-semibold text-[11px] px-2.5 py-1 rounded-full border border-emerald-100">
-          {product.subCategory || product.subcategory || 'Blinkit Fresh'}
+      <div className="absolute top-2.5 left-2.5 z-10">
+        <span className="bg-[#18C37E]/15 text-[#18C37E] font-semibold text-[10px] px-2 py-0.5 rounded-full border border-[#18C37E]/30 backdrop-blur-sm">
+          {product.subCategory || product.subcategory || 'Blinkit'}
         </span>
       </div>
 
       {/* Image container clickable to product detail */}
-      <Link to={`/products/${product.id}`} className="w-full h-48 bg-gray-50 flex items-center justify-center p-4 overflow-hidden relative">
+      <Link to={`/products/${product.id}`} className="w-full h-36 bg-[#1A1A1A] flex items-center justify-center p-3 overflow-hidden relative">
         <img
           src={getProductImageUrl(product)}
           alt={product.name}
@@ -42,29 +42,29 @@ export const ProductCard = ({ product }) => {
       </Link>
 
       {/* Product Content */}
-      <div className="p-4 flex-1 flex flex-col justify-between">
+      <div className="p-3 flex-1 flex flex-col justify-between space-y-3">
         <Link to={`/products/${product.id}`} className="block">
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-1">
+          <span className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-wider block mb-0.5">
             {product.brand}
           </span>
-          <h3 className="text-sm font-semibold text-gray-900 line-clamp-2 leading-snug group-hover:text-emerald-600 transition-colors">
+          <h3 className="text-xs font-bold text-white line-clamp-2 leading-snug group-hover:text-[#F8C537] transition-colors">
             {product.name}
           </h3>
         </Link>
 
-        <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+        <div className="pt-2 border-t border-white/10 flex items-center justify-between">
           <div>
-            <span className="text-xs text-gray-400 font-medium block">Price</span>
-            <span className="text-base font-extrabold text-gray-900">₹{product.price}</span>
+            <span className="text-[9px] text-[#B8B8B8] font-medium block">Price</span>
+            <span className="text-sm font-black text-white">₹{product.price}</span>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1.5">
             {quantity > 0 ? (
-              <div className="flex items-center bg-emerald-700 text-white rounded-lg px-2 py-1 space-x-2 text-xs font-bold shadow-sm">
+              <div className="flex items-center bg-[#18C37E] text-black rounded-lg px-2 py-1 space-x-1.5 text-xs font-black shadow-sm">
                 <button
                   type="button"
                   onClick={(e) => handleQtyClick(e, -1)}
-                  className="hover:bg-emerald-800 px-1 rounded transition-colors"
+                  className="hover:bg-black/10 px-1 rounded transition-colors"
                 >
                   -
                 </button>
@@ -72,7 +72,7 @@ export const ProductCard = ({ product }) => {
                 <button
                   type="button"
                   onClick={(e) => handleQtyClick(e, 1)}
-                  className="hover:bg-emerald-800 px-1 rounded transition-colors"
+                  className="hover:bg-black/10 px-1 rounded transition-colors"
                 >
                   +
                 </button>
@@ -81,7 +81,7 @@ export const ProductCard = ({ product }) => {
               <button
                 type="button"
                 onClick={handleAddClick}
-                className="bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white border border-emerald-600 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm transition-all duration-200"
+                className="bg-[#18C37E] hover:bg-[#15b072] text-black text-xs font-black px-3 py-1 rounded-lg shadow-sm transition-all duration-200"
               >
                 ADD
               </button>
@@ -89,7 +89,7 @@ export const ProductCard = ({ product }) => {
 
             <Link
               to={`/products/${product.id}`}
-              className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold px-2.5 py-1.5 rounded-lg transition-colors"
+              className="bg-[#2A2A2A] hover:bg-[#333333] text-[#B8B8B8] hover:text-white text-xs font-bold px-2 py-1 rounded-lg transition-colors"
             >
               View
             </Link>

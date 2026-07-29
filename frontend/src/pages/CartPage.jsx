@@ -9,17 +9,19 @@ export const CartPage = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-6">
-        <div className="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center mx-auto text-4xl shadow-inner">
+      <div className="bg-[#121212] min-h-screen text-white flex flex-col items-center justify-center p-6 text-center space-y-5 font-sans">
+        <div className="w-20 h-20 bg-[#1E1E1E] border border-white/10 rounded-full flex items-center justify-center text-3xl shadow-lg">
           🛒
         </div>
-        <h2 className="text-2xl font-extrabold text-gray-900">Your Cart is Empty</h2>
-        <p className="text-gray-500 text-sm max-w-sm mx-auto">
-          Looks like you haven't added any products to your cart yet. Explore our high-confidence skincare & beauty collection!
-        </p>
+        <div className="space-y-1">
+          <h2 className="text-xl font-black text-white">Your Cart is Empty</h2>
+          <p className="text-xs text-[#B8B8B8] max-w-xs mx-auto">
+            Explore our AI-verified skincare & beauty products with 10-minute delivery.
+          </p>
+        </div>
         <Link
           to="/"
-          className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition-all active:scale-95 text-sm"
+          className="inline-block bg-[#F8C537] hover:bg-[#e2bd00] text-[#121212] font-black text-xs px-6 py-3 rounded-xl shadow-md transition-all active:scale-95"
         >
           Explore Catalog →
         </Link>
@@ -28,59 +30,74 @@ export const CartPage = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-6 space-y-6 pb-24">
-      {/* Top Banner */}
-      <div className="bg-emerald-800 text-white p-4 rounded-2xl flex items-center justify-between shadow-md">
-        <div className="flex items-center space-x-3">
-          <span className="text-2xl">⚡</span>
+    <div className="bg-[#121212] min-h-screen text-white font-sans p-4 space-y-4 pb-28">
+      {/* Top Header & Delivery Info */}
+      <div className="bg-gradient-to-r from-[#2B0D0D] via-[#1E0909] to-[#142A22] text-white p-3.5 rounded-2xl border border-white/10 flex items-center justify-between shadow-md">
+        <div className="flex items-center space-x-2.5">
+          <span className="material-symbols-outlined text-[#F8C537] text-xl">bolt</span>
           <div>
-            <h3 className="font-extrabold text-sm">Delivery in 10-15 minutes</h3>
-            <p className="text-xs text-emerald-200">Shipment from nearest dark store • Bellandur</p>
+            <h3 className="font-black text-xs text-white">Delivery in 10-15 minutes</h3>
+            <p className="text-[10px] text-[#B8B8B8]">Shipment from nearest dark store • Sector 49</p>
           </div>
         </div>
         <button
           onClick={() => navigate('/')}
-          className="text-xs bg-emerald-700 hover:bg-emerald-600 font-bold px-3 py-1.5 rounded-lg transition-colors"
+          className="text-[10px] bg-[#1E1E1E] hover:bg-[#2A2A2A] border border-white/10 text-[#F8C537] font-extrabold px-2.5 py-1.5 rounded-xl transition-colors"
         >
           + Add More
         </button>
       </div>
 
+      {/* Coupon Savings Card */}
+      <div className="bg-[#142A22] border border-[#18C37E]/40 p-3 rounded-2xl flex items-center justify-between text-xs">
+        <div className="flex items-center space-x-2">
+          <span className="material-symbols-outlined text-[#18C37E] text-base">local_offer</span>
+          <div>
+            <span className="font-black text-[#18C37E] block text-[11px]">₹25 Saved on Delivery</span>
+            <span className="text-[10px] text-[#B8B8B8]">Free 10-min delivery offer applied</span>
+          </div>
+        </div>
+        <span className="text-[10px] font-black text-[#18C37E] bg-[#18C37E]/20 px-2 py-0.5 rounded-md border border-[#18C37E]/30 uppercase">
+          APPLIED
+        </span>
+      </div>
+
       {/* Cart Items List */}
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
-        <div className="p-4 border-b border-gray-100 flex items-center justify-between">
-          <h2 className="font-bold text-base text-gray-900">Items ({cartItems.length})</h2>
-          <span className="text-xs text-gray-400 font-medium">Verified Authentic Stock</span>
+      <div className="bg-[#1E1E1E] rounded-2xl border border-white/10 overflow-hidden shadow-sm">
+        <div className="p-3.5 border-b border-white/10 flex items-center justify-between">
+          <h2 className="font-black text-xs text-white uppercase tracking-wider">Cart Items ({cartItems.length})</h2>
+          <span className="text-[10px] text-[#18C37E] font-bold">100% Authentic Stock</span>
         </div>
 
-        <div className="divide-y divide-gray-100">
+        <div className="divide-y divide-white/10">
           {cartItems.map(({ product, quantity }) => (
-            <div key={product.id} className="p-4 flex items-center justify-between gap-4">
+            <div key={product.id} className="p-3.5 flex items-center justify-between gap-3">
               <div className="flex items-center space-x-3">
                 <img
                   src={getProductImageUrl(product)}
                   alt={product.name}
-                  className="w-16 h-16 object-contain rounded-lg bg-gray-50 border border-gray-100 p-1 shrink-0"
+                  className="w-14 h-14 object-contain rounded-xl bg-[#1A1A1A] border border-white/10 p-1 shrink-0"
                   onLoad={(e) => handleImageLoadCheck(e, product.name)}
                   onError={(e) => handleImageLoadError(e, product.name)}
                 />
                 <div>
-                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">
+                  <span className="text-[9px] font-extrabold text-[#B8B8B8] uppercase tracking-wider block">
                     {product.brand}
                   </span>
-                  <Link to={`/products/${product.id}`} className="font-semibold text-xs text-gray-900 hover:text-emerald-700 line-clamp-1">
+                  <Link to={`/products/${product.id}`} className="font-bold text-xs text-white hover:text-[#F8C537] line-clamp-1">
                     {product.name}
                   </Link>
-                  <p className="text-xs font-bold text-gray-900 mt-1">₹{product.price}</p>
+                  <p className="text-xs font-black text-white mt-0.5">₹{product.price}</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-3 shrink-0">
-                <div className="flex items-center bg-emerald-700 text-white rounded-lg px-2.5 py-1 space-x-2.5 font-bold text-xs shadow-sm">
+              {/* Quantity Selector & Remove Button */}
+              <div className="flex items-center space-x-2 shrink-0">
+                <div className="flex items-center bg-[#18C37E] text-black rounded-xl px-2 py-1 space-x-2 font-black text-xs shadow-sm">
                   <button
                     type="button"
                     onClick={() => updateQuantity(product.id, -1)}
-                    className="hover:bg-emerald-800 px-1 rounded transition-colors"
+                    className="hover:bg-black/10 px-1 rounded transition-colors"
                   >
                     -
                   </button>
@@ -88,7 +105,7 @@ export const CartPage = () => {
                   <button
                     type="button"
                     onClick={() => updateQuantity(product.id, 1)}
-                    className="hover:bg-emerald-800 px-1 rounded transition-colors"
+                    className="hover:bg-black/10 px-1 rounded transition-colors"
                   >
                     +
                   </button>
@@ -96,7 +113,7 @@ export const CartPage = () => {
                 <button
                   type="button"
                   onClick={() => removeFromCart(product.id)}
-                  className="text-gray-400 hover:text-red-500 transition-colors p-1"
+                  className="text-[#B8B8B8] hover:text-red-400 transition-colors p-1"
                   title="Remove item"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,45 +127,47 @@ export const CartPage = () => {
       </div>
 
       {/* Bill Details */}
-      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 space-y-3">
-        <h3 className="font-bold text-sm text-gray-900 border-b border-gray-100 pb-2">Bill Details</h3>
+      <div className="bg-[#1E1E1E] rounded-2xl border border-white/10 p-3.5 space-y-2.5 shadow-sm">
+        <h3 className="font-black text-xs text-white uppercase tracking-wider border-b border-white/10 pb-2">
+          Bill Details
+        </h3>
         
-        <div className="flex justify-between text-xs text-gray-600">
+        <div className="flex justify-between text-xs text-[#B8B8B8]">
           <span>Item Total</span>
-          <span className="font-semibold text-gray-900">₹{cartTotal}</span>
+          <span className="font-bold text-white">₹{cartTotal}</span>
         </div>
 
-        <div className="flex justify-between text-xs text-gray-600">
+        <div className="flex justify-between text-xs text-[#B8B8B8]">
           <span>Delivery Charge</span>
           {deliveryCharge === 0 ? (
-            <span className="font-bold text-emerald-700">FREE <span className="line-through font-normal text-gray-400">₹25</span></span>
+            <span className="font-black text-[#18C37E]">FREE <span className="line-through font-normal text-[#B8B8B8]">₹25</span></span>
           ) : (
-            <span className="font-semibold text-gray-900">₹{deliveryCharge}</span>
+            <span className="font-bold text-white">₹{deliveryCharge}</span>
           )}
         </div>
 
-        <div className="flex justify-between text-xs text-gray-600">
-          <span>Handling Charge</span>
-          <span className="font-semibold text-gray-900">₹{handlingFee}</span>
+        <div className="flex justify-between text-xs text-[#B8B8B8]">
+          <span>Handling Fee</span>
+          <span className="font-bold text-white">₹{handlingFee}</span>
         </div>
 
-        <div className="pt-2 border-t border-gray-200 flex justify-between text-sm font-extrabold text-gray-900">
+        <div className="pt-2 border-t border-white/10 flex justify-between text-sm font-black text-white">
           <span>To Pay</span>
-          <span className="text-base text-emerald-700">₹{grandTotal}</span>
+          <span className="text-base font-black text-[#F8C537]">₹{grandTotal}</span>
         </div>
       </div>
 
-      {/* Sticky Checkout Bar */}
-      <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 shadow-xl z-40">
-        <div className="max-w-3xl mx-auto flex items-center justify-between">
+      {/* Fixed Sticky Bottom Checkout Bar */}
+      <div className="absolute bottom-0 left-0 w-full bg-[#1A1A1A] border-t border-white/10 p-3.5 shadow-2xl z-40">
+        <div className="flex items-center justify-between">
           <div>
-            <span className="text-xs text-gray-500 font-medium block">Total Amount</span>
-            <span className="text-lg font-extrabold text-gray-900">₹{grandTotal}</span>
+            <span className="text-[10px] text-[#B8B8B8] font-semibold block">Grand Total</span>
+            <span className="text-base font-black text-white">₹{grandTotal}</span>
           </div>
           <button
             type="button"
             onClick={() => navigate('/checkout')}
-            className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md transition-all active:scale-95 flex items-center space-x-2"
+            className="bg-[#F8C537] hover:bg-[#e2bd00] text-[#121212] font-black text-xs px-6 py-2.5 rounded-xl shadow-md transition-all active:scale-95 flex items-center space-x-1.5"
           >
             <span>Proceed to Checkout</span>
             <span>→</span>

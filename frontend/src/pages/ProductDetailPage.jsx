@@ -70,7 +70,7 @@ export const ProductDetailPage = () => {
 
   if (loading) {
     return (
-      <div className="py-12 flex justify-center items-center h-screen bg-background">
+      <div className="py-12 flex justify-center items-center h-screen bg-[#121212] text-white">
         <LoadingSpinner label="Loading product details..." />
       </div>
     );
@@ -78,42 +78,42 @@ export const ProductDetailPage = () => {
 
   if (error || !product) {
     return (
-      <div className="bg-surface-container-lowest rounded-3xl p-8 border border-surface-variant text-center space-y-4 max-w-lg mx-auto my-12 shadow-sm">
+      <div className="bg-[#1E1E1E] rounded-3xl p-8 border border-white/10 text-center space-y-4 max-w-lg mx-auto my-12 shadow-sm text-white">
         <div className="text-4xl">🔍</div>
-        <h2 className="font-headline-lg text-headline-lg text-on-background">{error || 'Product Not Found'}</h2>
+        <h2 className="text-lg font-bold text-white">{error || 'Product Not Found'}</h2>
         <Link
           to="/"
-          className="inline-block bg-primary text-on-primary font-bold text-xs px-5 py-2.5 rounded-xl hover:bg-primary/90 transition-colors shadow-sm"
+          className="inline-block bg-[#F8C537] text-black font-extrabold text-xs px-5 py-2.5 rounded-xl hover:bg-[#e2bd00] transition-colors shadow-sm"
         >
-          ← Back to Catalog
+          ← Back to Home
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="bg-background text-on-background font-body-md min-h-screen pb-28 md:pb-0 relative">
-      {/* Top Navigation (Mobile Focus) */}
-      <header className="bg-surface sticky top-0 z-50 flex items-center justify-between px-margin-mobile h-14 w-full shadow-sm md:hidden">
-        <div className="flex items-center gap-4 text-on-surface">
-          <button 
-            className="material-symbols-outlined hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-1 rounded-full"
-            onClick={() => navigate('/')}
-          >
-            arrow_back
-          </button>
-        </div>
-        <div className="flex items-center gap-4 text-on-surface">
-          <button className="material-symbols-outlined hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-1 rounded-full">share</button>
-          <button className="material-symbols-outlined hover:bg-surface-container-low transition-colors duration-200 ease-in-out p-1 rounded-full">search</button>
+    <div className="bg-[#121212] text-white font-sans min-h-screen pb-24 relative">
+      {/* Top Header Bar */}
+      <header className="bg-gradient-to-b from-[#2B0D0D] to-[#121212] sticky top-0 z-50 flex items-center justify-between px-4 h-12 w-full border-b border-white/10">
+        <button 
+          className="material-symbols-outlined text-white hover:bg-white/10 p-1 rounded-full transition-colors"
+          onClick={() => navigate('/')}
+        >
+          arrow_back
+        </button>
+        <span className="text-xs font-bold text-gray-200 truncate max-w-[200px]">
+          {product.name}
+        </span>
+        <div className="flex items-center gap-2 text-white">
+          <button className="material-symbols-outlined text-sm hover:bg-white/10 p-1 rounded-full">share</button>
         </div>
       </header>
 
-      <main className="max-w-screen-md mx-auto bg-surface-container-lowest md:mt-8 md:rounded-xl md:shadow-md overflow-hidden relative">
+      <main className="bg-[#121212] overflow-hidden relative space-y-2">
         {/* 1. Product Header (Hero Image, Info & Delivery Badge) */}
         <ProductHeader product={product} />
 
-        {/* 2. Trust Signals Badges (Brand Verified, Batch Verified, Temp-Controlled) */}
+        {/* 2. Trust Signals Badges */}
         <TrustSignals showBadges={true} showDescription={false} />
 
         {/* 3. Purchase Confidence Engine */}
@@ -129,11 +129,11 @@ export const ProductDetailPage = () => {
         {/* 4. Product Description */}
         <TrustSignals showBadges={false} showDescription={true} description={product.description} />
 
-        {/* 5. Real Similar Products */}
+        {/* 5. Similar Products */}
         <SimilarProducts currentProduct={product} />
       </main>
 
-      {/* 5. Add to Cart Call To Action (Sticky Footer) */}
+      {/* 6. Add to Cart Call To Action (Sticky Footer) */}
       <AddToCartCTA product={product} price={product.price} />
 
       {/* Optional Extended Evidence Bottom Sheet */}

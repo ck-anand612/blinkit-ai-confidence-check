@@ -1,36 +1,42 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
-import Header from './components/Common/Header';
+import HomePage from './pages/HomePage';
 import ProductListingPage from './pages/ProductListingPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrderSuccessPage from './pages/OrderSuccessPage';
+import BottomNav from './components/Common/BottomNav';
 
 function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="min-h-screen bg-gray-50/60 font-sans text-gray-900 antialiased flex flex-col">
-          <Header />
-          
-          <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <Routes>
-              <Route path="/" element={<ProductListingPage />} />
-              <Route path="/products/:id" element={<ProductDetailPage />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="/checkout" element={<CheckoutPage />} />
-              <Route path="/order-success" element={<OrderSuccessPage />} />
-              {/* Catch-all route */}
-              <Route path="*" element={<ProductListingPage />} />
-            </Routes>
-          </main>
+        {/* Outer Backdrop (Centered Desktop Layout) */}
+        <div className="min-h-screen bg-[#080808] flex items-center justify-center p-2 sm:p-6 font-sans text-white antialiased selection:bg-[#F8C537] selection:text-black">
+          {/* Standard 6-Inch Mobile Viewport Frame (390px width x 720px height) */}
+          <div className="w-full max-w-[390px] h-screen sm:h-[720px] sm:max-h-[720px] bg-[#121212] sm:rounded-[44px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] flex flex-col relative overflow-hidden border border-white/10 sm:border-[6px] sm:border-[#222222]">
+            {/* Top Phone Camera Notch (Desktop Preview) */}
+            <div className="hidden sm:block absolute top-2 left-1/2 -translate-x-1/2 w-24 h-3.5 bg-black rounded-full z-50 pointer-events-none"></div>
 
-          <footer className="bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-400 space-y-1">
-            <p>© 2026 Blinkit Confidence Experience — AI-Native MVP</p>
-            <p>Powered by FastAPI + Groq AI (Llama 3.1) + React</p>
-          </footer>
+            {/* Scrollable Main Content Container */}
+            <main className="flex-1 overflow-y-auto scrollbar-none relative pb-14">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/listing" element={<ProductListingPage />} />
+                <Route path="/products/:id" element={<ProductDetailPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/order-success" element={<OrderSuccessPage />} />
+                {/* Catch-all route */}
+                <Route path="*" element={<HomePage />} />
+              </Routes>
+            </main>
+
+            {/* Fixed Bottom Navigation */}
+            <BottomNav />
+          </div>
         </div>
       </Router>
     </CartProvider>

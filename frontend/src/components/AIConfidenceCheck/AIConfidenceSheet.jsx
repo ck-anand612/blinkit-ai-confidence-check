@@ -50,9 +50,9 @@ export const AIConfidenceSheet = ({
 
   const concernTabs = [
     { id: 'authenticity', label: 'Authenticity', icon: 'verified' },
-    { id: 'suitability', label: 'Skin Compatibility', icon: 'face_retouching_natural' },
-    { id: 'quality', label: 'Product Quality', icon: 'thumb_up' },
-    { id: 'returns', label: 'Return & Refund', icon: 'assignment_return' },
+    { id: 'suitability', label: 'Skin Match', icon: 'face_retouching_natural' },
+    { id: 'quality', label: 'Quality', icon: 'thumb_up' },
+    { id: 'returns', label: 'Returns', icon: 'assignment_return' },
   ];
 
   const hasContext = product?.concernContext || {};
@@ -62,25 +62,25 @@ export const AIConfidenceSheet = ({
     <>
       {/* Scrim / Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/50 z-50 transition-opacity duration-300"
+        className="fixed inset-0 bg-black/70 z-50 transition-opacity duration-300 backdrop-blur-xs"
         onClick={onClose}
       />
       
       {/* Bottom Sheet Modal */}
       <div 
-        className="fixed bottom-0 left-0 w-full bg-white z-50 rounded-t-3xl max-h-[85vh] flex flex-col shadow-2xl transition-transform duration-300 ease-out"
+        className="fixed bottom-0 left-0 w-full bg-[#121212] border-t border-white/10 text-white z-50 rounded-t-3xl max-h-[85vh] flex flex-col shadow-2xl transition-transform duration-300 ease-out font-sans"
       >
         {/* Header */}
-        <div className="px-4 pt-3 pb-3 border-b border-gray-100 flex flex-col items-center relative shrink-0">
-          <div className="w-10 h-1 bg-gray-300 rounded-full mb-3"></div>
+        <div className="px-4 pt-3 pb-3 border-b border-white/10 flex flex-col items-center relative shrink-0">
+          <div className="w-10 h-1 bg-[#2A2A2A] rounded-full mb-3"></div>
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-emerald-700">verified</span>
-              <h3 className="font-extrabold text-base text-gray-900">Purchase Confidence Evidence</h3>
+              <span className="material-symbols-outlined text-[#F8C537]">verified</span>
+              <h3 className="font-black text-sm text-white">Purchase Confidence Evidence</h3>
             </div>
             <button 
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-700 p-1.5 rounded-full hover:bg-gray-100 transition-colors"
+              className="text-[#B8B8B8] hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
             >
               <span className="material-symbols-outlined text-lg">close</span>
             </button>
@@ -90,31 +90,31 @@ export const AIConfidenceSheet = ({
         {/* Scrollable Content Body */}
         <div className="p-4 overflow-y-auto space-y-4 flex-1">
           {/* Trust Score Breakdown */}
-          <div className="bg-emerald-950 text-white rounded-2xl p-4 space-y-2">
-            <div className="flex items-center justify-between border-b border-emerald-800/80 pb-2">
-              <span className="text-xs font-bold text-yellow-300 uppercase tracking-wider">
+          <div className="bg-gradient-to-r from-[#2B0D0D] via-[#1E0909] to-[#142A22] text-white rounded-2xl p-4 space-y-2 border border-white/10">
+            <div className="flex items-center justify-between border-b border-white/10 pb-2">
+              <span className="text-xs font-black text-[#F8C537] uppercase tracking-wider">
                 Purchase Confidence
               </span>
-              <span className="bg-yellow-400 text-emerald-950 px-2.5 py-0.5 rounded-full font-black text-xs sm:text-sm">
+              <span className="bg-[#F8C537] text-[#121212] px-2.5 py-0.5 rounded-full font-black text-xs">
                 {baseScore}%
               </span>
             </div>
             <div className="grid grid-cols-2 gap-2 pt-1 text-xs">
-              <div className="flex justify-between bg-emerald-900/60 p-2 rounded-lg border border-emerald-700/50">
-                <span className="text-emerald-200">✓ Authenticity</span>
-                <span className="font-extrabold text-white">{authenticityScore}%</span>
+              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
+                <span className="text-[#B8B8B8]">✓ Authenticity</span>
+                <span className="font-black text-[#18C37E]">{authenticityScore}%</span>
               </div>
-              <div className="flex justify-between bg-emerald-900/60 p-2 rounded-lg border border-emerald-700/50">
-                <span className="text-emerald-200">✓ Skin Match</span>
-                <span className="font-extrabold text-white">{skinMatchScore}%</span>
+              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
+                <span className="text-[#B8B8B8]">✓ Skin Match</span>
+                <span className="font-black text-[#18C37E]">{skinMatchScore}%</span>
               </div>
-              <div className="flex justify-between bg-emerald-900/60 p-2 rounded-lg border border-emerald-700/50">
-                <span className="text-emerald-200">✓ Quality</span>
-                <span className="font-extrabold text-white">{qualityScore}%</span>
+              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
+                <span className="text-[#B8B8B8]">✓ Quality</span>
+                <span className="font-black text-[#18C37E]">{qualityScore}%</span>
               </div>
-              <div className="flex justify-between bg-emerald-900/60 p-2 rounded-lg border border-emerald-700/50">
-                <span className="text-emerald-200">✓ Returns</span>
-                <span className="font-extrabold text-white">{returnsScore}%</span>
+              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
+                <span className="text-[#B8B8B8]">✓ Returns</span>
+                <span className="font-black text-[#18C37E]">{returnsScore}%</span>
               </div>
             </div>
           </div>
@@ -130,8 +130,8 @@ export const AIConfidenceSheet = ({
                   onClick={() => onConcernChange && onConcernChange(tab.id)}
                   className={`flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 border transition-all ${
                     isActive
-                      ? 'bg-emerald-700 text-white border-emerald-700'
-                      : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
+                      ? 'bg-[#18C37E] text-black border-[#18C37E] font-black'
+                      : 'bg-[#1E1E1E] text-[#B8B8B8] border border-white/10 hover:text-white'
                   }`}
                 >
                   <span className="material-symbols-outlined text-[15px]">{tab.icon}</span>
@@ -142,8 +142,8 @@ export const AIConfidenceSheet = ({
           </div>
 
           {/* AI Rationale Summary Box */}
-          <div className="bg-emerald-50 border border-emerald-200 p-3.5 rounded-xl space-y-1">
-            <span className="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider block">
+          <div className="bg-[#142A22] border border-[#18C37E]/40 p-3.5 rounded-2xl space-y-1">
+            <span className="text-[10px] font-black text-[#18C37E] uppercase tracking-wider block">
               Blinkit AI Recommendation
             </span>
             {loading ? (
@@ -151,69 +151,69 @@ export const AIConfidenceSheet = ({
                 <LoadingSpinner label="Generating rationale..." />
               </div>
             ) : (
-              <p className="text-xs text-emerald-950 font-semibold leading-relaxed whitespace-pre-line">
+              <p className="text-xs text-white font-medium leading-relaxed whitespace-pre-line">
                 {formattedRecommendation}
               </p>
             )}
           </div>
 
           {/* Granular Context Key Facts */}
-          <div className="space-y-3 pt-1">
-            <h4 className="font-bold text-xs text-gray-900 uppercase tracking-wider">
+          <div className="space-y-2.5 pt-1">
+            <h4 className="font-black text-xs text-white uppercase tracking-wider">
               Verified Evidence & Key Facts
             </h4>
 
             {hasContext.authenticity && (
-              <div className="bg-gray-50 border border-gray-200 p-3 rounded-xl space-y-1">
-                <span className="text-xs font-extrabold text-gray-900 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-emerald-700 text-sm">verified</span>
+              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
+                <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[#18C37E] text-sm">verified</span>
                   Authenticity Verification
                 </span>
-                <p className="text-xs text-gray-600 leading-snug">{hasContext.authenticity}</p>
+                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.authenticity}</p>
               </div>
             )}
 
             {hasContext.suitability && (
-              <div className="bg-gray-50 border border-gray-200 p-3 rounded-xl space-y-1">
-                <span className="text-xs font-extrabold text-gray-900 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-emerald-700 text-sm">spa</span>
+              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
+                <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[#18C37E] text-sm">spa</span>
                   Skin Suitability Analysis
                 </span>
-                <p className="text-xs text-gray-600 leading-snug">{hasContext.suitability}</p>
+                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.suitability}</p>
               </div>
             )}
 
             {hasContext.quality && (
-              <div className="bg-gray-50 border border-gray-200 p-3 rounded-xl space-y-1">
-                <span className="text-xs font-extrabold text-gray-900 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-emerald-700 text-sm">thumb_up</span>
+              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
+                <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[#18C37E] text-sm">thumb_up</span>
                   Quality & Value Criteria
                 </span>
-                <p className="text-xs text-gray-600 leading-snug">{hasContext.quality}</p>
+                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.quality}</p>
               </div>
             )}
 
             {hasContext.returns && (
-              <div className="bg-gray-50 border border-gray-200 p-3 rounded-xl space-y-1">
-                <span className="text-xs font-extrabold text-gray-900 flex items-center gap-1">
-                  <span className="material-symbols-outlined text-emerald-700 text-sm">assignment_return</span>
+              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
+                <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[#18C37E] text-sm">assignment_return</span>
                   Return & Refund Coverage
                 </span>
-                <p className="text-xs text-gray-600 leading-snug">{hasContext.returns}</p>
+                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.returns}</p>
               </div>
             )}
           </div>
         </div>
 
         {/* Footer Action */}
-        <div className="p-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between gap-3 shrink-0">
+        <div className="p-4 bg-[#1A1A1A] border-t border-white/10 flex items-center justify-between gap-3 shrink-0">
           <div>
-            <span className="text-xs text-gray-400 font-medium block">Price</span>
-            <span className="text-lg font-extrabold text-gray-900">₹{product.price}</span>
+            <span className="text-[10px] text-[#B8B8B8] font-medium block">Price</span>
+            <span className="text-lg font-black text-white">₹{product.price}</span>
           </div>
           <button
             onClick={onClose}
-            className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-emerald-950 font-extrabold text-sm py-3 rounded-xl shadow-md transition-all active:scale-95 text-center"
+            className="flex-1 bg-[#F8C537] hover:bg-[#e2bd00] text-[#121212] font-black text-xs py-3 rounded-xl shadow-md transition-all active:scale-95 text-center"
           >
             Got it, Back to Product
           </button>

@@ -2,11 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { getProducts } from '../api/client';
 import ProductCard from '../components/Common/ProductCard';
 
-export const ProductListingPage = () => {
+export const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedSubCategory, setSelectedSubCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('Beauty');
+
+  const categories = [
+    { name: 'All', icon: 'grid_view' },
+    { name: 'Grocery', icon: 'shopping_basket' },
+    { name: 'Electronics', icon: 'headphones' },
+    { name: 'Beauty', icon: 'auto_awesome' },
+    { name: 'Decor', icon: 'chair' },
+    { name: 'Kids', icon: 'child_care' },
+  ];
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -25,16 +34,15 @@ export const ProductListingPage = () => {
     fetchProducts();
   }, []);
 
-  const subCategories = ['All', ...new Set(products.map((p) => p.subCategory).filter(Boolean))];
-
-  const filteredProducts =
-    selectedSubCategory === 'All'
-      ? products
-      : products.filter((p) => p.subCategory === selectedSubCategory);
+  const handleCategoryClick = (categoryName) => {
+    if (categoryName === 'Beauty') {
+      setSelectedCategory('Beauty');
+    }
+  };
 
   return (
     <div className="bg-[#121212] min-h-screen text-white pb-20 font-sans">
-      {/* Header (Same Dark Maroon Header as Home #2B0D0D) */}
+      {/* Header (Blinkit Dark Maroon #2B0D0D) */}
       <div className="bg-gradient-to-b from-[#2B0D0D] via-[#1E0909] to-[#121212] p-4 space-y-5 rounded-b-3xl border-b border-white/10">
         {/* Status Bar emulation */}
         <div className="flex items-center justify-between text-xs text-[#B8B8B8] font-semibold px-1 pt-0.5">
@@ -46,7 +54,7 @@ export const ProductListingPage = () => {
           </div>
         </div>
 
-        {/* Compact Delivery Section */}
+        {/* Compact Delivery Section (Primary: Delivery Time, Address Below) */}
         <div className="flex items-start justify-between">
           <div className="space-y-0.5">
             <span className="text-[10px] font-extrabold text-[#B8B8B8] uppercase tracking-wider block">
@@ -63,7 +71,7 @@ export const ProductListingPage = () => {
             </div>
           </div>
 
-          {/* Right Action Icons */}
+          {/* Right Header Action Icons */}
           <div className="flex items-center space-x-2">
             <div className="bg-[#1A1A1A] border border-white/10 px-2.5 py-1 rounded-full flex items-center space-x-1 text-xs font-bold text-[#F8C537]">
               <span className="material-symbols-outlined text-sm">account_balance_wallet</span>
@@ -90,11 +98,46 @@ export const ProductListingPage = () => {
             <span className="material-symbols-outlined text-lg">mic</span>
           </div>
         </div>
+
+        {/* Categories: Circular Icon Buttons with Yellow Active Highlight (#F8C537) */}
+        <div className="pt-2">
+          <div className="flex items-center justify-between overflow-x-auto scrollbar-none px-1">
+            {categories.map((cat) => {
+              const isSelected = selectedCategory === cat.name;
+
+              return (
+                <button
+                  key={cat.name}
+                  type="button"
+                  onClick={() => handleCategoryClick(cat.name)}
+                  className="flex flex-col items-center space-y-1.5 shrink-0 px-1.5 group cursor-pointer focus:outline-none"
+                >
+                  <div
+                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
+                      isSelected
+                        ? 'bg-[#F8C537] text-[#121212] shadow-lg scale-105'
+                        : 'bg-[#1E1E1E] text-[#B8B8B8] border border-white/10 hover:border-white/20'
+                    }`}
+                  >
+                    <span className="material-symbols-outlined text-xl">{cat.icon}</span>
+                  </div>
+                  <span
+                    className={`text-[11px] font-bold transition-colors ${
+                      isSelected ? 'text-white' : 'text-[#B8B8B8]'
+                    }`}
+                  >
+                    {cat.name}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
-      {/* Main Content Area */}
+      {/* Main Feed Content */}
       <div className="p-4 space-y-5">
-        {/* Promotional AI Banner (Same compact dark AI banner as Home) */}
+        {/* AI Banner (~30% reduced height, dark gradient with yellow #F8C537 & green #18C37E accents) */}
         <div className="max-h-[140px] bg-gradient-to-r from-[#1E1E1E] via-[#2A1D10] to-[#142A22] rounded-2xl px-4 py-3 border border-white/10 text-white shadow-lg relative overflow-hidden flex flex-col justify-center">
           <div className="absolute top-0 right-0 p-3 opacity-10 pointer-events-none">
             <span className="material-symbols-outlined text-7xl">auto_awesome</span>
@@ -102,59 +145,35 @@ export const ProductListingPage = () => {
           <div className="relative z-10 space-y-1.5">
             <div className="flex items-center space-x-2">
               <span className="bg-[#F8C537] text-[#121212] text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
-                AI Confidence Store
+                AI Confidence Check
               </span>
               <span className="text-[#18C37E] text-[11px] font-bold flex items-center space-x-1">
                 <span className="material-symbols-outlined text-xs">verified</span>
-                <span>Verified Beauty</span>
+                <span>Instant AI Analysis</span>
               </span>
             </div>
             <h2 className="text-sm font-black tracking-tight leading-tight">
-              Beauty & Personal Care Catalog
+              Shop Beauty with 100% AI Confidence
             </h2>
             <p className="text-[#B8B8B8] text-[11px] line-clamp-2 leading-tight">
-              Instant AI answers on Authenticity, Suitability, Quality, and Returns before you buy.
+              Tap any item below for instant AI compatibility, authenticity & returns verification.
             </p>
           </div>
         </div>
 
-        {/* Subcategory Filter Pills */}
-        {!loading && (
-          <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
-            {subCategories.map((subCat) => {
-              const isSelected = selectedSubCategory === subCat;
-
-              return (
-                <button
-                  key={subCat}
-                  type="button"
-                  onClick={() => setSelectedSubCategory(subCat)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all shrink-0 border ${
-                    isSelected
-                      ? 'bg-[#F8C537] text-[#121212] border-[#F8C537] shadow-md scale-105'
-                      : 'bg-[#1E1E1E] text-[#B8B8B8] border border-white/10 hover:border-white/20 hover:text-white'
-                  }`}
-                >
-                  {subCat} ({subCat === 'All' ? products.length : products.filter(p => p.subCategory === subCat).length})
-                </button>
-              );
-            })}
-          </div>
-        )}
-
-        {/* Content Section: Products Grid / Skeleton Loader */}
+        {/* Product Feed Section ("Frequently bought") */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <h3 className="text-xs font-black text-white tracking-wider uppercase">
-              {selectedSubCategory === 'All' ? 'All Beauty Products' : selectedSubCategory}
+              Frequently bought
             </h3>
-            <span className="text-xs text-[#F8C537] font-bold">
-              {filteredProducts.length} Items
+            <span className="text-xs text-[#F8C537] font-bold cursor-pointer hover:underline">
+              See all
             </span>
           </div>
 
-          {/* Skeleton cards or Products grid */}
-          {loading || filteredProducts.length === 0 ? (
+          {/* Skeleton cards (#1E1E1E placeholders) or Product Grid */}
+          {loading || products.length === 0 ? (
             <div className="grid grid-cols-2 gap-3.5">
               {[1, 2, 3, 4].map((n) => (
                 <div
@@ -175,7 +194,7 @@ export const ProductListingPage = () => {
             </div>
           ) : (
             <div className="grid grid-cols-2 gap-3.5">
-              {filteredProducts.map((product) => (
+              {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
@@ -186,4 +205,4 @@ export const ProductListingPage = () => {
   );
 };
 
-export default ProductListingPage;
+export default HomePage;
