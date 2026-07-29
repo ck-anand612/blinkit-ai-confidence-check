@@ -21,20 +21,20 @@ export const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group bg-[#1E1E1E] rounded-2xl border border-white/10 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden relative">
+    <div className="group bg-[#FFFFFF] rounded-[16px] border border-[#E5E5E5] shadow-xs hover:shadow-md transition-all duration-200 flex flex-col overflow-hidden relative">
       {/* Category Tag */}
-      <div className="absolute top-2.5 left-2.5 z-10">
-        <span className="bg-[#18C37E]/15 text-[#18C37E] font-semibold text-[10px] px-2 py-0.5 rounded-full border border-[#18C37E]/30 backdrop-blur-sm">
+      <div className="absolute top-2 left-2 z-10">
+        <span className="bg-[#F3F4F6] text-[#0C831F] font-extrabold text-[9px] px-2 py-0.5 rounded-md border border-[#E5E5E5]">
           {product.subCategory || product.subcategory || 'Blinkit'}
         </span>
       </div>
 
       {/* Image container clickable to product detail */}
-      <Link to={`/products/${product.id}`} className="w-full h-36 bg-[#1A1A1A] flex items-center justify-center p-3 overflow-hidden relative">
+      <Link to={`/products/${product.id}`} className="w-full h-32 bg-[#F8F8F8] flex items-center justify-center p-2.5 overflow-hidden relative">
         <img
           src={getProductImageUrl(product)}
           alt={product.name}
-          className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+          className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-200"
           loading="lazy"
           onLoad={(e) => handleImageLoadCheck(e, product.name)}
           onError={(e) => handleImageLoadError(e, product.name)}
@@ -42,29 +42,29 @@ export const ProductCard = ({ product }) => {
       </Link>
 
       {/* Product Content */}
-      <div className="p-3 flex-1 flex flex-col justify-between space-y-3">
+      <div className="p-3 flex-1 flex flex-col justify-between space-y-2">
         <Link to={`/products/${product.id}`} className="block">
-          <span className="text-[10px] font-bold text-[#B8B8B8] uppercase tracking-wider block mb-0.5">
+          <span className="text-[9px] font-bold text-[#666666] uppercase tracking-wider block mb-0.5 truncate">
             {product.brand}
           </span>
-          <h3 className="text-xs font-bold text-white line-clamp-2 leading-snug group-hover:text-[#F8C537] transition-colors">
+          <h3 className="text-xs font-bold text-[#1F1F1F] line-clamp-2 leading-tight group-hover:text-[#0C831F] transition-colors">
             {product.name}
           </h3>
         </Link>
 
-        <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+        <div className="pt-2 border-t border-[#E5E5E5] flex items-center justify-between mt-auto">
           <div>
-            <span className="text-[9px] text-[#B8B8B8] font-medium block">Price</span>
-            <span className="text-sm font-black text-white">₹{product.price}</span>
+            <span className="text-[9px] text-[#666666] font-medium block">Price</span>
+            <span className="text-xs font-black text-[#1F1F1F]">₹{product.price}</span>
           </div>
 
-          <div className="flex items-center space-x-1.5">
+          <div className="flex items-center space-x-1">
             {quantity > 0 ? (
-              <div className="flex items-center bg-[#18C37E] text-black rounded-lg px-2 py-1 space-x-1.5 text-xs font-black shadow-sm">
+              <div className="flex items-center bg-[#0C831F] text-white rounded-lg px-2 py-1 space-x-1.5 text-xs font-bold shadow-xs">
                 <button
                   type="button"
                   onClick={(e) => handleQtyClick(e, -1)}
-                  className="hover:bg-black/10 px-1 rounded transition-colors"
+                  className="hover:bg-black/20 px-1 rounded transition-colors"
                 >
                   -
                 </button>
@@ -72,7 +72,7 @@ export const ProductCard = ({ product }) => {
                 <button
                   type="button"
                   onClick={(e) => handleQtyClick(e, 1)}
-                  className="hover:bg-black/10 px-1 rounded transition-colors"
+                  className="hover:bg-black/20 px-1 rounded transition-colors"
                 >
                   +
                 </button>
@@ -81,7 +81,7 @@ export const ProductCard = ({ product }) => {
               <button
                 type="button"
                 onClick={handleAddClick}
-                className="bg-[#18C37E] hover:bg-[#15b072] text-black text-xs font-black px-3 py-1 rounded-lg shadow-sm transition-all duration-200"
+                className="bg-[#0C831F] hover:bg-[#0A701A] text-white text-xs font-extrabold px-3 py-1 rounded-lg transition-all duration-150 active:scale-95 shadow-xs"
               >
                 ADD
               </button>
@@ -89,7 +89,7 @@ export const ProductCard = ({ product }) => {
 
             <Link
               to={`/products/${product.id}`}
-              className="bg-[#2A2A2A] hover:bg-[#333333] text-[#B8B8B8] hover:text-white text-xs font-bold px-2 py-1 rounded-lg transition-colors"
+              className="bg-[#FFFFFF] border border-[#E5E5E5] hover:bg-[#F3F4F6] text-[#1F1F1F] text-xs font-semibold px-2 py-1 rounded-lg transition-colors"
             >
               View
             </Link>

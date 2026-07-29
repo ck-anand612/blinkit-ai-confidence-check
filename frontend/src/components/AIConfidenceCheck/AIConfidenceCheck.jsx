@@ -163,35 +163,35 @@ export const AIConfidenceCheck = ({
   ];
 
   return (
-    <section className="px-4 py-3 space-y-4 bg-[#121212]">
-      {/* 1. Header & Trust Dashboard (Premium Dark Gradient + Visual Score Progress Bars) */}
-      <div className="bg-gradient-to-r from-[#2B0D0D] via-[#1E0909] to-[#142A22] text-white rounded-2xl p-4 border border-white/10 shadow-lg space-y-3.5 relative overflow-hidden">
+    <section className="px-4 py-3 space-y-3 bg-[#F8F8F8]">
+      {/* 1. Header & Trust Dashboard */}
+      <div className="bg-[#F3F4F6] text-[#1F1F1F] rounded-[16px] p-3.5 border border-[#E5E5E5] shadow-xs space-y-3 relative overflow-hidden">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5">
-            <span className="material-symbols-outlined text-[#F8C537] text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
+            <span className="material-symbols-outlined text-[#0C831F] text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>
               verified
             </span>
-            <h2 className="font-extrabold text-xs text-[#F8C537] uppercase tracking-wider">
+            <h2 className="font-extrabold text-xs text-[#0C831F] uppercase tracking-wider">
               Purchase Confidence
             </h2>
           </div>
-          <div className="bg-[#F8C537] text-[#121212] px-2.5 py-0.5 rounded-full font-black text-xs shadow-md flex items-center gap-1">
+          <div className="bg-[#0C831F] text-white px-2.5 py-0.5 rounded-full font-black text-xs shadow-xs flex items-center gap-1">
             <span>{baseScore}%</span>
-            <span className="text-[9px] font-extrabold uppercase tracking-tight">Confidence Score</span>
+            <span className="text-[9px] font-extrabold uppercase tracking-tight">Score</span>
           </div>
         </div>
 
-        {/* 4-Dimension Score Breakdown with Animated Progress Bars */}
-        <div className="grid grid-cols-2 gap-2 pt-1">
+        {/* 4-Dimension Score Breakdown with Progress Bars */}
+        <div className="grid grid-cols-2 gap-2 pt-0.5">
           {scores.map((scoreItem, index) => (
-            <div key={index} className="bg-[#1E1E1E]/90 border border-white/10 rounded-xl p-2 space-y-1">
+            <div key={index} className="bg-[#FFFFFF] border border-[#E5E5E5] rounded-xl p-2 space-y-1 shadow-2xs">
               <div className="flex justify-between items-center text-[10px] font-bold">
-                <span className="text-[#B8B8B8]">{scoreItem.label}</span>
-                <span className="text-[#18C37E] font-black">{scoreItem.value}%</span>
+                <span className="text-[#666666]">{scoreItem.label}</span>
+                <span className="text-[#0C831F] font-black">{scoreItem.value}%</span>
               </div>
-              <div className="w-full bg-[#2A2A2A] h-1.5 rounded-full overflow-hidden">
+              <div className="w-full bg-[#F8F8F8] h-1.5 rounded-full overflow-hidden">
                 <div
-                  className="bg-[#18C37E] h-full rounded-full transition-all duration-500"
+                  className="bg-[#0C831F] h-full rounded-full transition-all duration-500"
                   style={{ width: `${scoreItem.value}%` }}
                 ></div>
               </div>
@@ -200,9 +200,9 @@ export const AIConfidenceCheck = ({
         </div>
       </div>
 
-      {/* 2. Interactive Concern Tabs */}
-      <div className="space-y-2">
-        <span className="text-[10px] font-extrabold text-[#B8B8B8] uppercase tracking-wider block">
+      {/* 2. Interactive Concern Tabs (Horizontally Scrollable) */}
+      <div className="space-y-1.5">
+        <span className="text-[10px] font-black text-[#666666] uppercase tracking-wider block">
           Select concern for instant AI analysis:
         </span>
 
@@ -214,13 +214,13 @@ export const AIConfidenceCheck = ({
                 key={tab.id}
                 type="button"
                 onClick={() => onConcernChange && onConcernChange(tab.id)}
-                className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all shrink-0 border ${
+                className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all shrink-0 border ${
                   isActive
-                    ? 'bg-[#18C37E] text-black border-[#18C37E] font-black shadow-md scale-105'
-                    : 'bg-[#1E1E1E] text-[#B8B8B8] border border-white/10 hover:border-white/20 hover:text-white'
+                    ? 'bg-[#0C831F] text-white border-[#0C831F] font-black shadow-xs scale-105'
+                    : 'bg-[#FFFFFF] text-[#1F1F1F] border border-[#E5E5E5] hover:border-gray-400'
                 }`}
               >
-                <span className="material-symbols-outlined text-[15px]">
+                <span className="material-symbols-outlined text-[15px]" style={{ color: isActive ? '#FFFFFF' : '#2F2F2F' }}>
                   {tab.icon}
                 </span>
                 <span>{tab.label}</span>
@@ -231,24 +231,24 @@ export const AIConfidenceCheck = ({
       </div>
 
       {/* 3. Structured Evidence Cards */}
-      <div className="grid grid-cols-1 gap-2.5">
+      <div className="grid grid-cols-1 gap-2">
         {evidenceCards.map((card, idx) => (
           <div
             key={idx}
-            className="bg-[#1E1E1E] rounded-2xl border border-white/10 p-3 shadow-sm space-y-1 hover:border-white/20 transition-colors"
+            className="bg-[#FFFFFF] rounded-[16px] border border-[#E5E5E5] p-3 shadow-2xs space-y-1 hover:border-gray-300 transition-colors"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#18C37E] text-base">
+                <span className="material-symbols-outlined text-[#0C831F] text-base">
                   {card.icon}
                 </span>
-                <h4 className="font-bold text-xs text-white">{card.title}</h4>
+                <h4 className="font-bold text-xs text-[#1F1F1F]">{card.title}</h4>
               </div>
-              <span className="bg-[#18C37E]/15 text-[#18C37E] text-[9px] font-black px-2 py-0.5 rounded-md border border-[#18C37E]/30">
+              <span className="bg-[#F3F4F6] text-[#0C831F] text-[9px] font-black px-2 py-0.5 rounded-md border border-[#E5E5E5]">
                 {card.badge}
               </span>
             </div>
-            <p className="text-[11px] text-[#B8B8B8] leading-snug pl-6">
+            <p className="text-[11px] text-[#666666] leading-snug pl-6">
               {card.detail}
             </p>
           </div>
@@ -256,30 +256,30 @@ export const AIConfidenceCheck = ({
       </div>
 
       {/* 4. AI Recommendation Box */}
-      <div className="bg-[#142A22] border border-[#18C37E]/40 rounded-2xl p-3.5 space-y-1.5 shadow-md">
+      <div className="bg-[#F3F4F6] border border-[#E5E5E5] rounded-[16px] p-3 space-y-1 shadow-2xs">
         <div className="flex items-center justify-between">
-          <span className="text-[10px] font-black text-[#18C37E] uppercase tracking-wider flex items-center gap-1">
+          <span className="text-[10px] font-black text-[#0C831F] uppercase tracking-wider flex items-center gap-1">
             <span className="material-symbols-outlined text-sm">psychology</span>
             Blinkit AI Recommendation
           </span>
           {loading && (
-            <span className="text-[9px] text-[#18C37E] font-bold animate-pulse">
+            <span className="text-[9px] text-[#0C831F] font-bold animate-pulse">
               Updating AI rationale...
             </span>
           )}
         </div>
-        <p className="text-xs text-white font-medium leading-relaxed whitespace-pre-line">
+        <p className="text-xs text-[#1F1F1F] font-medium leading-relaxed whitespace-pre-line">
           {formattedRecommendation}
         </p>
       </div>
 
-      {/* 5. Optional See All Evidence Link */}
+      {/* 5. See All Evidence Link */}
       {onOpenSheet && (
         <div className="text-right pt-0.5">
           <button
             type="button"
             onClick={onOpenSheet}
-            className="text-xs font-black text-[#F8C537] hover:underline inline-flex items-center gap-1"
+            className="text-xs font-black text-[#0C831F] hover:underline inline-flex items-center gap-1"
           >
             <span>See all evidence</span>
             <span>→</span>

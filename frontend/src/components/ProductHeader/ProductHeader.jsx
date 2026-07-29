@@ -7,41 +7,46 @@ export const ProductHeader = ({ product }) => {
   return (
     <>
       {/* Hero Image Gallery */}
-      <section className="relative w-full h-[450px] bg-surface-container-low overflow-hidden snap-x snap-mandatory flex hide-scroll">
+      <section className="relative w-full h-[320px] bg-[#FFFFFF] border-b border-[#E5E5E5] overflow-hidden flex justify-center items-center">
         <img
           src={getProductImageUrl(product)}
           alt={product.name}
-          className="w-full h-full object-contain p-4 shrink-0 snap-center"
+          className="max-h-full max-w-full object-contain p-4"
           onLoad={(e) => handleImageLoadCheck(e, product.name)}
           onError={(e) => handleImageLoadError(e, product.name)}
         />
         {/* Pagination Dots overlay */}
-        <div className="absolute bottom-4 left-0 w-full flex justify-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-on-background opacity-100"></span>
-          <span className="w-2 h-2 rounded-full bg-on-background opacity-40"></span>
-          <span className="w-2 h-2 rounded-full bg-on-background opacity-40"></span>
+        <div className="absolute bottom-3 left-0 w-full flex justify-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-[#0C831F]"></span>
+          <span className="w-2 h-2 rounded-full bg-[#E5E5E5]"></span>
+          <span className="w-2 h-2 rounded-full bg-[#E5E5E5]"></span>
         </div>
       </section>
 
       {/* Product Header Info */}
-      <section className="px-margin-mobile py-lg border-b border-surface-variant">
-        <div className="flex justify-between items-start gap-4">
-          <div>
-            <h1 className="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-1">
+      <section className="px-4 py-3 bg-[#FFFFFF] border-b border-[#E5E5E5]">
+        <div className="flex justify-between items-start gap-3">
+          <div className="flex-1">
+            <h1 className="text-base font-bold text-[#1F1F1F] leading-snug mb-0.5">
               {product.name}
             </h1>
-            <p className="font-body-md text-body-md text-on-surface-variant">
-              by {product.brand} | {product.size || 'Standard'}
+            <p className="text-xs font-semibold text-[#666666] mb-1.5">
+              by {product.brand} {product.size ? `| ${product.size}` : ''}
             </p>
+            {product.description && (
+              <p className="text-xs text-[#666666] line-clamp-2 leading-relaxed mb-2">
+                {product.description}
+              </p>
+            )}
           </div>
-          <button className="material-symbols-outlined text-outline p-2 hover:bg-surface-container-low rounded-full transition-colors">
+          <button className="material-symbols-outlined text-[#2F2F2F] p-2 hover:bg-[#F3F4F6] rounded-full transition-colors shrink-0">
             favorite_border
           </button>
         </div>
-        <div className="mt-4 flex items-center gap-2 bg-surface-container-low w-fit px-3 py-1.5 rounded-md">
-          <span className="material-symbols-outlined text-secondary text-[18px]">schedule</span>
-          <span className="font-label-lg text-label-lg text-on-background">12 mins</span>
-          <span className="font-body-sm text-body-sm text-on-surface-variant ml-1">Delivery</span>
+        <div className="mt-1 flex items-center gap-2 bg-[#F3F4F6] border border-[#E5E5E5] w-fit px-3 py-1 rounded-lg">
+          <span className="material-symbols-outlined text-[#0C831F] text-[18px]">schedule</span>
+          <span className="text-xs font-extrabold text-[#1F1F1F]">12 mins</span>
+          <span className="text-xs text-[#666666]">Delivery</span>
         </div>
       </section>
     </>

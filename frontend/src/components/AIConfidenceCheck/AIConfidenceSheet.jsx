@@ -59,167 +59,163 @@ export const AIConfidenceSheet = ({
   const formattedRecommendation = formatConciseRecommendation(concernSummary, activeConcern, product);
 
   return (
-    <>
-      {/* Scrim / Backdrop */}
-      <div 
-        className="fixed inset-0 bg-black/70 z-50 transition-opacity duration-300 backdrop-blur-xs"
-        onClick={onClose}
-      />
-      
-      {/* Bottom Sheet Modal */}
-      <div 
-        className="fixed bottom-0 left-0 w-full bg-[#121212] border-t border-white/10 text-white z-50 rounded-t-3xl max-h-[85vh] flex flex-col shadow-2xl transition-transform duration-300 ease-out font-sans"
-      >
-        {/* Header */}
-        <div className="px-4 pt-3 pb-3 border-b border-white/10 flex flex-col items-center relative shrink-0">
-          <div className="w-10 h-1 bg-[#2A2A2A] rounded-full mb-3"></div>
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-[#F8C537]">verified</span>
-              <h3 className="font-black text-sm text-white">Purchase Confidence Evidence</h3>
-            </div>
-            <button 
-              onClick={onClose}
-              className="text-[#B8B8B8] hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors"
-            >
-              <span className="material-symbols-outlined text-lg">close</span>
-            </button>
-          </div>
+    <div className="absolute inset-0 z-50 bg-[#F8F8F8] flex flex-col font-sans overflow-hidden">
+      {/* Top Header Bar with Back Button */}
+      <div className="bg-[#FFFFFF] border-b border-[#E5E5E5] px-4 py-3 flex items-center justify-between shrink-0 shadow-xs">
+        <button
+          onClick={onClose}
+          className="flex items-center gap-1 text-xs font-extrabold text-[#1F1F1F] hover:text-[#0C831F] transition-colors p-1 rounded-lg hover:bg-[#F3F4F6]"
+        >
+          <span className="material-symbols-outlined text-lg text-[#2F2F2F]">arrow_back</span>
+          <span>Back</span>
+        </button>
+
+        <div className="flex items-center gap-1.5 text-xs font-extrabold text-[#1F1F1F]">
+          <span className="material-symbols-outlined text-[#0C831F] text-base">verified</span>
+          <span>AI Evidence Report</span>
         </div>
 
-        {/* Scrollable Content Body */}
-        <div className="p-4 overflow-y-auto space-y-4 flex-1">
-          {/* Trust Score Breakdown */}
-          <div className="bg-gradient-to-r from-[#2B0D0D] via-[#1E0909] to-[#142A22] text-white rounded-2xl p-4 space-y-2 border border-white/10">
-            <div className="flex items-center justify-between border-b border-white/10 pb-2">
-              <span className="text-xs font-black text-[#F8C537] uppercase tracking-wider">
-                Purchase Confidence
-              </span>
-              <span className="bg-[#F8C537] text-[#121212] px-2.5 py-0.5 rounded-full font-black text-xs">
-                {baseScore}%
-              </span>
-            </div>
-            <div className="grid grid-cols-2 gap-2 pt-1 text-xs">
-              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
-                <span className="text-[#B8B8B8]">✓ Authenticity</span>
-                <span className="font-black text-[#18C37E]">{authenticityScore}%</span>
-              </div>
-              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
-                <span className="text-[#B8B8B8]">✓ Skin Match</span>
-                <span className="font-black text-[#18C37E]">{skinMatchScore}%</span>
-              </div>
-              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
-                <span className="text-[#B8B8B8]">✓ Quality</span>
-                <span className="font-black text-[#18C37E]">{qualityScore}%</span>
-              </div>
-              <div className="flex justify-between bg-[#1E1E1E] p-2 rounded-xl border border-white/10">
-                <span className="text-[#B8B8B8]">✓ Returns</span>
-                <span className="font-black text-[#18C37E]">{returnsScore}%</span>
-              </div>
-            </div>
-          </div>
+        <button
+          onClick={onClose}
+          className="text-[#666666] hover:text-[#1F1F1F] p-1 rounded-full hover:bg-[#F3F4F6] transition-colors"
+        >
+          <span className="material-symbols-outlined text-lg">close</span>
+        </button>
+      </div>
 
-          {/* Tab Selector */}
-          <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
-            {concernTabs.map((tab) => {
-              const isActive = activeConcern === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => onConcernChange && onConcernChange(tab.id)}
-                  className={`flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 border transition-all ${
-                    isActive
-                      ? 'bg-[#18C37E] text-black border-[#18C37E] font-black'
-                      : 'bg-[#1E1E1E] text-[#B8B8B8] border border-white/10 hover:text-white'
-                  }`}
-                >
-                  <span className="material-symbols-outlined text-[15px]">{tab.icon}</span>
-                  <span>{tab.label}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* AI Rationale Summary Box */}
-          <div className="bg-[#142A22] border border-[#18C37E]/40 p-3.5 rounded-2xl space-y-1">
-            <span className="text-[10px] font-black text-[#18C37E] uppercase tracking-wider block">
-              Blinkit AI Recommendation
+      {/* Scrollable Main Evidence Content */}
+      <div className="p-4 overflow-y-auto space-y-3.5 flex-1 scrollbar-none">
+        {/* Trust Score Breakdown Banner */}
+        <div className="bg-[#F3F4F6] text-[#1F1F1F] rounded-[16px] p-4 space-y-2.5 border border-[#E5E5E5] shadow-xs">
+          <div className="flex items-center justify-between border-b border-[#E5E5E5] pb-2">
+            <span className="text-xs font-black text-[#0C831F] uppercase tracking-wider">
+              Purchase Confidence Analysis
             </span>
-            {loading ? (
-              <div className="py-2 flex items-center justify-center">
-                <LoadingSpinner label="Generating rationale..." />
-              </div>
-            ) : (
-              <p className="text-xs text-white font-medium leading-relaxed whitespace-pre-line">
-                {formattedRecommendation}
-              </p>
-            )}
+            <span className="bg-[#0C831F] text-white px-2.5 py-0.5 rounded-full font-black text-xs">
+              {baseScore}% Score
+            </span>
           </div>
 
-          {/* Granular Context Key Facts */}
-          <div className="space-y-2.5 pt-1">
-            <h4 className="font-black text-xs text-white uppercase tracking-wider">
-              Verified Evidence & Key Facts
-            </h4>
-
-            {hasContext.authenticity && (
-              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
-                <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#18C37E] text-sm">verified</span>
-                  Authenticity Verification
-                </span>
-                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.authenticity}</p>
-              </div>
-            )}
-
-            {hasContext.suitability && (
-              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
-                <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#18C37E] text-sm">spa</span>
-                  Skin Suitability Analysis
-                </span>
-                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.suitability}</p>
-              </div>
-            )}
-
-            {hasContext.quality && (
-              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
-                <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#18C37E] text-sm">thumb_up</span>
-                  Quality & Value Criteria
-                </span>
-                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.quality}</p>
-              </div>
-            )}
-
-            {hasContext.returns && (
-              <div className="bg-[#1E1E1E] border border-white/10 p-3 rounded-2xl space-y-1">
-                <span className="text-xs font-bold text-white flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#18C37E] text-sm">assignment_return</span>
-                  Return & Refund Coverage
-                </span>
-                <p className="text-xs text-[#B8B8B8] leading-snug pl-5">{hasContext.returns}</p>
-              </div>
-            )}
+          <div className="grid grid-cols-2 gap-2 text-xs pt-1">
+            <div className="flex justify-between bg-[#FFFFFF] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">✓ Authenticity</span>
+              <span className="font-black text-[#0C831F]">{authenticityScore}%</span>
+            </div>
+            <div className="flex justify-between bg-[#FFFFFF] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">✓ Skin Match</span>
+              <span className="font-black text-[#0C831F]">{skinMatchScore}%</span>
+            </div>
+            <div className="flex justify-between bg-[#FFFFFF] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">✓ Quality</span>
+              <span className="font-black text-[#0C831F]">{qualityScore}%</span>
+            </div>
+            <div className="flex justify-between bg-[#FFFFFF] p-2 rounded-xl border border-[#E5E5E5] shadow-2xs">
+              <span className="text-[#666666] font-medium">✓ Returns</span>
+              <span className="font-black text-[#0C831F]">{returnsScore}%</span>
+            </div>
           </div>
         </div>
 
-        {/* Footer Action */}
-        <div className="p-4 bg-[#1A1A1A] border-t border-white/10 flex items-center justify-between gap-3 shrink-0">
-          <div>
-            <span className="text-[10px] text-[#B8B8B8] font-medium block">Price</span>
-            <span className="text-lg font-black text-white">₹{product.price}</span>
-          </div>
-          <button
-            onClick={onClose}
-            className="flex-1 bg-[#F8C537] hover:bg-[#e2bd00] text-[#121212] font-black text-xs py-3 rounded-xl shadow-md transition-all active:scale-95 text-center"
-          >
-            Got it, Back to Product
-          </button>
+        {/* Tab Selector */}
+        <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
+          {concernTabs.map((tab) => {
+            const isActive = activeConcern === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => onConcernChange && onConcernChange(tab.id)}
+                className={`flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 border transition-all ${
+                  isActive
+                    ? 'bg-[#0C831F] text-white border-[#0C831F] font-black shadow-xs'
+                    : 'bg-[#FFFFFF] text-[#1F1F1F] border border-[#E5E5E5] hover:text-[#1F1F1F]'
+                }`}
+              >
+                <span className="material-symbols-outlined text-[15px]" style={{ color: isActive ? '#FFFFFF' : '#2F2F2F' }}>{tab.icon}</span>
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* AI Rationale Summary Box */}
+        <div className="bg-[#F3F4F6] border border-[#E5E5E5] p-3.5 rounded-[16px] space-y-1 shadow-2xs">
+          <span className="text-[10px] font-black text-[#0C831F] uppercase tracking-wider block">
+            Blinkit AI Recommendation Rationale
+          </span>
+          {loading ? (
+            <div className="py-2 flex items-center justify-center">
+              <LoadingSpinner label="Generating rationale..." />
+            </div>
+          ) : (
+            <p className="text-xs text-[#1F1F1F] font-medium leading-relaxed whitespace-pre-line">
+              {formattedRecommendation}
+            </p>
+          )}
+        </div>
+
+        {/* Granular Context Key Facts */}
+        <div className="space-y-2.5 pt-1">
+          <h4 className="font-black text-xs text-[#1F1F1F] uppercase tracking-wider">
+            Verified Evidence & Key Facts
+          </h4>
+
+          {hasContext.authenticity && (
+            <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-3 rounded-[16px] space-y-1 shadow-2xs">
+              <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[#0C831F] text-sm">verified</span>
+                Authenticity Verification
+              </span>
+              <p className="text-xs text-[#666666] leading-snug pl-5">{hasContext.authenticity}</p>
+            </div>
+          )}
+
+          {hasContext.suitability && (
+            <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-3 rounded-[16px] space-y-1 shadow-2xs">
+              <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[#0C831F] text-sm">spa</span>
+                Skin Suitability Analysis
+              </span>
+              <p className="text-xs text-[#666666] leading-snug pl-5">{hasContext.suitability}</p>
+            </div>
+          )}
+
+          {hasContext.quality && (
+            <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-3 rounded-[16px] space-y-1 shadow-2xs">
+              <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[#0C831F] text-sm">thumb_up</span>
+                Quality & Value Criteria
+              </span>
+              <p className="text-xs text-[#666666] leading-snug pl-5">{hasContext.quality}</p>
+            </div>
+          )}
+
+          {hasContext.returns && (
+            <div className="bg-[#FFFFFF] border border-[#E5E5E5] p-3 rounded-[16px] space-y-1 shadow-2xs">
+              <span className="text-xs font-bold text-[#1F1F1F] flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[#0C831F] text-sm">assignment_return</span>
+                Return & Refund Coverage
+              </span>
+              <p className="text-xs text-[#666666] leading-snug pl-5">{hasContext.returns}</p>
+            </div>
+          )}
         </div>
       </div>
-    </>
+
+      {/* Footer Action */}
+      <div className="p-3.5 bg-[#FFFFFF] border-t border-[#E5E5E5] flex items-center justify-between gap-3 shrink-0 shadow-md">
+        <div>
+          <span className="text-[10px] text-[#666666] font-semibold block">Product Price</span>
+          <span className="text-base font-black text-[#1F1F1F]">₹{product.price}</span>
+        </div>
+        <button
+          onClick={onClose}
+          className="flex-1 bg-[#0C831F] hover:bg-[#0A701A] text-white font-extrabold text-xs py-2.5 rounded-xl shadow-xs transition-all active:scale-95 text-center"
+        >
+          Back to Product Detail
+        </button>
+      </div>
+    </div>
   );
 };
 

@@ -9,9 +9,9 @@ export const OrderSuccessPage = () => {
 
   if (!lastOrder) {
     return (
-      <div className="max-w-md mx-auto px-4 py-16 text-center space-y-4">
-        <h2 className="text-xl font-bold text-gray-900">No active order found</h2>
-        <Link to="/" className="inline-block bg-emerald-700 text-white px-6 py-2.5 rounded-xl font-bold text-xs">
+      <div className="max-w-md mx-auto px-4 py-12 text-center space-y-3 font-sans bg-[#F8F8F8] h-full flex flex-col justify-center items-center text-[#1F1F1F]">
+        <h2 className="text-base font-bold text-[#1F1F1F]">No active order found</h2>
+        <Link to="/" className="inline-block bg-[#0C831F] text-white px-5 py-2 rounded-xl font-bold text-xs shadow-2xs">
           Go to Home
         </Link>
       </div>
@@ -19,90 +19,84 @@ export const OrderSuccessPage = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
-      {/* Success Hero */}
-      <div className="bg-emerald-800 text-white rounded-3xl p-8 text-center space-y-4 shadow-xl relative overflow-hidden">
-        <div className="w-20 h-20 bg-yellow-400 text-emerald-900 rounded-full flex items-center justify-center mx-auto text-4xl font-black shadow-lg animate-bounce">
+    <div className="bg-[#F8F8F8] text-[#1F1F1F] font-sans p-2.5 space-y-2 pb-6 relative">
+      {/* Success Hero Banner (Success Green #16A34A with #F8C537 Check Badge) */}
+      <div className="bg-[#16A34A] text-white p-3.5 rounded-[14px] text-center space-y-1.5 shadow-2xs relative overflow-hidden">
+        <div className="w-10 h-10 bg-[#F8C537] text-[#1F1F1F] rounded-full flex items-center justify-center mx-auto text-base font-black shadow-inner">
           ✓
         </div>
+
+        <div className="space-y-0.5">
+          <span className="bg-white/20 text-white text-[8px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
+            Order Confirmed
+          </span>
+          <h1 className="text-base font-black tracking-tight">Order #{lastOrder.orderId || lastOrder.id} Placed!</h1>
+          <p className="text-[10px] font-semibold text-emerald-100">
+            Arriving in 10-15 minutes at {lastOrder.address?.split(',')[0]}
+          </p>
+        </div>
+
+        {/* Live Delivery Progress Bar */}
+        <div className="bg-white/20 p-1.5 rounded-lg text-left space-y-0.5">
+          <div className="flex justify-between text-[9px] font-bold text-white">
+            <span>⚡ Packing at dark store</span>
+            <span>Est. 12 mins</span>
+          </div>
+          <div className="w-full bg-white/30 h-1 rounded-full overflow-hidden">
+            <div className="bg-[#F8C537] h-full w-2/3 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Order Details Card */}
+      <div className="bg-[#FFFFFF] rounded-[14px] border border-[#E5E5E5] p-2.5 shadow-2xs space-y-2">
+        <div className="flex justify-between items-center border-b border-[#E5E5E5] pb-1 text-[11px]">
+          <span className="font-bold text-[#666666]">Payment Method</span>
+          <span className="font-black text-[#1F1F1F]">{lastOrder.paymentMethod}</span>
+        </div>
+
+        {/* Item Breakdown */}
         <div className="space-y-1">
-          <span className="text-xs uppercase font-extrabold tracking-widest text-emerald-300">Order Confirmed</span>
-          <h1 className="text-2xl sm:text-3xl font-extrabold">Delivery in 10-15 Minutes ⚡</h1>
-          <p className="text-xs text-emerald-200">Your order has been assigned to a Blinkit rider!</p>
-        </div>
-
-        {/* Delivery Progress Bar */}
-        <div className="pt-4 max-w-sm mx-auto space-y-1.5">
-          <div className="flex justify-between text-[11px] text-emerald-200 font-semibold">
-            <span>Order Packed</span>
-            <span>Rider Dispatched</span>
-            <span className="text-yellow-300 font-bold">10 MINS</span>
-          </div>
-          <div className="w-full bg-emerald-900/60 rounded-full h-3 p-0.5 overflow-hidden border border-emerald-600/40">
-            <div className="bg-gradient-to-r from-yellow-400 to-emerald-400 h-full rounded-full w-3/4 animate-pulse"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Order Info Card */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-4">
-        <div className="flex items-center justify-between border-b border-gray-100 pb-3">
-          <div>
-            <span className="text-xs text-gray-400 font-medium block">Order ID</span>
-            <span className="font-mono font-extrabold text-sm text-gray-900">{lastOrder.orderId}</span>
-          </div>
-          <div className="text-right">
-            <span className="text-xs text-gray-400 font-medium block">Total Paid</span>
-            <span className="font-extrabold text-base text-emerald-700">₹{lastOrder.totalAmount}</span>
-          </div>
-        </div>
-
-        <div className="space-y-2 text-xs">
-          <div className="flex justify-between">
-            <span className="text-gray-500 font-medium">Delivery Address:</span>
-            <span className="text-gray-900 font-semibold text-right max-w-xs">{lastOrder.address}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-500 font-medium">Payment Mode:</span>
-            <span className="text-gray-900 font-semibold">{lastOrder.paymentMethod}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-500 font-medium">Order Placed:</span>
-            <span className="text-gray-900 font-semibold">{new Date(lastOrder.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Ordered Items Summary */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm space-y-3">
-        <h3 className="font-bold text-sm text-gray-900 border-b border-gray-100 pb-2">Items Ordered</h3>
-        <div className="space-y-3">
-          {lastOrder.items.map(({ product, quantity }) => (
-            <div key={product.id} className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <img
-                  src={getProductImageUrl(product)}
-                  alt={product.name}
-                  className="w-12 h-12 object-contain rounded-lg bg-gray-50 p-1 border border-gray-100"
-                  onLoad={(e) => handleImageLoadCheck(e, product.name)}
-                  onError={(e) => handleImageLoadError(e, product.name)}
-                />
-                <div>
-                  <h4 className="font-bold text-xs text-gray-900 line-clamp-1">{product.name}</h4>
-                  <p className="text-[11px] text-gray-500">Qty: {quantity} • ₹{product.price} each</p>
+          <h3 className="font-black text-[10px] text-[#1F1F1F] uppercase tracking-wider">Items Ordered</h3>
+          <div className="space-y-1 max-h-24 overflow-y-auto pr-0.5 scrollbar-none">
+            {lastOrder.items?.map(({ product, quantity }) => (
+              <div key={product.id} className="flex items-center justify-between text-[11px] py-0.5">
+                <div className="flex items-center space-x-1.5 min-w-0">
+                  <img
+                    src={getProductImageUrl(product)}
+                    alt={product.name}
+                    className="w-6 h-6 object-contain rounded bg-[#F8F8F8] p-0.5 border border-[#E5E5E5] shrink-0"
+                    onLoad={(e) => handleImageLoadCheck(e, product.name)}
+                    onError={(e) => handleImageLoadError(e, product.name)}
+                  />
+                  <span className="font-medium text-[#1F1F1F] truncate">{quantity}x {product.name}</span>
                 </div>
+                <span className="font-bold text-[#1F1F1F] shrink-0 ml-1">₹{product.price * quantity}</span>
               </div>
-              <span className="font-bold text-xs text-gray-900">₹{product.price * quantity}</span>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className="pt-1 border-t border-[#E5E5E5] flex justify-between items-center text-xs font-black text-[#1F1F1F]">
+          <span>Amount Paid</span>
+          <span className="text-sm text-[#0C831F]">₹{lastOrder.totalAmount || lastOrder.grandTotal}</span>
         </div>
       </div>
 
-      {/* Actions */}
-      <div className="text-center pt-2">
+      {/* AI Trust Confirmation Banner */}
+      <div className="bg-[#F3F4F6] border border-[#E5E5E5] p-2 rounded-[14px] flex items-center space-x-1.5 text-[10px] text-[#1F1F1F] shadow-2xs">
+        <span className="material-symbols-outlined text-[#0C831F] text-base">verified</span>
+        <p className="text-[9px] leading-tight">
+          <strong className="text-[#0C831F] font-black">AI Guarantee:</strong> Sealed authentic batch verified with 7-day returns.
+        </p>
+      </div>
+
+      {/* Primary Action Button */}
+      <div className="pt-1">
         <button
+          type="button"
           onClick={() => navigate('/')}
-          className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md transition-all active:scale-95"
+          className="w-full bg-[#0C831F] hover:bg-[#0A701A] text-white font-black text-xs py-2.5 rounded-xl shadow-2xs transition-all active:scale-95 text-center"
         >
           Continue Shopping →
         </button>
