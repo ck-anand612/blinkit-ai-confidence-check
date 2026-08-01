@@ -26,6 +26,10 @@ The product principle: **Engineer Purchase Confidence, not Product Discovery.**
 
 ## Screenshots
 
+### Homepage — Confidence Guarantee Banner
+
+![Homepage showing Confidence Guarantee banner with AI-powered Confidence Check tagline](docs/screenshots/homepage_banner.png)
+
 ### Product Detail Page — Blinkit Confidence Guarantee Panel
 
 ![Product Detail Page showing Blinkit Confidence Guarantee panel with 4-dimension trust scores](docs/screenshots/pdp_confidence_panel.png)
