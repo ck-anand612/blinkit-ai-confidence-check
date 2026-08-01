@@ -149,14 +149,14 @@ export const HomePage = () => {
               </span>
               <span className="text-[#0C831F] text-[10px] font-extrabold flex items-center space-x-0.5">
                 <span className="material-symbols-outlined text-xs">verified</span>
-                <span>Instant AI Analysis</span>
+                <span>AI-powered Confidence Check</span>
               </span>
             </div>
             <h2 className="text-xs font-black tracking-tight leading-tight text-[#1F1F1F]">
-              Blinkit Confidence Guarantee for Beauty
+              Blinkit Confidence Guarantee — Shop Beauty with Confidence
             </h2>
             <p className="text-[#666666] text-[10px] line-clamp-2 leading-tight">
-              AI-powered Confidence Check — instant authenticity, skin suitability & returns verification.
+              Tap any item below for instant AI compatibility, authenticity & returns verification.
             </p>
           </div>
         </div>

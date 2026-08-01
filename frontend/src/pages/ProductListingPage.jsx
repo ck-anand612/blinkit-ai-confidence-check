@@ -102,11 +102,11 @@ export const ProductListingPage = () => {
           <div className="relative z-10 space-y-1">
             <div className="flex items-center space-x-1.5">
               <span className="bg-[#F8C537] text-[#1F1F1F] text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-2xs">
-                AI Confidence Store
+                Confidence Guarantee
               </span>
               <span className="text-[#0C831F] text-[10px] font-extrabold flex items-center space-x-0.5">
                 <span className="material-symbols-outlined text-xs">verified</span>
-                <span>Verified Beauty</span>
+                <span>AI-powered Confidence Check</span>
               </span>
             </div>
             <h2 className="text-xs font-black tracking-tight leading-tight text-[#1F1F1F]">
