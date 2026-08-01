@@ -24,22 +24,6 @@ The product principle: **Engineer Purchase Confidence, not Product Discovery.**
 
 ---
 
-## Screenshots
-
-### Homepage — Confidence Guarantee Banner
-
-![Homepage showing Confidence Guarantee banner with AI-powered Confidence Check tagline](docs/screenshots/homepage_banner.png)
-
-### Product Detail Page — Blinkit Confidence Guarantee Panel
-
-![Product Detail Page showing Blinkit Confidence Guarantee panel with 4-dimension trust scores](docs/screenshots/pdp_confidence_panel.png)
-
-### AI Evidence Report — Full Detail Sheet
-
-![AI Evidence Report sheet showing Authenticity Evidence, Skin Compatibility Analysis, and ingredient intelligence](docs/screenshots/ai_evidence_report.png)
-
----
-
 ## Tech Stack
 
 | Layer | Technology |
@@ -153,7 +137,6 @@ blinkit-ai-confidence-check/
 │   ├── implementation.md
 │   └── edge_cases.md
 ├── .env.example                   # Environment variable template
-├── LICENSE                        # MIT
 └── README.md
 ```
 
@@ -193,9 +176,3 @@ blinkit-ai-confidence-check/
 | [`docs/architecture.md`](docs/architecture.md) | System architecture, data flow, and API design |
 | [`docs/implementation.md`](docs/implementation.md) | Implementation details and component breakdown |
 | [`docs/edge_cases.md`](docs/edge_cases.md) | Edge cases and error handling decisions |
-
----
-
-## License
-
-[MIT](LICENSE) — case study project.
