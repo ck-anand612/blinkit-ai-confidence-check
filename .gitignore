@@ -3,6 +3,8 @@
 
 # Python virtual environment
 backend/venv/
+backend/.venv/
+.venv/
 
 # Node modules
 frontend/node_modules/
@@ -12,6 +14,7 @@ frontend/dist/
 
 # Python cache
 __pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
 
