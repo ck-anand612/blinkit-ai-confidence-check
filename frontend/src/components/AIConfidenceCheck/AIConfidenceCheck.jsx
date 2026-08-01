@@ -74,7 +74,7 @@ export const AIConfidenceCheck = ({
         <div className="flex items-center justify-between">
           <span className="text-[10px] font-black text-[#0C831F] uppercase tracking-wider flex items-center gap-1">
             <span className="material-symbols-outlined text-sm">psychology</span>
-            Blinkit AI Recommendation
+            Blinkit Confidence Guarantee
           </span>
           {loading && (
             <span className="text-[9px] text-[#0C831F] font-bold animate-pulse">

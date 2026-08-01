@@ -145,7 +145,7 @@ export const HomePage = () => {
           <div className="relative z-10 space-y-1">
             <div className="flex items-center space-x-1.5">
               <span className="bg-[#F8C537] text-[#1F1F1F] text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-2xs">
-                AI Confidence Check
+                Confidence Guarantee
               </span>
               <span className="text-[#0C831F] text-[10px] font-extrabold flex items-center space-x-0.5">
                 <span className="material-symbols-outlined text-xs">verified</span>
@@ -153,10 +153,10 @@ export const HomePage = () => {
               </span>
             </div>
             <h2 className="text-xs font-black tracking-tight leading-tight text-[#1F1F1F]">
-              Shop Beauty with 100% AI Confidence
+              Blinkit Confidence Guarantee for Beauty
             </h2>
             <p className="text-[#666666] text-[10px] line-clamp-2 leading-tight">
-              Tap any item below for instant AI compatibility, authenticity & returns verification.
+              AI-powered Confidence Check — instant authenticity, skin suitability & returns verification.
             </p>
           </div>
         </div>

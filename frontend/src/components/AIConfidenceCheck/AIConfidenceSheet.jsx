@@ -107,7 +107,7 @@ export const AIConfidenceSheet = ({
           
           <div className="bg-[#F3F4F6] p-2.5 rounded-xl border border-[#E5E5E5]">
             <p className="text-xs text-[#1F1F1F] font-semibold leading-relaxed">
-              Based on the aggregated scores across 4 dimensions, Blinkit AI recommends this product as a highly secure and verified purchase.
+              Based on the aggregated scores across 4 dimensions, Blinkit Confidence Guarantee marks this product as a highly secure and verified purchase.
             </p>
           </div>
         </div>

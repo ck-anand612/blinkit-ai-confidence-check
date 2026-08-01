@@ -1,6 +1,6 @@
-# Blinkit AI Confidence Check — AI-Native MVP (Part 4)
+# Blinkit Confidence Guarantee — AI-Powered Confidence Check (Part 4 MVP)
 
-> **A product case study MVP demonstrating an AI-powered Purchase Confidence Engine for Blinkit's Beauty & Personal Care category.**
+> **A product case study MVP demonstrating Blinkit's AI-Powered Confidence Check — an AI-native Purchase Confidence Engine for the Beauty & Personal Care category.**
 
 🔗 **Live Demo:** [blinkit-ai-confidence-check.vercel.app](https://blinkit-ai-confidence-check.vercel.app)
 
@@ -14,7 +14,7 @@ Blinkit has successfully established itself as India's leading quick-commerce pl
 
 ## What This MVP Does
 
-**AI Confidence Check** is an inline feature on the Product Detail Page that eliminates the need for users to leave Blinkit to validate a purchase. The user selects their concern — **Authenticity**, **Skin Suitability**, **Quality**, or **Returns** — and the system generates a grounded, product-specific response derived from verified product data (ingredients, supply chain signals, batch information, and return policies).
+**Blinkit Confidence Guarantee** is Blinkit's AI-Powered Confidence Check — an inline feature on the Product Detail Page that eliminates the need for users to leave Blinkit to validate a purchase. The user selects their concern — **Authenticity**, **Skin Suitability**, **Quality**, or **Returns** — and the system generates a grounded, product-specific response derived from verified product data (ingredients, supply chain signals, batch information, and return policies).
 
 Key surfaces:
 - **Purchase Confidence panel** — 4-dimension trust score (Authenticity, Skin Match, Quality, Returns) with progress bars and an AI recommendation snippet
@@ -26,7 +26,7 @@ The product principle: **Engineer Purchase Confidence, not Product Discovery.**
 
 ## Screenshots
 
-### Product Detail Page — AI Confidence Check Panel
+### Product Detail Page — Blinkit Confidence Guarantee Panel
 
 ![Product Detail Page showing Purchase Confidence panel with 4-dimension trust scores](docs/screenshots/pdp_confidence_panel.png)
 
@@ -160,7 +160,7 @@ blinkit-ai-confidence-check/
 ### Included in this MVP
 
 - Beauty & Personal Care products on the Product Detail Page
-- AI Confidence Check (concern-driven summary generation via Groq Llama 3.3 70B)
+- AI-Powered Confidence Check — concern-driven summary generation via Groq Llama 3.3 70B
 - Authenticity Assurance signals
 - Trust Signal badges (Brand Verified, Batch Verified, Cold Chain)
 - Local Confidence Signals (delivery time, dark store proximity)

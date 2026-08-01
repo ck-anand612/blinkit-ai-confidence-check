@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-3.5 h-12 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 group">
           <span className="bg-[#0C831F] text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
-            Blinkit Beauty & AI Confidence
+            Blinkit Confidence Guarantee
           </span>
         </Link>
 
